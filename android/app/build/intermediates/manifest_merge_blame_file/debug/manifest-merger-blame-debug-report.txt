@@ -1,0 +1,519 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.notes"
+4    android:versionCode="2"
+5    android:versionName="1.1" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="34" />
+10
+11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+11-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/debug/AndroidManifest.xml:5:5-77
+11-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/debug/AndroidManifest.xml:5:22-75
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:3:5-67
+12-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:3:22-64
+13    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+13-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:4:5-75
+13-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:4:22-73
+14    <uses-permission android:name="android.permission.CAMERA" />
+14-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:5:5-64
+14-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:5:22-62
+15    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+15-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:6:5-80
+15-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:6:22-78
+16    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+16-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:7:5-79
+16-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:7:22-77
+17    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+17-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:8:7-72
+17-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:8:24-70
+18    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+18-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:9:7-81
+18-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:9:24-78
+19    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+19-->[com.facebook.flipper:flipper:0.125.0] /Users/nikeshghadage/.gradle/caches/transforms-3/7791fe77b8ab9730d0e25ce55c6aa090/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:16:5-76
+19-->[com.facebook.flipper:flipper:0.125.0] /Users/nikeshghadage/.gradle/caches/transforms-3/7791fe77b8ab9730d0e25ce55c6aa090/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:16:22-73
+20
+21    <queries>
+21-->[:react-native-image-crop-picker] /Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-13:15
+22        <intent>
+22-->[:react-native-image-crop-picker] /Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-12:18
+23            <action android:name="android.media.action.IMAGE_CAPTURE" />
+23-->[:react-native-image-crop-picker] /Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-73
+23-->[:react-native-image-crop-picker] /Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:21-70
+24        </intent>
+25    </queries>
+26
+27    <uses-permission android:name="android.permission.WAKE_LOCK" />
+27-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:23:5-68
+27-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:23:22-65
+28    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+28-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:25:5-81
+28-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:25:22-78
+29    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+29-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:26:5-77
+29-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:26:22-74
+30    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+30-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:9:5-77
+30-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:9:22-74
+31    <uses-permission android:name="android.permission.VIBRATE" />
+31-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:13:5-66
+31-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:13:22-63
+32    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+32-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:16:5-79
+32-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:16:22-76
+33    <uses-permission
+33-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:17:5-19:38
+34        android:name="android.permission.BROADCAST_CLOSE_SYSTEM_DIALOGS"
+34-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:18:9-73
+35        android:maxSdkVersion="30" /> <!-- For Xiaomi devices to enable heads-up notifications as default (https://github.com/invertase/notifee/issues/296) -->
+35-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:19:9-35
+36    <uses-permission
+36-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:21:5-23:38
+37        android:name="android.permission.ACCESS_NOTIFICATION_POLICY"
+37-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:22:9-69
+38        android:minSdkVersion="23" />
+38-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:23:9-35
+39
+40    <application
+40-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:12:5-37:19
+41        android:name="com.notes.MainApplication"
+41-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:13:7-38
+42        android:allowBackup="false"
+42-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:19:7-34
+43        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+43-->[androidx.core:core:1.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/4147f26a61fb6196770ea38e58daddf3/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
+44        android:debuggable="true"
+45        android:icon="@drawable/app_icon"
+45-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:16:7-40
+46        android:label="@string/app_name"
+46-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:15:7-39
+47        android:networkSecurityConfig="@xml/network_security_config"
+47-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:18:7-67
+48        android:requestLegacyExternalStorage="true"
+48-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:14:7-50
+49        android:roundIcon="@drawable/app_icon"
+49-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:17:7-45
+50        android:theme="@style/AppTheme"
+50-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:21:7-38
+51        android:usesCleartextTraffic="true" >
+51-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:20:7-42
+52        <activity
+52-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/debug/AndroidManifest.xml:11:9-111
+53            android:name="com.facebook.react.devsupport.DevSettingsActivity"
+53-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/debug/AndroidManifest.xml:11:19-83
+54            android:exported="false" />
+54-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/debug/AndroidManifest.xml:11:84-108
+55        <activity
+55-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:22:7-33:18
+56            android:name="com.notes.MainActivity"
+56-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:23:9-37
+57            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+57-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:25:9-118
+58            android:exported="true"
+58-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:28:9-32
+59            android:label="@string/app_name"
+59-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:24:9-41
+60            android:launchMode="singleTask"
+60-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:26:9-40
+61            android:windowSoftInputMode="adjustResize" >
+61-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:27:9-51
+62            <intent-filter>
+62-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:29:9-32:25
+63                <action android:name="android.intent.action.MAIN" />
+63-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:30:13-65
+63-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:30:21-62
+64
+65                <category android:name="android.intent.category.LAUNCHER" />
+65-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:31:13-73
+65-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:31:23-70
+66            </intent-filter>
+67        </activity>
+68
+69        <meta-data
+69-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:34:2-36:32
+70            android:name="android:requestLegacyExternalStorage"
+70-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:35:9-60
+71            android:value="true" />
+71-->/Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/android/app/src/main/AndroidManifest.xml:36:9-29
+72
+73        <provider
+73-->[:notifee_react-native] /Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/node_modules/@notifee/react-native/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-14:40
+74            android:name="io.invertase.notifee.NotifeeInitProvider"
+74-->[:notifee_react-native] /Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/node_modules/@notifee/react-native/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-68
+75            android:authorities="com.notes.notifee-init-provider"
+75-->[:notifee_react-native] /Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/node_modules/@notifee/react-native/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-73
+76            android:exported="false"
+76-->[:notifee_react-native] /Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/node_modules/@notifee/react-native/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-37
+77            android:initOrder="-100" />
+77-->[:notifee_react-native] /Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/node_modules/@notifee/react-native/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-37
+78        <provider
+78-->[:react-native-image-crop-picker] /Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:9-26:20
+79            android:name="com.reactnative.ivpusic.imagepicker.IvpusicImagePickerFileProvider"
+79-->[:react-native-image-crop-picker] /Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:13-94
+80            android:authorities="com.notes.provider"
+80-->[:react-native-image-crop-picker] /Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:13-60
+81            android:exported="false"
+81-->[:react-native-image-crop-picker] /Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:13-37
+82            android:grantUriPermissions="true" >
+82-->[:react-native-image-crop-picker] /Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:22:13-47
+83            <meta-data
+83-->[:react-native-image-crop-picker] /Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-25:78
+84                android:name="android.support.FILE_PROVIDER_PATHS"
+84-->[:react-native-image-crop-picker] /Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-67
+85                android:resource="@xml/ivpusic_imagepicker_provider_paths" />
+85-->[:react-native-image-crop-picker] /Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:17-75
+86        </provider>
+87
+88        <activity
+88-->[:react-native-image-crop-picker] /Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:28:9-30:72
+89            android:name="com.yalantis.ucrop.UCropActivity"
+89-->[:react-native-image-crop-picker] /Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-60
+90            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+90-->[:react-native-image-crop-picker] /Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:30:13-69
+91
+92        <provider
+92-->[:react-native-image-picker] /Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-18:20
+93            android:name="com.imagepicker.ImagePickerProvider"
+93-->[:react-native-image-picker] /Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-63
+94            android:authorities="com.notes.imagepickerprovider"
+94-->[:react-native-image-picker] /Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-71
+95            android:exported="false"
+95-->[:react-native-image-picker] /Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-37
+96            android:grantUriPermissions="true" >
+96-->[:react-native-image-picker] /Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-47
+97            <meta-data
+97-->[:react-native-image-crop-picker] /Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-25:78
+98                android:name="android.support.FILE_PROVIDER_PATHS"
+98-->[:react-native-image-crop-picker] /Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-67
+99                android:resource="@xml/imagepicker_provider_paths" />
+99-->[:react-native-image-crop-picker] /Users/nikeshghadage/CODEPLATEAU/PRACTICE/Practice/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:17-75
+100        </provider>
+101        <provider
+101-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:29:9-37:20
+102            android:name="androidx.startup.InitializationProvider"
+102-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:30:13-67
+103            android:authorities="com.notes.androidx-startup"
+103-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:31:13-68
+104            android:exported="false" >
+104-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:32:13-37
+105            <meta-data
+105-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:34:13-36:52
+106                android:name="androidx.work.WorkManagerInitializer"
+106-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:35:17-68
+107                android:value="androidx.startup" />
+107-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:36:17-49
+108            <meta-data
+108-->[androidx.emoji2:emoji2:1.0.0] /Users/nikeshghadage/.gradle/caches/transforms-3/f1880cf4497a0a81e315b120458930c1/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
+109                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+109-->[androidx.emoji2:emoji2:1.0.0] /Users/nikeshghadage/.gradle/caches/transforms-3/f1880cf4497a0a81e315b120458930c1/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
+110                android:value="androidx.startup" />
+110-->[androidx.emoji2:emoji2:1.0.0] /Users/nikeshghadage/.gradle/caches/transforms-3/f1880cf4497a0a81e315b120458930c1/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
+111            <meta-data
+111-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/nikeshghadage/.gradle/caches/transforms-3/d734cd817a6eba2dc56ecab0ed4b46f1/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
+112                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+112-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/nikeshghadage/.gradle/caches/transforms-3/d734cd817a6eba2dc56ecab0ed4b46f1/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
+113                android:value="androidx.startup" />
+113-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/nikeshghadage/.gradle/caches/transforms-3/d734cd817a6eba2dc56ecab0ed4b46f1/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
+114        </provider>
+115
+116        <service
+116-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:39:9-45:35
+117            android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"
+117-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:40:13-88
+118            android:directBootAware="false"
+118-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:41:13-44
+119            android:enabled="@bool/enable_system_alarm_service_default"
+119-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:42:13-72
+120            android:exported="false" />
+120-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:43:13-37
+121        <service
+121-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:46:9-52:35
+122            android:name="androidx.work.impl.background.systemjob.SystemJobService"
+122-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:47:13-84
+123            android:directBootAware="false"
+123-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:48:13-44
+124            android:enabled="@bool/enable_system_job_service_default"
+124-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:49:13-70
+125            android:exported="true"
+125-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:50:13-36
+126            android:permission="android.permission.BIND_JOB_SERVICE" />
+126-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:51:13-69
+127        <service
+127-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:53:9-59:35
+128            android:name="androidx.work.impl.foreground.SystemForegroundService"
+128-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:54:13-81
+129            android:directBootAware="false"
+129-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:55:13-44
+130            android:enabled="@bool/enable_system_foreground_service_default"
+130-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:56:13-77
+131            android:exported="false" />
+131-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:57:13-37
+132
+133        <receiver
+133-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:61:9-66:35
+134            android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"
+134-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:62:13-88
+135            android:directBootAware="false"
+135-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:63:13-44
+136            android:enabled="true"
+136-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:64:13-35
+137            android:exported="false" />
+137-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:65:13-37
+138        <receiver
+138-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:67:9-77:20
+139            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy"
+139-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:68:13-106
+140            android:directBootAware="false"
+140-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:69:13-44
+141            android:enabled="false"
+141-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:70:13-36
+142            android:exported="false" >
+142-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:71:13-37
+143            <intent-filter>
+143-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:73:13-76:29
+144                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+144-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:74:17-87
+144-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:74:25-84
+145                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+145-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:75:17-90
+145-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:75:25-87
+146            </intent-filter>
+147        </receiver>
+148        <receiver
+148-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:78:9-88:20
+149            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy"
+149-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:79:13-104
+150            android:directBootAware="false"
+150-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:80:13-44
+151            android:enabled="false"
+151-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:81:13-36
+152            android:exported="false" >
+152-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:82:13-37
+153            <intent-filter>
+153-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:84:13-87:29
+154                <action android:name="android.intent.action.BATTERY_OKAY" />
+154-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:85:17-77
+154-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:85:25-74
+155                <action android:name="android.intent.action.BATTERY_LOW" />
+155-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:86:17-76
+155-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:86:25-73
+156            </intent-filter>
+157        </receiver>
+158        <receiver
+158-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:89:9-99:20
+159            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy"
+159-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:90:13-104
+160            android:directBootAware="false"
+160-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:91:13-44
+161            android:enabled="false"
+161-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:92:13-36
+162            android:exported="false" >
+162-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:93:13-37
+163            <intent-filter>
+163-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:95:13-98:29
+164                <action android:name="android.intent.action.DEVICE_STORAGE_LOW" />
+164-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:96:17-83
+164-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:96:25-80
+165                <action android:name="android.intent.action.DEVICE_STORAGE_OK" />
+165-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:97:17-82
+165-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:97:25-79
+166            </intent-filter>
+167        </receiver>
+168        <receiver
+168-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:100:9-109:20
+169            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy"
+169-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:101:13-103
+170            android:directBootAware="false"
+170-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:102:13-44
+171            android:enabled="false"
+171-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:103:13-36
+172            android:exported="false" >
+172-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:104:13-37
+173            <intent-filter>
+173-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:106:13-108:29
+174                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+174-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:107:17-79
+174-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:107:25-76
+175            </intent-filter>
+176        </receiver>
+177        <receiver
+177-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:110:9-121:20
+178            android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver"
+178-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:111:13-88
+179            android:directBootAware="false"
+179-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:112:13-44
+180            android:enabled="false"
+180-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:113:13-36
+181            android:exported="false" >
+181-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:114:13-37
+182            <intent-filter>
+182-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:116:13-120:29
+183                <action android:name="android.intent.action.BOOT_COMPLETED" />
+183-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:117:17-79
+183-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:117:25-76
+184                <action android:name="android.intent.action.TIME_SET" />
+184-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:118:17-73
+184-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:118:25-70
+185                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+185-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:119:17-81
+185-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:119:25-78
+186            </intent-filter>
+187        </receiver>
+188        <receiver
+188-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:122:9-131:20
+189            android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver"
+189-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:123:13-99
+190            android:directBootAware="false"
+190-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:124:13-44
+191            android:enabled="@bool/enable_system_alarm_service_default"
+191-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:125:13-72
+192            android:exported="false" >
+192-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:126:13-37
+193            <intent-filter>
+193-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:128:13-130:29
+194                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies" />
+194-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:129:17-98
+194-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:129:25-95
+195            </intent-filter>
+196        </receiver>
+197        <receiver
+197-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:132:9-142:20
+198            android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver"
+198-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:133:13-78
+199            android:directBootAware="false"
+199-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:134:13-44
+200            android:enabled="true"
+200-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:135:13-35
+201            android:exported="true"
+201-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:136:13-36
+202            android:permission="android.permission.DUMP" >
+202-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:137:13-57
+203            <intent-filter>
+203-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:139:13-141:29
+204                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS" />
+204-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:140:17-88
+204-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:140:25-85
+205            </intent-filter>
+206        </receiver>
+207
+208        <service
+208-->[androidx.room:room-runtime:2.5.0] /Users/nikeshghadage/.gradle/caches/transforms-3/84687da98c9229873a5a324fd9c01893/transformed/room-runtime-2.5.0/AndroidManifest.xml:24:9-28:63
+209            android:name="androidx.room.MultiInstanceInvalidationService"
+209-->[androidx.room:room-runtime:2.5.0] /Users/nikeshghadage/.gradle/caches/transforms-3/84687da98c9229873a5a324fd9c01893/transformed/room-runtime-2.5.0/AndroidManifest.xml:25:13-74
+210            android:directBootAware="true"
+210-->[androidx.room:room-runtime:2.5.0] /Users/nikeshghadage/.gradle/caches/transforms-3/84687da98c9229873a5a324fd9c01893/transformed/room-runtime-2.5.0/AndroidManifest.xml:26:13-43
+211            android:exported="false" />
+211-->[androidx.room:room-runtime:2.5.0] /Users/nikeshghadage/.gradle/caches/transforms-3/84687da98c9229873a5a324fd9c01893/transformed/room-runtime-2.5.0/AndroidManifest.xml:27:13-37
+212
+213        <meta-data
+213-->[com.google.android.gms:play-services-basement:18.0.0] /Users/nikeshghadage/.gradle/caches/transforms-3/8c45b2f617d58504dcf0b1bc86086a24/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:21:9-23:69
+214            android:name="com.google.android.gms.version"
+214-->[com.google.android.gms:play-services-basement:18.0.0] /Users/nikeshghadage/.gradle/caches/transforms-3/8c45b2f617d58504dcf0b1bc86086a24/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:22:13-58
+215            android:value="@integer/google_play_services_version" /> <!-- Receiver Service -->
+215-->[com.google.android.gms:play-services-basement:18.0.0] /Users/nikeshghadage/.gradle/caches/transforms-3/8c45b2f617d58504dcf0b1bc86086a24/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:23:13-66
+216        <service
+216-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:28:9-30:40
+217            android:name="app.notifee.core.ReceiverService"
+217-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:29:13-60
+218            android:exported="false" />
+218-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:30:13-37
+219
+220        <activity
+220-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:32:9-38:75
+221            android:name="app.notifee.core.NotificationReceiverActivity"
+221-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:33:13-73
+222            android:excludeFromRecents="true"
+222-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:34:13-46
+223            android:exported="true"
+223-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:35:13-36
+224            android:noHistory="true"
+224-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:36:13-37
+225            android:taskAffinity=""
+225-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:37:13-36
+226            android:theme="@android:style/Theme.Translucent.NoTitleBar" /> <!-- Foreground Service -->
+226-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:38:13-72
+227        <service
+227-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:41:9-44:60
+228            android:name="app.notifee.core.ForegroundService"
+228-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:42:13-62
+229            android:exported="false"
+229-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:43:13-37
+230            android:foregroundServiceType="shortService" />
+230-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:44:13-57
+231
+232        <receiver
+232-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:46:9-54:20
+233            android:name="app.notifee.core.RebootBroadcastReceiver"
+233-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:47:13-68
+234            android:exported="false" >
+234-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:48:13-37
+235            <intent-filter>
+235-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:49:13-53:29
+236                <action android:name="android.intent.action.BOOT_COMPLETED" />
+236-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:117:17-79
+236-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:117:25-76
+237                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+237-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:51:17-82
+237-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:51:25-79
+238                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+238-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:52:17-82
+238-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:52:25-79
+239            </intent-filter>
+240        </receiver>
+241        <receiver
+241-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:55:9-61:20
+242            android:name="app.notifee.core.AlarmPermissionBroadcastReceiver"
+242-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:56:13-77
+243            android:exported="true" >
+243-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:57:13-36
+244            <intent-filter>
+244-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:58:13-60:29
+245                <action android:name="android.app.action.SCHEDULE_EXACT_ALARM_PERMISSION_STATE_CHANGED" />
+245-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:59:17-107
+245-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:59:25-104
+246            </intent-filter>
+247        </receiver>
+248        <receiver
+248-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:62:9-70:20
+249            android:name="app.notifee.core.NotificationAlarmReceiver"
+249-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:63:13-70
+250            android:exported="false" >
+250-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:64:13-37
+251            <intent-filter>
+251-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:49:13-53:29
+252                <action android:name="android.intent.action.BOOT_COMPLETED" />
+252-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:117:17-79
+252-->[androidx.work:work-runtime:2.8.0] /Users/nikeshghadage/.gradle/caches/transforms-3/6ef407a6966806a9eb299d18f442a958/transformed/work-runtime-2.8.0/AndroidManifest.xml:117:25-76
+253                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+253-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:51:17-82
+253-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:51:25-79
+254                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+254-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:52:17-82
+254-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:52:25-79
+255            </intent-filter>
+256        </receiver> <!-- Broadcast Receiver -->
+257        <receiver
+257-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:73:9-81:20
+258            android:name="app.notifee.core.BlockStateBroadcastReceiver"
+258-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:74:13-72
+259            android:exported="false" >
+259-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:75:13-37
+260            <intent-filter>
+260-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:76:13-80:29
+261                <action android:name="android.app.action.APP_BLOCK_STATE_CHANGED" />
+261-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:77:17-85
+261-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:77:25-82
+262                <action android:name="android.app.action.NOTIFICATION_CHANNEL_BLOCK_STATE_CHANGED" />
+262-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:78:17-102
+262-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:78:25-99
+263                <action android:name="android.app.action.NOTIFICATION_CHANNEL_GROUP_BLOCK_STATE_CHANGED" />
+263-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:79:17-108
+263-->[app.notifee:core:202108261754] /Users/nikeshghadage/.gradle/caches/transforms-3/559bb7f9db9e9c774be178126693ff07/transformed/jetified-core-202108261754/AndroidManifest.xml:79:25-105
+264            </intent-filter>
+265        </receiver>
+266    </application>
+267
+268</manifest>

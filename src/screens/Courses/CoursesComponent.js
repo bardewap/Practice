@@ -1,4 +1,4 @@
-import React, {useState, useEffect, memo, useCallback} from 'react';
+import React, { useState, useEffect, memo, useCallback } from "react";
 import {
   View,
   Text,
@@ -9,17 +9,17 @@ import {
   TextInput,
   Modal,
   StyleSheet,
-} from 'react-native';
-import styles from './styles';
-import {Images} from '../../utils/Theme'; // Assuming you have a folder icon in Images
-import Loader from '../../components/Loader';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import {useFocusEffect} from '@react-navigation/native';
+} from "react-native";
+import styles from "./styles";
+import { Images } from "../../utils/Theme"; // Assuming you have a folder icon in Images
+import Loader from "../../components/Loader";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useFocusEffect } from "@react-navigation/native";
 
-const CoursesComponent = memo(props => {
-  const {navigation} = props;
+const CoursesComponent = memo((props) => {
+  const { navigation } = props;
   const [folders, setFolders] = useState([]);
-  const [newFolderName, setNewFolderName] = useState('');
+  const [newFolderName, setNewFolderName] = useState("");
   const [isCreatingFolder, setIsCreatingFolder] = useState(false);
   const [isModalVisible, setModalVisible] = useState(false);
   const [folderToDelete, setFolderToDelete] = useState(null);
@@ -27,23 +27,23 @@ const CoursesComponent = memo(props => {
   useFocusEffect(
     useCallback(() => {
       const fetchFolders = async () => {
-        const storedFolders = await AsyncStorage.getItem('folders');
+        const storedFolders = await AsyncStorage.getItem("folders");
         if (storedFolders) {
           setFolders(JSON.parse(storedFolders));
 
           console.log(
-            'storedFolders',
-            JSON.stringify(JSON.parse(storedFolders)),
+            "storedFolders",
+            JSON.stringify(JSON.parse(storedFolders))
           );
         }
       };
       fetchFolders();
-    }, []),
+    }, [])
   );
 
   const handleCreateFolder = async () => {
     if (!newFolderName.trim()) {
-      Alert.alert('Please enter a folder name');
+      Alert.alert("Please enter a folder name");
       return;
     }
 
@@ -57,28 +57,29 @@ const CoursesComponent = memo(props => {
 
     try {
       // Store the new folder in AsyncStorage
-      await AsyncStorage.setItem('folders', JSON.stringify(updatedFolders));
+      await AsyncStorage.setItem("folders", JSON.stringify(updatedFolders));
       setFolders(updatedFolders);
-      setNewFolderName('');
+      setNewFolderName("");
       setIsCreatingFolder(false);
     } catch (error) {
-      console.error('Error creating folder:', error);
+      console.error("Error creating folder:", error);
     }
   };
 
-  const renderFolderItem = ({item}) => (
+  const renderFolderItem = ({ item }) => (
     <TouchableOpacity
       onPress={() => props.folderDetailsPress(item)}
       onLongPress={() => {
         setFolderToDelete(item); // Set the folder to be deleted
         setModalVisible(true); // Show the confirmation modal
       }}
-      style={styles.folderItem}>
+      style={styles.folderItem}
+    >
       <Image source={Images.folder} style={styles.folderIcon} />
       <View style={styles.folderDetails}>
         <Text style={styles.folderTitle}>{item.title}</Text>
         <Text style={styles.fileCount}>
-          {item?.notes ? item?.notes?.length : '0'} files
+          {item?.notes ? item?.notes?.length : "0"} files
         </Text>
       </View>
     </TouchableOpacity>
@@ -88,17 +89,17 @@ const CoursesComponent = memo(props => {
     if (!folderToDelete) return;
 
     const updatedFolders = folders.filter(
-      folder => folder.id !== folderToDelete.id,
+      (folder) => folder.id !== folderToDelete.id
     );
 
     try {
       // Update AsyncStorage
-      await AsyncStorage.setItem('folders', JSON.stringify(updatedFolders));
+      await AsyncStorage.setItem("folders", JSON.stringify(updatedFolders));
       setFolders(updatedFolders);
       setModalVisible(false);
       setFolderToDelete(null);
     } catch (error) {
-      console.error('Error deleting folder:', error);
+      console.error("Error deleting folder:", error);
     }
   };
   return (
@@ -116,16 +117,15 @@ const CoursesComponent = memo(props => {
             </TouchableOpacity>
           </View>
           <Text style={styles.bottomText}>Manage your folders</Text>
-
           {/* Create Folder Button */}
           <TouchableOpacity
             style={styles.createFolderButton}
-            onPress={() => setIsCreatingFolder(!isCreatingFolder)}>
+            onPress={() => setIsCreatingFolder(!isCreatingFolder)}
+          >
             <Text style={styles.createFolderButtonText}>Create Folder</Text>
           </TouchableOpacity>
-
           {/* Input for Folder Name */}
-          {isCreatingFolder && (
+          {/* {isCreatingFolder && (
             <View style={styles.createFolderContainer}>
               <TextInput
                 style={styles.folderInput}
@@ -139,6 +139,49 @@ const CoursesComponent = memo(props => {
                 <Text style={styles.saveButtonText}>Save</Text>
               </TouchableOpacity>
             </View>
+          )} */}
+          {isCreatingFolder && (
+            <Modal
+              animationType="slide"
+              transparent={true}
+              visible={isCreatingFolder}
+              onRequestClose={() => setIsCreatingFolder(false)}
+            >
+              <View style={styles.modalContainer11}>
+                <View style={styles.modalContent11}>
+                  {/* Title Bar */}
+                  <View style={styles.titleBar}>
+                    <TouchableOpacity
+                      onPress={() => setIsCreatingFolder(false)}
+                    >
+                      <Text style={styles.cancelButton}>Cancel</Text>
+                    </TouchableOpacity>
+                    <Text style={styles.modalTitle}>New Folder</Text>
+                    <TouchableOpacity onPress={handleCreateFolder}>
+                      <Text style={styles.doneButton}>Done</Text>
+                    </TouchableOpacity>
+                  </View>
+
+                  {/* Input for Folder Name */}
+                  <View style={styles.inputContainer}>
+                    <TextInput
+                      style={styles.folderInput}
+                      placeholder="New Folder"
+                      value={newFolderName}
+                      onChangeText={setNewFolderName}
+                    />
+                    {newFolderName.length > 0 && (
+                      <TouchableOpacity
+                        onPress={() => setNewFolderName("")}
+                        style={styles.clearButton}
+                      >
+                        <Text style={styles.clearButtonText}>X</Text>
+                      </TouchableOpacity>
+                    )}
+                  </View>
+                </View>
+              </View>
+            </Modal>
           )}
         </View>
       </View>
@@ -151,7 +194,7 @@ const CoursesComponent = memo(props => {
         <FlatList
           data={folders}
           renderItem={renderFolderItem}
-          keyExtractor={item => item.id}
+          keyExtractor={(item) => item.id}
           contentContainerStyle={styles.listContainer}
         />
       )}
@@ -171,12 +214,14 @@ const CoursesComponent = memo(props => {
                 onPress={() => {
                   setModalVisible(false);
                   setFolderToDelete(null);
-                }}>
+                }}
+              >
                 <Text style={styles.modalButtonText}>Cancel</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.modalButton}
-                onPress={handleDeleteFolder}>
+                onPress={handleDeleteFolder}
+              >
                 <Text style={styles.modalButtonText}>Delete</Text>
               </TouchableOpacity>
             </View>

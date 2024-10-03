@@ -76,7 +76,6 @@ const AddNoteContainer = memo(({ navigation, route }) => {
         }
         return folder;
       });
-
       await AsyncStorage.setItem("folders", JSON.stringify(updatedFolders));
       Alert.alert("Success", "Note added successfully");
       setTitle("");
@@ -85,6 +84,8 @@ const AddNoteContainer = memo(({ navigation, route }) => {
       setReminderDate(new Date());
       onNoteAdded();
       navigation.goBack();
+
+      
     } catch (error) {
       console.error("Error saving note:", error);
       Alert.alert("Error", "Could not save note, please try again.");

@@ -20,4 +20,6 @@ export default {
   folder: require("../../assets/images/folder.png"),
 
   reminder: require("../../assets/images/reminder.png"),
+  noNotesIllustration: require("../../assets/images/noNotesIllustration.png"),
+
 };

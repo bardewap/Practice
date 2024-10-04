@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React, { memo, useState, useEffect, useCallback } from "react";
 import {
   View,
   Text,
@@ -6,43 +6,86 @@ import {
   TouchableOpacity,
   FlatList,
   ScrollView,
-} from 'react-native';
-import styles from './styles'; // Assume styles are updated accordingly
-import {Images} from '../../utils/Theme';
-import Loader from '../../components/Loader';
+} from "react-native";
+import styles from "./styles"; // Assume styles are updated accordingly
+import { Images } from "../../utils/Theme";
+import Loader from "../../components/Loader";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useFocusEffect } from "@react-navigation/native";
 
-const HomeComponent = memo(props => {
-  const currentCourses = [
-    {id: '1', title: 'Course 1', description: 'Description of Course 1'},
-    {id: '2', title: 'Course 2', description: 'Description of Course 2'},
-  ];
+const HomeComponent = memo((props) => {
+  const [folders, setFolders] = useState([]);
 
-  const weeklyQuizzes = [
-    {id: '1', title: 'Quiz 1', date: '2024-09-30'},
-    {id: '2', title: 'Quiz 2', date: '2024-10-07'},
-  ];
+  useFocusEffect(
+    useCallback(() => {
+      const fetchFolders = async () => {
+        const storedFolders = await AsyncStorage.getItem("folders");
+        if (storedFolders) {
+          setFolders(JSON.parse(storedFolders));
 
-  const renderCourseItem = ({item}) => (
+          console.log(
+            "storedFolders",
+            JSON.stringify(JSON.parse(storedFolders))
+          );
+        }
+      };
+      fetchFolders();
+    }, [])
+  );
+
+  const getRecentNotesById = (folders, limit = 3) => {
+    // Step 1: Flatten the notes into a single array
+    const allNotes = folders.flatMap((folder) => folder.notes);
+
+    // Step 2: Sort the notes by id (assuming higher id means more recently created)
+    const sortedNotes = allNotes.sort((a, b) => b.id.localeCompare(a.id));
+
+    // Step 3: Select the top `limit` notes
+    return sortedNotes.slice(0, limit);
+  };
+
+  const recentNotes = getRecentNotesById(folders);
+  console.log(recentNotes);
+
+  const renderNoteItem = ({ item }) => (
     <View style={styles.courseItem}>
       <Text style={styles.courseTitle}>{item.title}</Text>
       <Text style={styles.courseDescription}>{item.description}</Text>
     </View>
   );
 
-  const renderQuizItem = ({item}) => (
+  const currentCourses = [
+    { id: "1", title: "Course 1", description: "Description of Course 1" },
+    { id: "2", title: "Course 2", description: "Description of Course 2" },
+  ];
+
+  const weeklyQuizzes = [
+    { id: "1", title: "Quiz 1", date: "2024-09-30" },
+    { id: "2", title: "Quiz 2", date: "2024-10-07" },
+  ];
+
+  const renderCourseItem = ({ item }) => (
+    <View style={styles.courseItem}>
+      <Text style={styles.courseTitle}>{item.title}</Text>
+      <Text style={styles.courseDescription}>{item.description}</Text>
+    </View>
+  );
+
+  const renderQuizItem = ({ item }) => (
     <View style={styles.quizItem}>
       <Text style={styles.quizTitle}>{item.title}</Text>
       <Text style={styles.quizDate}>Due Date: {item.date}</Text>
       <TouchableOpacity
         style={styles.startQuizButton}
-        onPress={() => handleStartQuiz(item)}>
+        onPress={() => handleStartQuiz(item)}
+      >
         <Text style={styles.buttonText}>Start Quiz</Text>
       </TouchableOpacity>
     </View>
   );
 
-  const handleStartQuiz = quiz => {
-    console.log('Starting quiz:', quiz);
+  const handleStartQuiz = (quiz) => {
+    console.log("Starting quiz:", quiz);
   };
 
   return (
@@ -65,13 +108,35 @@ const HomeComponent = memo(props => {
       {/* Current Courses Section */}
       <ScrollView style={styles.scrollView}>
         <View style={styles.sectionContainer}>
-          <Text style={styles.sectionTitle}>Current Courses</Text>
+          {/* <Text style={styles.sectionTitle}>Current Courses</Text>
           <FlatList
             data={currentCourses}
             renderItem={renderCourseItem}
-            keyExtractor={item => item.id}
+            keyExtractor={(item) => item.id}
             contentContainerStyle={styles.listContainer}
-          />
+          /> */}
+          {/* Recently Created Notes Section */}
+          <Text style={styles.sectionTitle}>Recently Created Notes</Text>
+          {recentNotes?.length > 0 ? (
+            <FlatList
+              data={recentNotes}
+              renderItem={renderNoteItem}
+              keyExtractor={(item) => item.id}
+              contentContainerStyle={styles.listContainer}
+            />
+          ) : (
+            <View style={styles.noNotesContainer}>
+              <Text style={styles.noNotesText}>
+                No recently created notes available.
+              </Text>
+              {/* You can also add an illustration or icon if desired */}
+              <Image
+                source={Images.noNotesIllustration} // Replace with your illustration asset
+                style={styles.noNotesImage}
+                resizeMode="contain"
+              />
+            </View>
+          )}
         </View>
 
         {/* Weekly Quizzes Section */}
@@ -80,7 +145,7 @@ const HomeComponent = memo(props => {
           <FlatList
             data={weeklyQuizzes}
             renderItem={renderQuizItem}
-            keyExtractor={item => item.id}
+            keyExtractor={(item) => item.id}
             contentContainerStyle={styles.listContainer}
           />
         </View>

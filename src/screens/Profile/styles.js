@@ -1,6 +1,6 @@
-import {StyleSheet, Dimensions} from 'react-native';
-import {Colors, Sizes, Fonts} from '../../utils/Theme';
-const windowWidth = Dimensions.get('window').width;
+import { StyleSheet, Dimensions } from "react-native";
+import { Colors, Sizes, Fonts } from "../../utils/Theme";
+const windowWidth = Dimensions.get("window").width;
 
 export default StyleSheet.create({
   container: {
@@ -11,38 +11,39 @@ export default StyleSheet.create({
     height: 150,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
-    backgroundColor: '#6200EA', // Primary color similar to HomeComponent
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: "#6200EA", // Primary color similar to HomeComponent
+    justifyContent: "center",
+    alignItems: "center",
   },
   blurContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   bannerContent: {
     marginBottom: 20,
   },
   bannerText: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     color: Colors.White_FFFFFF,
   },
   scrollViewContent: {
     padding: 20,
   },
   profileSection: {
-    alignItems: 'center',
+    alignItems: "center",
     marginVertical: 20,
   },
   profileImage: {
     width: 100,
     height: 100,
     borderRadius: 50,
+    resizeMode: "cover",
   },
   userName: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginTop: 10,
   },
   userEmail: {
@@ -53,5 +54,10 @@ export default StyleSheet.create({
     fontSize: 14,
     color: Colors.lightGray,
     marginTop: 5,
+  },
+  appVersion: {
+    fontSize: 12,
+    color: Colors.gray,
+    margin: 10,
   },
 });

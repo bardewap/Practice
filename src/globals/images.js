@@ -21,5 +21,7 @@ export default {
 
   reminder: require("../../assets/images/reminder.png"),
   noNotesIllustration: require("../../assets/images/noNotesIllustration.png"),
+  app_icon: require("../../assets/images/app_icon.png"),
+
 
 };

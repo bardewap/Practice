@@ -97,7 +97,7 @@ const HomeComponent = memo((props) => {
             <Text style={styles.bannerText}>Hi Student</Text>
             <TouchableOpacity>
               <Image
-                source={Images.profileThumnail} // Fixed typo here
+                source={Images.app_icon} // Fixed typo here
                 style={styles.profileImage}
               />
             </TouchableOpacity>

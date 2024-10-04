@@ -110,10 +110,7 @@ const CoursesComponent = memo((props) => {
           <View style={styles.bannerContent}>
             <Text style={styles.bannerText}>Your Folders</Text>
             <TouchableOpacity>
-              <Image
-                source={Images.profileThumnail}
-                style={styles.profileImage}
-              />
+              <Image source={Images.app_icon} style={styles.profileImage} />
             </TouchableOpacity>
           </View>
           <Text style={styles.bottomText}>Manage your folders</Text>

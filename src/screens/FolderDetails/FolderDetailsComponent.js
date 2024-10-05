@@ -27,6 +27,7 @@ const FolderDetailsComponent = memo((props) => {
 
   const renderNoteItem = ({ item }) => (
     <TouchableOpacity
+      onPress={() => props.handleNoteDetails(item)} // Delete on long press
       onLongPress={() => props.handleDeleteNote(item.id)} // Delete on long press
       style={styles.noteItemContainer}
     >

@@ -1,16 +1,16 @@
-import React, {useEffect, useState} from 'react';
-import {connect} from 'react-redux';
-import FolderDetailsComponent from './FolderDetailsComponent';
-import {useIsFocused} from '@react-navigation/native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import {Alert} from 'react-native';
+import React, { useEffect, useState } from "react";
+import { connect } from "react-redux";
+import FolderDetailsComponent from "./FolderDetailsComponent";
+import { useIsFocused } from "@react-navigation/native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { Alert } from "react-native";
 
-const FolderDetailsContainer = props => {
-  const {navigation} = props;
-  const {data} = props.route.params;
+const FolderDetailsContainer = (props) => {
+  const { navigation } = props;
+  const { data } = props.route.params;
   const isFocused = useIsFocused();
   const [notes, setNotes] = useState([]);
-  const [searchQuery, setSearchQuery] = useState(''); // Search query state
+  const [searchQuery, setSearchQuery] = useState(""); // Search query state
 
   useEffect(() => {
     if (isFocused) {
@@ -22,53 +22,57 @@ const FolderDetailsContainer = props => {
     navigation.goBack();
   };
 
-  const onAddNote = folderId => {
-    navigation.navigate('AddNoteContainer', {
+  const onAddNote = (folderId) => {
+    navigation.navigate("AddNoteContainer", {
       folderId: folderId,
       onNoteAdded: fetchNotes, // Pass the fetchNotes function as a callback
     });
   };
 
   const fetchNotes = async () => {
-    const existingFolders = await AsyncStorage.getItem('folders');
+    const existingFolders = await AsyncStorage.getItem("folders");
     const foldersArray = existingFolders ? JSON.parse(existingFolders) : [];
     const currentFolder = foldersArray.find(
-      folder => folder.id === data?.item?.id,
+      (folder) => folder.id === data?.item?.id
     );
     setNotes(currentFolder?.notes || []); // Set notes or empty array if not found
   };
 
-  const handleDeleteNote = async noteId => {
+  const handleDeleteNote = async (noteId) => {
     Alert.alert(
-      'Delete Note',
-      'Are you sure you want to delete this note?',
+      "Delete Note",
+      "Are you sure you want to delete this note?",
       [
         {
-          text: 'Cancel',
-          style: 'cancel',
+          text: "Cancel",
+          style: "cancel",
         },
         {
-          text: 'Delete',
+          text: "Delete",
           onPress: async () => {
-            const updatedNotes = notes.filter(note => note.id !== noteId);
+            const updatedNotes = notes.filter((note) => note.id !== noteId);
             try {
               const folderId = data?.item?.id;
-              const storedFolders = await AsyncStorage.getItem('folders');
+              const storedFolders = await AsyncStorage.getItem("folders");
               let folders = JSON.parse(storedFolders);
               const folderIndex = folders.findIndex(
-                folder => folder.id === folderId,
+                (folder) => folder.id === folderId
               );
               folders[folderIndex].notes = updatedNotes;
-              await AsyncStorage.setItem('folders', JSON.stringify(folders));
+              await AsyncStorage.setItem("folders", JSON.stringify(folders));
               setNotes(updatedNotes); // Update state
             } catch (error) {
-              console.error('Error deleting note:', error);
+              console.error("Error deleting note:", error);
             }
           },
         },
       ],
-      {cancelable: true},
+      { cancelable: true }
     );
+  };
+
+  const handleNoteDetails = (item) => {
+    navigation.navigate("NoteDetailsContainer", { data: { item: item } });
   };
 
   return (
@@ -81,14 +85,15 @@ const FolderDetailsContainer = props => {
       searchQuery={searchQuery} // Pass search query state
       setSearchQuery={setSearchQuery} // Pass setSearchQuery to handle input
       handleDeleteNote={handleDeleteNote}
+      handleNoteDetails={handleNoteDetails}
     />
   );
 };
 
-const mapStateToProps = state => ({});
-const mapDispatchToProps = dispatch => ({});
+const mapStateToProps = (state) => ({});
+const mapDispatchToProps = (dispatch) => ({});
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(FolderDetailsContainer);

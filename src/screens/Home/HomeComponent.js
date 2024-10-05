@@ -48,10 +48,13 @@ const HomeComponent = memo((props) => {
   console.log(recentNotes);
 
   const renderNoteItem = ({ item }) => (
-    <View style={styles.courseItem}>
+    <TouchableOpacity
+      onPress={() => props.handleNoteDetails(item)} // Delete on long press
+      style={styles.courseItem}
+    >
       <Text style={styles.courseTitle}>{item.title}</Text>
       <Text style={styles.courseDescription}>{item.description}</Text>
-    </View>
+    </TouchableOpacity>
   );
 
   const currentCourses = [

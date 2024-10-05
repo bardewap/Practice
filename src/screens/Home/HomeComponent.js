@@ -13,9 +13,15 @@ import Loader from "../../components/Loader";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useFocusEffect } from "@react-navigation/native";
 import SeeMore from "react-native-see-more-inline"; // Import the SeeMore component
+import { PermissionsAndroid, Platform } from "react-native";
+import PushNotification from "react-native-push-notification";
 
 const HomeComponent = memo((props) => {
   const [folders, setFolders] = useState([]);
+
+  useEffect(() => {
+    requestNotificationPermission();
+  }, []);
 
   useFocusEffect(
     useCallback(() => {
@@ -33,6 +39,34 @@ const HomeComponent = memo((props) => {
       fetchFolders();
     }, [])
   );
+  const requestNotificationPermission = async () => {
+    if (Platform.OS === "android") {
+      try {
+        PermissionsAndroid.check("android.permission.POST_NOTIFICATIONS")
+          .then((response) => {
+            if (!response) {
+              PermissionsAndroid.request(
+                "android.permission.POST_NOTIFICATIONS",
+                {
+                  title: "Notification",
+                  message:
+                    "App needs access to your notification " +
+                    "so you can get Updates",
+                  buttonNeutral: "Ask Me Later",
+                  buttonNegative: "Cancel",
+                  buttonPositive: "OK",
+                }
+              );
+            }
+          })
+          .catch((err) => {
+            console.log("Notification Error=====>", err);
+          });
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  };
 
   const getRecentNotesById = (folders, limit = 3) => {
     // Step 1: Flatten the notes into a single array

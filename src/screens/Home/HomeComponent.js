@@ -36,24 +36,24 @@ const HomeComponent = memo((props) => {
 
   const getRecentNotesById = (folders, limit = 3) => {
     // Step 1: Flatten the notes into a single array
-    const allNotes = folders.flatMap((folder) => folder.notes);
+    const allNotes = folders?.flatMap((folder) => folder?.notes);
 
     // Step 2: Sort the notes by id (assuming higher id means more recently created)
-    const sortedNotes = allNotes.sort((a, b) => b.id.localeCompare(a.id));
+    const sortedNotes = allNotes.sort((a, b) => b?.id.localeCompare(a?.id));
 
     // Step 3: Select the top `limit` notes
     return sortedNotes.slice(0, limit);
   };
 
   const recentNotes = getRecentNotesById(folders);
-  console.log(recentNotes);
+  console.log("recentNotes", recentNotes);
 
   const renderNoteItem = ({ item }) => (
     <TouchableOpacity
       onPress={() => props.handleNoteDetails(item)} // Delete on long press
       style={styles.courseItem}
     >
-      <Text style={styles.courseTitle}>{item.title}</Text>
+      <Text style={styles.courseTitle}>{item?.title}</Text>
       {/* <SeeMore
         numberOfLines={5} // Number of lines before truncating
         style={styles.courseDescription}
@@ -65,7 +65,7 @@ const HomeComponent = memo((props) => {
         {item.description}
       </SeeMore> */}
       <Text numberOfLines={4} style={styles.courseDescription}>
-        {item.description}
+        {item?.description}
       </Text>
     </TouchableOpacity>
   );
@@ -133,11 +133,11 @@ const HomeComponent = memo((props) => {
           /> */}
           {/* Recently Created Notes Section */}
           <Text style={styles.sectionTitle}>Recently Created Notes</Text>
-          {recentNotes?.length > 0 ? (
+          {recentNotes?.length > 0 || recentNotes == [] ? (
             <FlatList
               data={recentNotes}
               renderItem={renderNoteItem}
-              keyExtractor={(item) => item.id}
+              keyExtractor={(item) => item?.id}
               contentContainerStyle={styles.listContainer}
             />
           ) : (
@@ -161,7 +161,7 @@ const HomeComponent = memo((props) => {
           <FlatList
             data={weeklyQuizzes}
             renderItem={renderQuizItem}
-            keyExtractor={(item) => item.id}
+            keyExtractor={(item) => item?.id}
             contentContainerStyle={styles.listContainer}
           />
         </View>

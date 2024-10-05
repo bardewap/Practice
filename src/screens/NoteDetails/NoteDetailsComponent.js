@@ -14,9 +14,6 @@ const NoteDetailsComponent = memo((props) => {
       </View>
 
       <ScrollView contentContainerStyle={styles.scrollViewContent}>
-        {/* Display Note Title */}
-
-        {/* Display Note Description */}
         <View style={styles.detailSection}>
           <Text style={styles.label}>Description</Text>
           <Text style={styles.value}>
@@ -24,7 +21,6 @@ const NoteDetailsComponent = memo((props) => {
           </Text>
         </View>
 
-        {/* Display Uploaded Image */}
         {props?.selectedImage && (
           <View style={styles.imageSection}>
             <Text style={styles.label}>Attached Image</Text>
@@ -34,8 +30,6 @@ const NoteDetailsComponent = memo((props) => {
             />
           </View>
         )}
-
-        {/* Display Reminder */}
         {props?.data?.item?.reminderDate && (
           <View style={styles.reminderSection}>
             <Text style={styles.label}>Reminder :</Text>

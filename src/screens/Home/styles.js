@@ -71,6 +71,7 @@ export default StyleSheet.create({
   courseDescription: {
     fontSize: 14,
     color: "#4B5563",
+    
   },
   quizItem: {
     padding: 15,
@@ -118,5 +119,11 @@ export default StyleSheet.create({
   noNotesImage: {
     width: 80, // Adjust size as needed
     height: 80,
+  },
+  seeMoreText: {
+    color: "blue", // Ensure the color is visible against your background
+    fontWeight: "bold",
+    fontSize: 14,
+    paddingVertical: 5,
   },
 });

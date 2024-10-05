@@ -121,4 +121,9 @@ export default StyleSheet.create({
     fontSize: 14,
     color: "#888",
   },
+  seeMoreText: {
+    color: Colors.Main, // Blue for emphasis
+    fontWeight: "bold",
+    marginTop: 4,
+  },
 });

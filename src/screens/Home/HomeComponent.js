@@ -12,6 +12,7 @@ import { Images } from "../../utils/Theme";
 import Loader from "../../components/Loader";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useFocusEffect } from "@react-navigation/native";
+import SeeMore from "react-native-see-more-inline"; // Import the SeeMore component
 
 const HomeComponent = memo((props) => {
   const [folders, setFolders] = useState([]);
@@ -53,7 +54,19 @@ const HomeComponent = memo((props) => {
       style={styles.courseItem}
     >
       <Text style={styles.courseTitle}>{item.title}</Text>
-      <Text style={styles.courseDescription}>{item.description}</Text>
+      {/* <SeeMore
+        numberOfLines={5} // Number of lines before truncating
+        style={styles.courseDescription}
+        seeMoreText="See More"
+        seeLessText="See Less"
+        seeMoreStyle={styles.seeMoreText} // Optional custom style for "See More" text
+        seeLessStyle={styles.seeMoreText} // Optional custom style for "See Less" text
+      >
+        {item.description}
+      </SeeMore> */}
+      <Text numberOfLines={4} style={styles.courseDescription}>
+        {item.description}
+      </Text>
     </TouchableOpacity>
   );
 

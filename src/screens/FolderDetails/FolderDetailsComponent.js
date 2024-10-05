@@ -11,6 +11,7 @@ import styles from "./styles";
 import { Images } from "../../utils/Theme";
 import Loader from "../../components/Loader";
 import moment from "moment";
+import SeeMore from "react-native-see-more-inline"; // Import the SeeMore component
 
 const FolderDetailsComponent = memo((props) => {
   const { searchQuery, setSearchQuery } = props;
@@ -32,7 +33,19 @@ const FolderDetailsComponent = memo((props) => {
       style={styles.noteItemContainer}
     >
       <Text style={styles.noteTitle}>{item.title}</Text>
-      <Text style={styles.noteDescription}>{item.description}</Text>
+      <Text numberOfLines={4} style={styles.noteDescription}>
+        {item.description}
+      </Text>
+      {/* <SeeMore
+        numberOfLines={3} // Number of lines before truncating
+        style={styles.noteDescription}
+        seeMoreText="See More"
+        seeLessText="See Less"
+        seeMoreStyle={styles.seeMoreText} // Optional custom style for "See More" text
+        seeLessStyle={styles.seeMoreText} // Optional custom style for "See Less" text
+      >
+        {item.description}
+      </SeeMore> */}
 
       {/* Render the reminder section if reminderDate exists */}
       {item.reminderDate && (
@@ -76,6 +89,7 @@ const FolderDetailsComponent = memo((props) => {
         {filteredNotes.length > 0 ? (
           <FlatList
             data={filteredNotes}
+            showsVerticalScrollIndicator={false}
             renderItem={renderNoteItem}
             keyExtractor={(item) => item.id} // Use unique id as key
           />

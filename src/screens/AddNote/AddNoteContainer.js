@@ -146,17 +146,18 @@ const AddNoteContainer = memo(({ navigation, route }) => {
       return;
     }
 
-    let localImagePath = null; // Initialize the path as null
+    // Handle the image path
+    let localImagePath = null;
     if (selectedImageUri) {
-      localImagePath = await saveImageLocally(selectedImageUri); // Save the image locally and get the path
+      localImagePath = `file://${selectedImageUri}`; // Ensure the path has the 'file://' prefix
     }
 
-    // Create a new note object with the image's local path
+    // Create or update the note
     const newNote = {
-      id: Date.now().toString(),
+      id: noteId || Date.now().toString(),
       title,
       description,
-      image: localImagePath, // Store the local image path, or null if no image
+      image: localImagePath, // Use the correctly formatted path
       folderId,
       reminderDate,
     };
@@ -168,8 +169,19 @@ const AddNoteContainer = memo(({ navigation, route }) => {
         if (!folder.notes) {
           folder.notes = [];
         }
+
+        // Check if it's an edit or a new note
         if (folder.id === folderId) {
-          return { ...folder, notes: [...folder.notes, newNote] };
+          if (noteId) {
+            // Editing an existing note
+            const updatedNotes = folder.notes.map((note) =>
+              note.id === noteId ? newNote : note
+            );
+            return { ...folder, notes: updatedNotes };
+          } else {
+            // Adding a new note
+            return { ...folder, notes: [...folder.notes, newNote] };
+          }
         }
         return folder;
       });
@@ -177,22 +189,20 @@ const AddNoteContainer = memo(({ navigation, route }) => {
       // Save updated folders back to AsyncStorage
       await AsyncStorage.setItem("folders", JSON.stringify(updatedFolders));
 
-      Alert.alert("Success", "Note added successfully");
-
-      // Schedule notification if a reminder is set in the future
-      if (reminderDate && reminderDate > new Date()) {
-        scheduleNotification(reminderDate, title);
-      }
-
+      Alert.alert(
+        "Success",
+        noteId ? "Note updated successfully" : "Note added successfully"
+      );
       navigation.goBack();
 
       setTitle("");
       setDescription("");
       setSelectedImageUri(null); // Clear the image selection
       setReminderDate(new Date());
-      onNoteAdded(); // Notify parent that note was added
+      onNoteAdded(); // Notify parent that note was added/edited
     } catch (error) {
       console.error("Error saving note:", error);
+      // Alert.alert("Error", "Could not save note, please try again.");
     }
   };
 

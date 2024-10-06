@@ -21,15 +21,16 @@ const NoteDetailsComponent = memo((props) => {
           </Text>
         </View>
 
-        {props?.selectedImage && (
+        {props?.data?.item?.image && (
           <View style={styles.imageSection}>
             <Text style={styles.label}>Attached Image</Text>
             <Image
-              source={{ uri: props?.selectedImage }}
-              style={styles.noteImage}
+              source={{ uri: `file://${props?.data?.item?.image}` }} // Display the saved image
+              style={{ width: 200, height: 200 }} // Customize image size
             />
           </View>
         )}
+
         {props?.data?.item?.reminderDate && (
           <View style={styles.reminderSection}>
             <Text style={styles.label}>Reminder :</Text>

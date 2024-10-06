@@ -6,6 +6,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { launchImageLibrary, launchCamera } from "react-native-image-picker";
 import AddNoteComponent from "./AddNoteComponent";
 import PushNotification from "react-native-push-notification";
+import RNFS from "react-native-fs";
 
 const AddNoteContainer = memo(({ navigation, route }) => {
   const { folderId, onNoteAdded } = route.params;
@@ -67,74 +68,12 @@ const AddNoteContainer = memo(({ navigation, route }) => {
     navigation.goBack();
   };
 
-  // const handleImageUpload = () => {
-  //   const options = {
-  //     mediaType: "photo",
-  //     includeBase64: false,
-  //   };
-
-  //   launchImageLibrary(options, (response) => {
-  //     if (response.didCancel) {
-  //       console.log("User cancelled image picker");
-  //     } else if (response.errorCode) {
-  //       console.error("ImagePicker Error: ", response.errorMessage);
-  //     } else if (response.assets && response.assets.length > 0) {
-  //       const selectedAsset = response.assets[0];
-  //       setSelectedImageName(selectedAsset.fileName);
-  //     }
-  //   });
-  // };
-
-  // const handleAddNote = async () => {
-  //   if (title.trim() === "" || description.trim() === "") {
-  //     Alert.alert("Error", "Please fill in all fields");
-  //     return;
-  //   }
-
-  //   const newNote = {
-  //     id: Date.now().toString(),
-  //     title,
-  //     description,
-  //     image: selectedImageName,
-  //     folderId,
-  //     reminderDate,
-  //   };
-
-  //   try {
-  //     const existingFolders = await AsyncStorage.getItem("folders");
-  //     const foldersArray = existingFolders ? JSON.parse(existingFolders) : [];
-  //     const updatedFolders = foldersArray.map((folder) => {
-  //       if (!folder.notes) {
-  //         folder.notes = [];
-  //       }
-  //       if (folder?.id === folderId) {
-  //         return { ...folder, notes: [...folder.notes, newNote] };
-  //       }
-  //       return folder;
-  //     });
-  //     await AsyncStorage.setItem("folders", JSON.stringify(updatedFolders));
-  //     Alert.alert("Success", "Note added successfully");
-  //     sendNotification();
-
-  //     setTitle("");
-  //     setDescription("");
-  //     setSelectedImageName(null);
-  //     setReminderDate(new Date());
-  //     onNoteAdded();
-  //     navigation.goBack();
-  //   } catch (error) {
-  //     console.error("Error saving note:", error);
-  //     Alert.alert("Error", "Could not save note, please try again.");
-  //   }
-  // };
-
   const handleImageUpload = () => {
     const options = {
       mediaType: "photo",
       includeBase64: false,
     };
 
-    // Show a prompt to choose between camera and gallery
     Alert.alert(
       "Select Image",
       "Choose an option",
@@ -151,6 +90,19 @@ const AddNoteContainer = memo(({ navigation, route }) => {
       ],
       { cancelable: true }
     );
+  };
+
+  const saveImageLocally = async (imageUri) => {
+    const filename = imageUri.split("/").pop(); // Extract the filename from the URI
+    const path = `${RNFS.DocumentDirectoryPath}/${filename}`; // Set the path in the local filesystem
+
+    try {
+      await RNFS.copyFile(imageUri, path); // Copy the file to the local filesystem
+      return path; // Return the new local path
+    } catch (error) {
+      console.error("Error saving image locally:", error);
+      return null;
+    }
   };
 
   const handleResponse = (response) => {
@@ -171,11 +123,18 @@ const AddNoteContainer = memo(({ navigation, route }) => {
       return;
     }
 
+    // Check if there's a selected image, and if so, save it locally
+    let localImagePath = null; // Initialize the path as null
+    if (selectedImageUri) {
+      localImagePath = await saveImageLocally(selectedImageUri); // Save the image locally and get the path
+    }
+
+    // Create a new note object with the image's local path
     const newNote = {
       id: Date.now().toString(),
       title,
       description,
-      image: selectedImageName,
+      image: localImagePath, // Store the local image path, or null if no image
       folderId,
       reminderDate,
     };
@@ -187,25 +146,28 @@ const AddNoteContainer = memo(({ navigation, route }) => {
         if (!folder.notes) {
           folder.notes = [];
         }
-        if (folder?.id === folderId) {
+        if (folder.id === folderId) {
           return { ...folder, notes: [...folder.notes, newNote] };
         }
         return folder;
       });
 
+      // Save updated folders back to AsyncStorage
       await AsyncStorage.setItem("folders", JSON.stringify(updatedFolders));
+
       Alert.alert("Success", "Note added successfully");
 
-      // Schedule notification if reminderDate is in the future
-      if (reminderDate) {
+      // Schedule notification if a reminder is set in the future
+      if (reminderDate && reminderDate > new Date()) {
         scheduleNotification(reminderDate, title);
       }
 
+      // Reset the form
       setTitle("");
       setDescription("");
-      setSelectedImageName(null);
+      setSelectedImageUri(null); // Clear the image selection
       setReminderDate(new Date());
-      onNoteAdded();
+      onNoteAdded(); // Notify parent that note was added
       navigation.goBack();
     } catch (error) {
       console.error("Error saving note:", error);

@@ -24,8 +24,6 @@ const FolderDetailsComponent = memo((props) => {
       note.description.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  console.log("filteredNotes", filteredNotes);
-
   // const renderNoteItem = ({ item }) => (
   //   <TouchableOpacity
   //     onPress={() => props.handleNoteDetails(item)} // Delete on long press

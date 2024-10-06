@@ -28,18 +28,13 @@ const AddNoteContainer = memo(({ navigation, route }) => {
     initialReminderDate ? new Date(initialReminderDate) : new Date()
   ); // Use the passed reminder date
 
-  useEffect(() => {
-    if (initialImage) {
-      setSelectedImageUri(
-        initialImage.startsWith("file://")
-          ? initialImage
-          : `file://${initialImage}`
-      );
-    }
-  }, [initialImage]);
   const [selectedImageName, setSelectedImageName] = useState(null);
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [showTimePicker, setShowTimePicker] = useState(false);
+
+  useEffect(() => {
+    console.log("initialImage", initialImage);
+  }, []);
 
   PushNotification.configure({
     // (optional) Called when Token is generated (iOS and Android)
@@ -114,17 +109,16 @@ const AddNoteContainer = memo(({ navigation, route }) => {
       { cancelable: true }
     );
   };
-
   const saveImageLocally = async (imageUri) => {
-    const filename = imageUri.split("/").pop(); // Extract the filename from the URI
-    const path = `${RNFS.DocumentDirectoryPath}/${filename}`; // Set the path in the local filesystem
-
     try {
-      await RNFS.copyFile(imageUri, path); // Copy the file to the local filesystem
-      return path; // Return the new local path
+      const imageName = imageUri.substring(imageUri.lastIndexOf("/") + 1); // Extract image name
+      const destinationPath = `${RNFS.DocumentDirectoryPath}/${imageName}`; // Path to save the image
+
+      await RNFS.copyFile(imageUri, destinationPath); // Copy image to local path
+      return destinationPath; // Return the new path
     } catch (error) {
-      console.error("Error saving image locally:", error);
-      return null;
+      console.error("Error saving image:", error);
+      throw error;
     }
   };
 
@@ -149,7 +143,7 @@ const AddNoteContainer = memo(({ navigation, route }) => {
     // Handle the image path
     let localImagePath = null;
     if (selectedImageUri) {
-      localImagePath = `file://${selectedImageUri}`; // Ensure the path has the 'file://' prefix
+      localImagePath = await saveImageLocally(selectedImageUri);
     }
 
     // Create or update the note

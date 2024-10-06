@@ -32,11 +32,16 @@ const HomeContainer = memo((props) => {
     navigation.navigate("NoteDetailsContainer", { data: { item: item } });
   };
 
+  const handleStartQuiz = (item) => {
+    navigation.navigate("QuizContainer");
+  };
+
   return (
     <HomeComponent
       handleNoteDetails={handleNoteDetails}
       props={props}
       isLoading={isLoading}
+      handleStartQuiz={handleStartQuiz}
     />
   );
 });

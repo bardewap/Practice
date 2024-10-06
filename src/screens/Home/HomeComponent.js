@@ -127,7 +127,7 @@ const HomeComponent = memo((props) => {
       <Text style={styles.quizDate}>Due Date: {item.date}</Text>
       <TouchableOpacity
         style={styles.startQuizButton}
-        onPress={() => handleStartQuiz(item)}
+        onPress={() => props?.handleStartQuiz(item)}
       >
         <Text style={styles.buttonText}>Start Quiz</Text>
       </TouchableOpacity>

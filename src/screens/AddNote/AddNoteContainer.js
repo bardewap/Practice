@@ -84,46 +84,95 @@ const AddNoteContainer = memo(({ navigation, route }) => {
     });
   };
 
+  // const handleAddNote = async () => {
+  //   if (title.trim() === "" || description.trim() === "") {
+  //     Alert.alert("Error", "Please fill in all fields");
+  //     return;
+  //   }
+
+  //   const newNote = {
+  //     id: Date.now().toString(),
+  //     title,
+  //     description,
+  //     image: selectedImageName,
+  //     folderId,
+  //     reminderDate,
+  //   };
+
+  //   try {
+  //     const existingFolders = await AsyncStorage.getItem("folders");
+  //     const foldersArray = existingFolders ? JSON.parse(existingFolders) : [];
+  //     const updatedFolders = foldersArray.map((folder) => {
+  //       if (!folder.notes) {
+  //         folder.notes = [];
+  //       }
+  //       if (folder?.id === folderId) {
+  //         return { ...folder, notes: [...folder.notes, newNote] };
+  //       }
+  //       return folder;
+  //     });
+  //     await AsyncStorage.setItem("folders", JSON.stringify(updatedFolders));
+  //     Alert.alert("Success", "Note added successfully");
+  //     sendNotification();
+
+  //     setTitle("");
+  //     setDescription("");
+  //     setSelectedImageName(null);
+  //     setReminderDate(new Date());
+  //     onNoteAdded();
+  //     navigation.goBack();
+  //   } catch (error) {
+  //     console.error("Error saving note:", error);
+  //     Alert.alert("Error", "Could not save note, please try again.");
+  //   }
+  // };
+
   const handleAddNote = async () => {
-    // if (title.trim() === "" || description.trim() === "") {
-    //   Alert.alert("Error", "Please fill in all fields");
-    //   return;
-    // }
+    if (title.trim() === "" || description.trim() === "") {
+      Alert.alert("Error", "Please fill in all fields");
+      return;
+    }
 
-    // const newNote = {
-    //   id: Date.now().toString(),
-    //   title,
-    //   description,
-    //   image: selectedImageName,
-    //   folderId,
-    //   reminderDate,
-    // };
+    const newNote = {
+      id: Date.now().toString(),
+      title,
+      description,
+      image: selectedImageName,
+      folderId,
+      reminderDate,
+    };
 
-    // try {
-    //   const existingFolders = await AsyncStorage.getItem("folders");
-    //   const foldersArray = existingFolders ? JSON.parse(existingFolders) : [];
-    //   const updatedFolders = foldersArray.map((folder) => {
-    //     if (!folder.notes) {
-    //       folder.notes = [];
-    //     }
-    //     if (folder?.id === folderId) {
-    //       return { ...folder, notes: [...folder.notes, newNote] };
-    //     }
-    //     return folder;
-    //   });
-    //   await AsyncStorage.setItem("folders", JSON.stringify(updatedFolders));
-    //   Alert.alert("Success", "Note added successfully");
-    //   setTitle("");
-    //   setDescription("");
-    //   setSelectedImageName(null);
-    //   setReminderDate(new Date());
-    //   onNoteAdded();
-    //   navigation.goBack();
-    // } catch (error) {
-    //   console.error("Error saving note:", error);
-    //   Alert.alert("Error", "Could not save note, please try again.");
-    // }
-    sendNotification();
+    try {
+      const existingFolders = await AsyncStorage.getItem("folders");
+      const foldersArray = existingFolders ? JSON.parse(existingFolders) : [];
+      const updatedFolders = foldersArray.map((folder) => {
+        if (!folder.notes) {
+          folder.notes = [];
+        }
+        if (folder?.id === folderId) {
+          return { ...folder, notes: [...folder.notes, newNote] };
+        }
+        return folder;
+      });
+
+      await AsyncStorage.setItem("folders", JSON.stringify(updatedFolders));
+      Alert.alert("Success", "Note added successfully");
+
+      // Schedule notification if reminderDate is in the future
+      if (reminderDate) {
+        scheduleNotification(reminderDate, title);
+      }
+
+      // setTitle("");
+      // setDescription("");
+      // setSelectedImageName(null);
+      // setReminderDate(new Date());
+      // onNoteAdded();
+      // navigation.goBack();
+    } catch (error) {
+      console.error("Error saving note:", error);
+      Alert.alert("Error", "Could not save note, please try again.");
+    }
   };
 
   const handleDateChange = (event, selectedDate) => {
@@ -147,14 +196,26 @@ const AddNoteContainer = memo(({ navigation, route }) => {
     }
   };
 
-  const sendNotification = () => {
+  // const sendNotification = () => {
+  //   createChannel();
+  //   PushNotification.localNotification({
+  //     channelId: "your-channel-id",
+  //     id: 0,
+  //     title: `My Name's Alireza`,
+  //     message: "Hi 👋",
+  //   });
+  // };
+
+  const scheduleNotification = (date, title) => {
     createChannel();
-    PushNotification.localNotification({
+    PushNotification.localNotificationSchedule({
       channelId: "your-channel-id",
-      id: 0,
-      title: `My Name's Alireza`,
-      message: "Hi 👋",
+      id: 0, // Optional: Unique ID for the notification
+      title: `Reminder: ${title}`,
+      message: "Don't forget your note!",
+      date: new Date(), // Schedule notification at the specified date
     });
+    console.log("scheduleNotification");
   };
 
   return (

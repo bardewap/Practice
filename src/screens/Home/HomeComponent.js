@@ -14,48 +14,12 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useFocusEffect } from "@react-navigation/native";
 import SeeMore from "react-native-see-more-inline";
 import { PermissionsAndroid, Platform } from "react-native";
+import moment from "moment";
 
 const HomeComponent = memo((props) => {
-  const [folders, setFolders] = useState([]);
-  const [previousScore, setPreviousScore] = useState(null); // State for previous score
-  const [previousScoreNet, setPreviousScoreNet] = useState(null); // State for previous score
-
   useEffect(() => {
     requestNotificationPermission();
   }, []);
-
-  useFocusEffect(
-    useCallback(() => {
-      const fetchFolders = async () => {
-        const storedFolders = await AsyncStorage.getItem("folders");
-        if (storedFolders) {
-          setFolders(JSON.parse(storedFolders));
-        }
-      };
-      fetchFolders();
-      fetchPreviousScore(); // Fetch the previous score when the component mounts
-    }, [])
-  );
-
-  // Fetch previous score from AsyncStorage
-  const fetchPreviousScore = async () => {
-    try {
-      const savedScore = await AsyncStorage.getItem("quizScore");
-      const savedScoreNet = await AsyncStorage.getItem("quizTwoScore");
-      console.log("savedScore", savedScore);
-
-      console.log("savedScoreNet", savedScoreNet);
-
-      if (savedScore !== null) {
-        setPreviousScore(parseInt(savedScore, 10));
-      }
-      if (savedScoreNet !== null) {
-        setPreviousScoreNet(parseInt(savedScoreNet, 10));
-      }
-    } catch (error) {
-      console.error("Failed to load previous score", error);
-    }
-  };
 
   const requestNotificationPermission = async () => {
     if (Platform.OS === "android") {
@@ -87,23 +51,58 @@ const HomeComponent = memo((props) => {
   };
 
   const getRecentNotesById = (folders, limit = 3) => {
-    const allNotes = folders?.flatMap((folder) => folder?.notes);
+    const allNotes = props?.folders?.flatMap((folder) => folder?.notes);
     const sortedNotes = allNotes.sort((a, b) => b?.id.localeCompare(a?.id));
     return sortedNotes.slice(0, limit);
   };
 
-  const recentNotes = getRecentNotesById(folders);
+  const recentNotes = getRecentNotesById(props?.folders);
+
+  // const renderNoteItem = ({ item }) => (
+  //   <TouchableOpacity
+  //     onPress={() => props.handleNoteDetails(item)} // Delete on long press
+  //     style={styles.courseItem}
+  //   >
+  //     <Text style={styles.courseTitle}>{item?.title}</Text>
+  //     <Text numberOfLines={4} style={styles.courseDescription}>
+  //       {item?.description}
+  //     </Text>
+
+  //   </TouchableOpacity>
+  // );
 
   const renderNoteItem = ({ item }) => (
-    <TouchableOpacity
-      onPress={() => props.handleNoteDetails(item)} // Delete on long press
-      style={styles.courseItem}
+    <View
+      // Delete on long press
+      style={styles.noteItemContainer}
     >
-      <Text style={styles.courseTitle}>{item?.title}</Text>
-      <Text numberOfLines={4} style={styles.courseDescription}>
-        {item?.description}
-      </Text>
-    </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => props.handleNoteDetails(item)}
+        style={{ flex: 0.8 }}
+      >
+        <Text style={styles.noteTitle}>{item.title}</Text>
+        <Text numberOfLines={2} style={styles.noteDescription}>
+          {item.description}
+        </Text>
+        {item.reminderDate && (
+          <View style={styles.reminderContainer}>
+            <Image source={Images.reminder} style={styles.reminderIcon} />
+            <Text style={styles.reminderText}>
+              Reminder:{" "}
+              {moment(item.reminderDate).format("MMMM Do YYYY, h:mm a")}
+            </Text>
+          </View>
+        )}
+      </TouchableOpacity>
+      <View style={styles.iconContainer}>
+        <TouchableOpacity onPress={() => props.handleEditNote(item)}>
+          <Image source={Images.edit} style={styles.iconStyle} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => props.handleDeleteNote(item.id)}>
+          <Image source={Images.delete} style={styles.iconStyle} />
+        </TouchableOpacity>
+      </View>
+    </View>
   );
 
   const weeklyQuizzes = [
@@ -165,19 +164,19 @@ const HomeComponent = memo((props) => {
         {/* Section to display the previous quiz score */}
         <View style={styles.sectionContainer}>
           <Text style={styles.sectionTitle}>Previous Quiz Score</Text>
-          {previousScore !== null ? (
+          {props?.previousScore !== null ? (
             <View style={styles.scoreContainer}>
               <Text style={styles.scoreText}>
-                Last Networking Quiz Score: {previousScore}
+                Last Networking Quiz Score: {props?.previousScore}
               </Text>
             </View>
           ) : (
             <Text style={styles.noScoreText}>No score available yet.</Text>
           )}
-          {previousScoreNet !== null ? (
+          {props?.previousScoreNet !== null ? (
             <View style={styles.scoreContainer}>
               <Text style={styles.scoreText}>
-                Last Cyber Security Quiz Score: {previousScoreNet}
+                Last Cyber Security Quiz Score: {props?.previousScoreNet}
               </Text>
             </View>
           ) : (

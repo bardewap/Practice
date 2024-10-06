@@ -273,7 +273,6 @@ const AddNoteContainer = memo(({ navigation, route }) => {
       handleTimeChange={handleTimeChange}
       setShowDatePicker={setShowDatePicker}
       selectedImageUri={selectedImageUri} // Pass the URI to the component
-
     />
   );
 });

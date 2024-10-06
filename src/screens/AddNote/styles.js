@@ -143,4 +143,5 @@ export default StyleSheet.create({
     width: 200,
     height: 200,
   },
+  
 });

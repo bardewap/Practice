@@ -8,25 +8,36 @@ export default StyleSheet.create({
     backgroundColor: Colors.white,
   },
   topView: {
-    height: 150,
-    borderBottomLeftRadius: 20,
-    borderBottomRightRadius: 20,
-    backgroundColor: "#6200EA", // Primary color similar to HomeComponent
-    justifyContent: "center",
-    alignItems: "center",
+    backgroundColor: "#6200EA", // Primary color
+    padding: 20,
+    borderBottomLeftRadius: 30,
+    borderBottomRightRadius: 30,
+    elevation: 5,
   },
   blurContainer: {
-    flex: 1,
-    justifyContent: "center",
     alignItems: "center",
+    marginBottom: 10,
   },
   bannerContent: {
-    marginBottom: 20,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "100%",
   },
   bannerText: {
+    color: "#FFFFFF",
     fontSize: 24,
     fontWeight: "bold",
-    color: Colors.White_FFFFFF,
+  },
+  profileImage: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    resizeMode: "cover",
+  },
+  bottomText: {
+    color: "#FFFFFF",
+    fontSize: 16,
   },
   scrollViewContent: {
     padding: 20,
@@ -35,12 +46,7 @@ export default StyleSheet.create({
     alignItems: "center",
     marginVertical: 20,
   },
-  profileImage: {
-    width: 100,
-    height: 100,
-    borderRadius: 50,
-    resizeMode: "contain",
-  },
+
   userName: {
     fontSize: 20,
     fontWeight: "bold",
@@ -59,5 +65,24 @@ export default StyleSheet.create({
     fontSize: 12,
     color: Colors.gray,
     margin: 10,
+    textAlign: "center",
+  },
+  aboutUsSection: {
+    // padding: 15,
+    backgroundColor: Colors.lightGray,
+    borderRadius: 10,
+  },
+
+  aboutUsTitle: {
+    fontSize: 18,
+    fontWeight: "bold",
+    marginBottom: 10,
+    color: Colors.primary,
+  },
+
+  aboutUsDescription: {
+    fontSize: 14,
+    color: Colors.darkGray,
+    lineHeight: 20,
   },
 });

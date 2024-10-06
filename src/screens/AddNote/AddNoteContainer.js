@@ -9,14 +9,37 @@ import PushNotification from "react-native-push-notification";
 import RNFS from "react-native-fs";
 
 const AddNoteContainer = memo(({ navigation, route }) => {
-  const { folderId, onNoteAdded } = route.params;
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+  const {
+    folderId,
+    onNoteAdded,
+    noteId,
+    title: initialTitle,
+    description: initialDescription,
+    image: initialImage,
+    reminderDate: initialReminderDate,
+  } = route.params;
+
+  const [title, setTitle] = useState(initialTitle || ""); // Prepopulate if editing
+  const [description, setDescription] = useState(initialDescription || "");
+  const [selectedImageUri, setSelectedImageUri] = useState(
+    initialImage || null
+  ); // Prepopulate the image URI if editing
+  const [reminderDate, setReminderDate] = useState(
+    initialReminderDate ? new Date(initialReminderDate) : new Date()
+  ); // Use the passed reminder date
+
+  useEffect(() => {
+    if (initialImage) {
+      setSelectedImageUri(
+        initialImage.startsWith("file://")
+          ? initialImage
+          : `file://${initialImage}`
+      );
+    }
+  }, [initialImage]);
   const [selectedImageName, setSelectedImageName] = useState(null);
-  const [reminderDate, setReminderDate] = useState(new Date()); // Ensure this is a valid date object
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [showTimePicker, setShowTimePicker] = useState(false);
-  const [selectedImageUri, setSelectedImageUri] = useState(null); // Add state for image URI
 
   PushNotification.configure({
     // (optional) Called when Token is generated (iOS and Android)
@@ -123,7 +146,6 @@ const AddNoteContainer = memo(({ navigation, route }) => {
       return;
     }
 
-    // Check if there's a selected image, and if so, save it locally
     let localImagePath = null; // Initialize the path as null
     if (selectedImageUri) {
       localImagePath = await saveImageLocally(selectedImageUri); // Save the image locally and get the path
@@ -162,16 +184,15 @@ const AddNoteContainer = memo(({ navigation, route }) => {
         scheduleNotification(reminderDate, title);
       }
 
-      // Reset the form
+      navigation.goBack();
+
       setTitle("");
       setDescription("");
       setSelectedImageUri(null); // Clear the image selection
       setReminderDate(new Date());
       onNoteAdded(); // Notify parent that note was added
-      navigation.goBack();
     } catch (error) {
       console.error("Error saving note:", error);
-      Alert.alert("Error", "Could not save note, please try again.");
     }
   };
 
@@ -234,7 +255,8 @@ const AddNoteContainer = memo(({ navigation, route }) => {
       handleDateChange={handleDateChange}
       handleTimeChange={handleTimeChange}
       setShowDatePicker={setShowDatePicker}
-      selectedImageUri={selectedImageUri} // Pass the URI to the component
+      selectedImageUri={selectedImageUri}
+      noteId={noteId} // Pass the URI to the component
     />
   );
 });

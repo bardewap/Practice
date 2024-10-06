@@ -107,14 +107,14 @@ const HomeComponent = memo((props) => {
   );
 
   const weeklyQuizzes = [
-    { id: "1", title: "Networking Quiz", date: "2025-09-30" },
-    { id: "2", title: "Cyber Security Quiz", date: "2025-10-07" },
+    { id: "1", title: "Networking Quiz", date: "30" },
+    { id: "2", title: "Cyber Security Quiz", date: "30" },
   ];
 
   const renderQuizItem = ({ item }) => (
     <View style={styles.quizItem}>
       <Text style={styles.quizTitle}>{item.title}</Text>
-      <Text style={styles.quizDate}>Due Date: {item.date}</Text>
+      <Text style={styles.quizDate}>Total Questions: {item.date}</Text>
       <TouchableOpacity
         style={styles.startQuizButton}
         onPress={() => props?.handleStartQuiz(item)}

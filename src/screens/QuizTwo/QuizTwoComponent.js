@@ -291,28 +291,52 @@ const QuizTwoComponent = memo((props) => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [score, setScore] = useState(0);
   const [showModal, setShowModal] = useState(false);
+  const [remainingTime, setRemainingTime] = useState(1800); // 30 minutes in seconds
+  const [timerId, setTimerId] = useState(null);
+
+  useEffect(() => {
+    // Start the timer
+    const id = setInterval(() => {
+      setRemainingTime((prevTime) => {
+        if (prevTime <= 1) {
+          clearInterval(id);
+          handleTimerExpiry();
+          return 0;
+        }
+        return prevTime - 1;
+      });
+    }, 1000);
+    setTimerId(id);
+
+    return () => clearInterval(id); // Cleanup timer on unmount
+  }, []);
+
+  const handleTimerExpiry = () => {
+    // Logic for when timer expires
+    saveScore(score); // Save score before navigating
+    props?.backPress;
+  };
 
   const handleNext = () => {
     if (selectedAnswer === quizData[currentQuestion].answer) {
-      setScore((prevScore) => prevScore + 1); // Increment score only for correct answers
+      setScore((prevScore) => prevScore + 1);
     }
     setSelectedAnswer(null);
-
     if (currentQuestion < quizData.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
       const finalScore =
-        score + (selectedAnswer === quizData[currentQuestion].answer ? 1 : 0); // Calculate final score
-      setShowModal(true); // Show modal when quiz is completed
-      saveScore(finalScore); // Save the calculated score
+        score + (selectedAnswer === quizData[currentQuestion].answer ? 1 : 0);
+      setShowModal(true);
+      saveScore(finalScore);
     }
   };
 
-  // Save the score to AsyncStorage
   const saveScore = async (finalScore) => {
     try {
+      await AsyncStorage.removeItem("quizTwoScore");
       await AsyncStorage.setItem("quizTwoScore", finalScore.toString());
-      console.log("finalScore", finalScore);
+      console.log("New score saved:", finalScore);
     } catch (error) {
       console.error("Failed to save score", error);
     }
@@ -321,11 +345,22 @@ const QuizTwoComponent = memo((props) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <TouchableOpacity onPress={props?.backPress} style={styles.backButton}>
+        <TouchableOpacity
+          onPress={props?.backPress}
+          style={[
+            styles.backButton,
+            { opacity: remainingTime === 0 ? 1 : 0.5 },
+          ]}
+          disabled={remainingTime > 0} // Disable back button if time is running
+        >
           <Image source={Images.back} style={styles.backIcon} />
         </TouchableOpacity>
         <Text style={styles.headerTitle}>
           Quiz ({currentQuestion + 1}/{quizData.length})
+        </Text>
+        <Text style={styles.timerText}>
+          {Math.floor(remainingTime / 60)}:
+          {(remainingTime % 60).toString().padStart(2, "0")}
         </Text>
       </View>
 
@@ -367,7 +402,7 @@ const QuizTwoComponent = memo((props) => {
               style={styles.modalButton}
               onPress={() => {
                 setShowModal(false);
-                props?.backPress(); // Go back to the Home screen
+                props.navigation.navigate("Home"); // Go to Home screen
               }}
             >
               <Text style={styles.modalButtonText}>Go to Home</Text>

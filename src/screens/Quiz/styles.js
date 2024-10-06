@@ -244,4 +244,10 @@ export default StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
   },
+  timerText: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#ff0000", // Red color for emphasis
+    marginLeft: 10,
+  },
 });

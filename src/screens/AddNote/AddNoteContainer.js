@@ -163,12 +163,12 @@ const AddNoteContainer = memo(({ navigation, route }) => {
         scheduleNotification(reminderDate, title);
       }
 
-      // setTitle("");
-      // setDescription("");
-      // setSelectedImageName(null);
-      // setReminderDate(new Date());
-      // onNoteAdded();
-      // navigation.goBack();
+      setTitle("");
+      setDescription("");
+      setSelectedImageName(null);
+      setReminderDate(new Date());
+      onNoteAdded();
+      navigation.goBack();
     } catch (error) {
       console.error("Error saving note:", error);
       Alert.alert("Error", "Could not save note, please try again.");

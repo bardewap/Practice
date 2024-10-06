@@ -139,4 +139,8 @@ export default StyleSheet.create({
     width: 24,
     height: 24,
   },
+  selectedImage: {
+    width: 200,
+    height: 200,
+  },
 });

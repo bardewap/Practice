@@ -42,13 +42,19 @@ const AddNoteComponent = memo((props) => {
           onPress={props?.handleImageUpload}
         >
           <Image source={Images.camera} style={styles.icon} />
-          <Text style={styles.uploadText}>Upload Image</Text>
+          <Text style={styles.uploadText}>Upload Note</Text>
         </TouchableOpacity>
 
-        {props?.selectedImageName && (
-          <Text style={styles.fileNameText}>
-            {`Selected Image: ${props?.selectedImageName}`}
-          </Text>
+        {props?.selectedImageName && props?.selectedImageUri && (
+          <View>
+            <Text style={styles.fileNameText}>
+              {`Selected Image: ${props?.selectedImageName}`}
+            </Text>
+            <Image
+              source={{ uri: props?.selectedImageUri }} // Display the selected image
+              style={styles.selectedImage}
+            />
+          </View>
         )}
 
         {/* Add Reminder Section */}

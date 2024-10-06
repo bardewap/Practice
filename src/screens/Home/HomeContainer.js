@@ -85,6 +85,7 @@ const HomeContainer = memo((props) => {
       description: item?.description,
       image: item?.image, // Pass the image if it exists
       reminderDate: item?.reminderDate,
+      selectedImageName: item?.selectedImageName,
     });
   };
   const handleDeleteNote = async (noteId) => {

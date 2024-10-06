@@ -42,6 +42,8 @@ const HomeComponent = memo((props) => {
     try {
       const savedScore = await AsyncStorage.getItem("quizScore");
       const savedScoreNet = await AsyncStorage.getItem("quizTwoScore");
+      console.log("savedScore", savedScore);
+
       console.log("savedScoreNet", savedScoreNet);
 
       if (savedScore !== null) {

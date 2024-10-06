@@ -7,14 +7,13 @@ import {
   FlatList,
   ScrollView,
 } from "react-native";
-import styles from "./styles"; // Assume styles are updated accordingly
+import styles from "./styles";
 import { Images } from "../../utils/Theme";
 import Loader from "../../components/Loader";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useFocusEffect } from "@react-navigation/native";
-import SeeMore from "react-native-see-more-inline"; // Import the SeeMore component
+import SeeMore from "react-native-see-more-inline";
 import { PermissionsAndroid, Platform } from "react-native";
-import PushNotification from "react-native-push-notification";
 
 const HomeComponent = memo((props) => {
   const [folders, setFolders] = useState([]);
@@ -69,13 +68,10 @@ const HomeComponent = memo((props) => {
   };
 
   const getRecentNotesById = (folders, limit = 3) => {
-    // Step 1: Flatten the notes into a single array
     const allNotes = folders?.flatMap((folder) => folder?.notes);
 
-    // Step 2: Sort the notes by id (assuming higher id means more recently created)
     const sortedNotes = allNotes.sort((a, b) => b?.id.localeCompare(a?.id));
 
-    // Step 3: Select the top `limit` notes
     return sortedNotes.slice(0, limit);
   };
 
@@ -110,8 +106,8 @@ const HomeComponent = memo((props) => {
   ];
 
   const weeklyQuizzes = [
-    { id: "1", title: "Quiz 1", date: "2024-09-30" },
-    { id: "2", title: "Quiz 2", date: "2024-10-07" },
+    { id: "1", title: "Networking Quiz", date: "2025-09-30" },
+    { id: "2", title: "Cyber Security Quiz", date: "2025-10-07" },
   ];
 
   const renderCourseItem = ({ item }) => (
@@ -155,17 +151,8 @@ const HomeComponent = memo((props) => {
           <Text style={styles.bottomText}>Let’s start learning</Text>
         </View>
       </View>
-      {/* Current Courses Section */}
       <ScrollView style={styles.scrollView}>
         <View style={styles.sectionContainer}>
-          {/* <Text style={styles.sectionTitle}>Current Courses</Text>
-          <FlatList
-            data={currentCourses}
-            renderItem={renderCourseItem}
-            keyExtractor={(item) => item.id}
-            contentContainerStyle={styles.listContainer}
-          /> */}
-          {/* Recently Created Notes Section */}
           <Text style={styles.sectionTitle}>Recently Created Notes</Text>
           {recentNotes?.length > 0 || recentNotes == [] ? (
             <FlatList
@@ -179,17 +166,14 @@ const HomeComponent = memo((props) => {
               <Text style={styles.noNotesText}>
                 No recently created notes available.
               </Text>
-              {/* You can also add an illustration or icon if desired */}
               <Image
-                source={Images.noNotesIllustration} // Replace with your illustration asset
+                source={Images.noNotesIllustration}
                 style={styles.noNotesImage}
                 resizeMode="contain"
               />
             </View>
           )}
         </View>
-
-        {/* Weekly Quizzes Section */}
         <View style={styles.sectionContainer}>
           <Text style={styles.sectionTitle}>Weekly Quizzes</Text>
           <FlatList

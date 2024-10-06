@@ -216,7 +216,7 @@ const quizData = [
   },
 ];
 
-const QuizComponent = memo((props) => {
+const QuizTwoComponent = memo((props) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [score, setScore] = useState(0);
@@ -240,7 +240,7 @@ const QuizComponent = memo((props) => {
           <Image source={Images.back} style={styles.backIcon} />
         </TouchableOpacity>
         <Text style={styles.headerTitle}>
-          Networking Quiz ({currentQuestion + 1}/{quizData.length})
+          Cyber Security Quiz ({currentQuestion + 1}/{quizData.length})
         </Text>
       </View>
 
@@ -273,4 +273,4 @@ const QuizComponent = memo((props) => {
   );
 });
 
-export default QuizComponent;
+export default QuizTwoComponent;

@@ -33,7 +33,11 @@ const HomeContainer = memo((props) => {
   };
 
   const handleStartQuiz = (item) => {
-    navigation.navigate("QuizContainer");
+    if (item?.id == 1) {
+      navigation.navigate("QuizContainer");
+    } else {
+      navigation.navigate("QuizTwoContainer");
+    }
   };
 
   return (

@@ -23,5 +23,9 @@ export default {
   noNotesIllustration: require("../../assets/images/noNotesIllustration.png"),
   app_icon: require("../../assets/images/app_icon.png"),
 
+  edit: require("../../assets/images/edit.png"),
+  delete: require("../../assets/images/delete.png"),
+
+
 
 };

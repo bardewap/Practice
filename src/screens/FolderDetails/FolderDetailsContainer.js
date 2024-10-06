@@ -75,6 +75,17 @@ const FolderDetailsContainer = (props) => {
     navigation.navigate("NoteDetailsContainer", { data: { item: item } });
   };
 
+  const handleEditNote = (item) => {
+    navigation.navigate("AddNoteContainer", {
+      folderId: item?.folderId,
+      noteId: item?.id, // Pass the note ID for reference
+      title: item?.title,
+      description: item?.description,
+      image: item?.image, // Pass the image if it exists
+      reminderDate: item?.reminderDate,
+    });
+  };
+
   return (
     <FolderDetailsComponent
       backPress={backPress}
@@ -84,8 +95,9 @@ const FolderDetailsContainer = (props) => {
       notes={notes}
       searchQuery={searchQuery} // Pass search query state
       setSearchQuery={setSearchQuery} // Pass setSearchQuery to handle input
-      handleDeleteNote={handleDeleteNote}
       handleNoteDetails={handleNoteDetails}
+      handleEditNote={handleEditNote}
+      handleDeleteNote={handleDeleteNote}
     />
   );
 };

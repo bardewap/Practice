@@ -26,37 +26,71 @@ const FolderDetailsComponent = memo((props) => {
 
   console.log("filteredNotes", filteredNotes);
 
+  // const renderNoteItem = ({ item }) => (
+  //   <TouchableOpacity
+  //     onPress={() => props.handleNoteDetails(item)} // Delete on long press
+  //     onLongPress={() => props.handleDeleteNote(item.id)} // Delete on long press
+  //     style={styles.noteItemContainer}
+  //   >
+  //     <Text style={styles.noteTitle}>{item.title}</Text>
+  //     <Text numberOfLines={4} style={styles.noteDescription}>
+  //       {item.description}
+  //     </Text>
+  //     {/* <SeeMore
+  //       numberOfLines={3} // Number of lines before truncating
+  //       style={styles.noteDescription}
+  //       seeMoreText="See More"
+  //       seeLessText="See Less"
+  //       seeMoreStyle={styles.seeMoreText} // Optional custom style for "See More" text
+  //       seeLessStyle={styles.seeMoreText} // Optional custom style for "See Less" text
+  //     >
+  //       {item.description}
+  //     </SeeMore> */}
+
+  //     {/* Render the reminder section if reminderDate exists */}
+  //     {item.reminderDate && (
+  //       <View style={styles.reminderContainer}>
+  //         <Image source={Images.reminder} style={styles.reminderIcon} />
+  //         <Text style={styles.reminderText}>
+  //           Reminder: {moment(item.reminderDate).format("MMMM Do YYYY, h:mm a")}
+  //         </Text>
+  //       </View>
+  //     )}
+  //   </TouchableOpacity>
+  // );
+
   const renderNoteItem = ({ item }) => (
-    <TouchableOpacity
-      onPress={() => props.handleNoteDetails(item)} // Delete on long press
-      onLongPress={() => props.handleDeleteNote(item.id)} // Delete on long press
+    <View
+      // Delete on long press
       style={styles.noteItemContainer}
     >
-      <Text style={styles.noteTitle}>{item.title}</Text>
-      <Text numberOfLines={4} style={styles.noteDescription}>
-        {item.description}
-      </Text>
-      {/* <SeeMore
-        numberOfLines={3} // Number of lines before truncating
-        style={styles.noteDescription}
-        seeMoreText="See More"
-        seeLessText="See Less"
-        seeMoreStyle={styles.seeMoreText} // Optional custom style for "See More" text
-        seeLessStyle={styles.seeMoreText} // Optional custom style for "See Less" text
+      <TouchableOpacity
+        onPress={() => props.handleNoteDetails(item)}
+        style={{ flex: 0.8 }}
       >
-        {item.description}
-      </SeeMore> */}
-
-      {/* Render the reminder section if reminderDate exists */}
-      {item.reminderDate && (
-        <View style={styles.reminderContainer}>
-          <Image source={Images.reminder} style={styles.reminderIcon} />
-          <Text style={styles.reminderText}>
-            Reminder: {moment(item.reminderDate).format("MMMM Do YYYY, h:mm a")}
-          </Text>
-        </View>
-      )}
-    </TouchableOpacity>
+        <Text style={styles.noteTitle}>{item?.title}</Text>
+        <Text numberOfLines={2} style={styles.noteDescription}>
+          {item.description}
+        </Text>
+        {item.reminderDate && (
+          <View style={styles.reminderContainer}>
+            <Image source={Images.reminder} style={styles.reminderIcon} />
+            <Text style={styles.reminderText}>
+              Reminder:{" "}
+              {moment(item.reminderDate).format("MMMM Do YYYY, h:mm a")}
+            </Text>
+          </View>
+        )}
+      </TouchableOpacity>
+      <View style={styles.iconContainer}>
+        <TouchableOpacity onPress={() => props.handleEditNote(item)}>
+          <Image source={Images.edit} style={styles.iconStyle} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => props.handleDeleteNote(item.id)}>
+          <Image source={Images.delete} style={styles.iconStyle} />
+        </TouchableOpacity>
+      </View>
+    </View>
   );
 
   return (

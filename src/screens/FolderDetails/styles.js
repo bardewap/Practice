@@ -126,4 +126,39 @@ export default StyleSheet.create({
     fontWeight: "bold",
     marginTop: 4,
   },
+  iconContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    flex: 0.2,
+  },
+  iconStyle: {
+    width: 24,
+    height: 24,
+    marginLeft: 10,
+  },
+  noteItemContainer: {
+    paddingVertical: 15, // Adding vertical space between notes
+    paddingHorizontal: 20,
+    backgroundColor: "#FFF", // White background for the note item
+    borderRadius: 8, // Rounded corners for better design aesthetics
+    marginBottom: 10, // Space between each note item
+    shadowColor: "#000", // Adding shadow for depth
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 2,
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  noteTitle: {
+    fontSize: 18, // Slightly larger title font size
+    fontWeight: "bold",
+    color: Colors.text, // Consistent text color from theme
+    marginBottom: 6, // Space between title and description
+    fontFamily: Fonts.Bold,
+  },
+  noteDescription: {
+    fontSize: 14,
+    color: "#555", // Muted color for description
+    fontFamily: Fonts.Regular,
+  },
 });

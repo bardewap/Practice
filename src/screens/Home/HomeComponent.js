@@ -10,9 +10,6 @@ import {
 import styles from "./styles";
 import { Images } from "../../utils/Theme";
 import Loader from "../../components/Loader";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import { useFocusEffect } from "@react-navigation/native";
-import SeeMore from "react-native-see-more-inline";
 import { PermissionsAndroid, Platform } from "react-native";
 import moment from "moment";
 
@@ -58,19 +55,6 @@ const HomeComponent = memo((props) => {
 
   const recentNotes = getRecentNotesById(props?.folders);
 
-  // const renderNoteItem = ({ item }) => (
-  //   <TouchableOpacity
-  //     onPress={() => props.handleNoteDetails(item)} // Delete on long press
-  //     style={styles.courseItem}
-  //   >
-  //     <Text style={styles.courseTitle}>{item?.title}</Text>
-  //     <Text numberOfLines={4} style={styles.courseDescription}>
-  //       {item?.description}
-  //     </Text>
-
-  //   </TouchableOpacity>
-  // );
-
   const renderNoteItem = ({ item }) => (
     <View
       // Delete on long press
@@ -80,16 +64,16 @@ const HomeComponent = memo((props) => {
         onPress={() => props.handleNoteDetails(item)}
         style={{ flex: 0.8 }}
       >
-        <Text style={styles.noteTitle}>{item.title}</Text>
-        <Text numberOfLines={2} style={styles.noteDescription}>
-          {item.description}
+        <Text style={styles.noteTitle}>{item?.title}</Text>
+        <Text numberOfLines={2} style={styles?.noteDescription}>
+          {item?.description}
         </Text>
-        {item.reminderDate && (
+        {item?.reminderDate && (
           <View style={styles.reminderContainer}>
             <Image source={Images.reminder} style={styles.reminderIcon} />
             <Text style={styles.reminderText}>
               Reminder:{" "}
-              {moment(item.reminderDate).format("MMMM Do YYYY, h:mm a")}
+              {moment(item?.reminderDate).format("MMMM Do YYYY, h:mm a")}
             </Text>
           </View>
         )}
@@ -112,8 +96,8 @@ const HomeComponent = memo((props) => {
 
   const renderQuizItem = ({ item }) => (
     <View style={styles.quizItem}>
-      <Text style={styles.quizTitle}>{item.title}</Text>
-      <Text style={styles.quizDate}>Total Questions: {item.date}</Text>
+      <Text style={styles.quizTitle}>{item?.title}</Text>
+      <Text style={styles.quizDate}>Total Questions: {item?.date}</Text>
       <TouchableOpacity
         style={styles.startQuizButton}
         onPress={() => props?.handleStartQuiz(item)}

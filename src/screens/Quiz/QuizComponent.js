@@ -340,7 +340,7 @@ const QuizComponent = memo((props) => {
               style={styles.modalButton}
               onPress={() => {
                 setShowModal(false);
-                props.navigation.navigate("Home"); // Go to Home screen
+                props.backPress(); // Go to Home screen
               }}
             >
               <Text style={styles.modalButtonText}>Go to Home</Text>

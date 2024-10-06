@@ -390,7 +390,6 @@ const QuizTwoComponent = memo((props) => {
         </TouchableOpacity>
       </ScrollView>
 
-      {/* Modal for displaying the score */}
       <Modal transparent={true} visible={showModal} animationType="slide">
         <View style={styles.modalContainer}>
           <View style={styles.modalContent}>
@@ -402,7 +401,7 @@ const QuizTwoComponent = memo((props) => {
               style={styles.modalButton}
               onPress={() => {
                 setShowModal(false);
-                props.navigation.navigate("Home"); // Go to Home screen
+                props.backPress();
               }}
             >
               <Text style={styles.modalButtonText}>Go to Home</Text>

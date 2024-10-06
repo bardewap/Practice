@@ -124,10 +124,6 @@ const HomeComponent = memo((props) => {
     </View>
   );
 
-  const handleStartQuiz = (quiz) => {
-    console.log("Starting quiz:", quiz);
-  };
-
   return (
     <View style={styles.container}>
       <Loader loading={props.isLoading} />
@@ -172,7 +168,7 @@ const HomeComponent = memo((props) => {
           {previousScore !== null ? (
             <View style={styles.scoreContainer}>
               <Text style={styles.scoreText}>
-                Last Quiz Score: {previousScore}
+                Last Networking Quiz Score: {previousScore}
               </Text>
             </View>
           ) : (
@@ -181,7 +177,7 @@ const HomeComponent = memo((props) => {
           {previousScoreNet !== null ? (
             <View style={styles.scoreContainer}>
               <Text style={styles.scoreText}>
-                Last Quiz Score: {previousScoreNet}
+                Last Cyber Security Quiz Score: {previousScoreNet}
               </Text>
             </View>
           ) : (

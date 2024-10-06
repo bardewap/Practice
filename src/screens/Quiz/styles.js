@@ -139,4 +139,56 @@ export default StyleSheet.create({
     width: 24,
     height: 24,
   },
+  container: {
+    flex: 1,
+    backgroundColor: "#f5f5f5",
+  },
+
+  backButton: {
+    padding: 10,
+  },
+  backIcon: {
+    width: 24,
+    height: 24,
+    resizeMode: "contain",
+  },
+
+  quizContainer: {
+    padding: 20,
+  },
+  question: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#333",
+    marginBottom: 20,
+  },
+  optionButton: {
+    backgroundColor: "#fff",
+    paddingVertical: 15,
+    paddingHorizontal: 10,
+    marginVertical: 10,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: "#e0e0e0",
+  },
+  selectedOption: {
+    backgroundColor: "#d0f0c0",
+    borderColor: "#90ee90",
+  },
+  optionText: {
+    fontSize: 16,
+    color: "#333",
+  },
+  nextButton: {
+    backgroundColor: "#4CAF50",
+    padding: 15,
+    borderRadius: 10,
+    alignItems: "center",
+    marginTop: 20,
+  },
+  nextButtonText: {
+    fontSize: 18,
+    color: "#fff",
+    fontWeight: "bold",
+  },
 });

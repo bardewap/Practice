@@ -83,6 +83,7 @@ const FolderDetailsContainer = (props) => {
       description: item?.description,
       image: item?.image, // Pass the image if it exists
       reminderDate: item?.reminderDate,
+      selectedImageName: item?.selectedImageName,
     });
   };
 

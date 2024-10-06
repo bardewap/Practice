@@ -17,6 +17,7 @@ const AddNoteContainer = memo(({ navigation, route }) => {
     description: initialDescription,
     image: initialImage,
     reminderDate: initialReminderDate,
+    selectedImageName: initialSelectedImageName,
   } = route.params;
 
   const [title, setTitle] = useState(initialTitle || ""); // Prepopulate if editing
@@ -28,13 +29,20 @@ const AddNoteContainer = memo(({ navigation, route }) => {
     initialReminderDate ? new Date(initialReminderDate) : new Date()
   ); // Use the passed reminder date
 
-  const [selectedImageName, setSelectedImageName] = useState(null);
+  const [selectedImageName, setSelectedImageName] = useState(
+    initialSelectedImageName || ""
+  );
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [showTimePicker, setShowTimePicker] = useState(false);
 
   useEffect(() => {
     console.log("initialImage", initialImage);
-  }, []);
+    setSelectedImageUri(
+      initialImage && !initialImage.startsWith("file://")
+        ? `file://${initialImage}`
+        : initialImage
+    );
+  }, [initialImage]);
 
   PushNotification.configure({
     // (optional) Called when Token is generated (iOS and Android)
@@ -151,7 +159,8 @@ const AddNoteContainer = memo(({ navigation, route }) => {
       id: noteId || Date.now().toString(),
       title,
       description,
-      image: localImagePath, // Use the correctly formatted path
+      image: localImagePath,
+      selectedImageName, // Use the correctly formatted path
       folderId,
       reminderDate,
     };

@@ -53,8 +53,7 @@ const AddNoteComponent = memo((props) => {
               {`Selected Image: ${props?.selectedImageName}`}
             </Text>
             <Image
-              source={{ uri: props?.selectedImageUri }}
-              // Display the selected image
+              source={{ uri: props?.selectedImageUri }} // Display the selected image
               style={styles.selectedImage}
             />
           </View>

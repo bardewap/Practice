@@ -18,7 +18,9 @@ const AddNoteComponent = memo((props) => {
         <TouchableOpacity onPress={props?.backPress} style={styles.backButton}>
           <Image source={Images.back} style={styles.backIcon} />
         </TouchableOpacity>
-        <Text style={styles.headerTitle}>Add Note</Text>
+        <Text style={styles.headerTitle}>
+          {props?.noteId ? "Edit Note" : "Add Note"}
+        </Text>
       </View>
 
       <ScrollView contentContainerStyle={styles.scrollViewContent}>
@@ -94,7 +96,7 @@ const AddNoteComponent = memo((props) => {
             onPress={props?.handleAddNote}
           >
             <Text style={styles.addButtonText}>
-              {props.noteId ? "Update Note" : "Add Note"}
+              {props?.noteId ? "Update Note" : "Add Note"}
             </Text>
           </TouchableOpacity>
         </View>

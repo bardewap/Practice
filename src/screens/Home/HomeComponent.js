@@ -17,6 +17,8 @@ import { PermissionsAndroid, Platform } from "react-native";
 
 const HomeComponent = memo((props) => {
   const [folders, setFolders] = useState([]);
+  const [previousScore, setPreviousScore] = useState(null); // State for previous score
+  const [previousScoreNet, setPreviousScoreNet] = useState(null); // State for previous score
 
   useEffect(() => {
     requestNotificationPermission();
@@ -28,16 +30,31 @@ const HomeComponent = memo((props) => {
         const storedFolders = await AsyncStorage.getItem("folders");
         if (storedFolders) {
           setFolders(JSON.parse(storedFolders));
-
-          console.log(
-            "storedFolders",
-            JSON.stringify(JSON.parse(storedFolders))
-          );
         }
       };
       fetchFolders();
+      fetchPreviousScore(); // Fetch the previous score when the component mounts
     }, [])
   );
+
+  // Fetch previous score from AsyncStorage
+  const fetchPreviousScore = async () => {
+    try {
+      const savedScore = await AsyncStorage.getItem("quizScore");
+      const savedScoreNet = await AsyncStorage.getItem("quizTwoScore");
+      console.log("savedScoreNet", savedScoreNet);
+
+      if (savedScore !== null) {
+        setPreviousScore(parseInt(savedScore, 10));
+      }
+      if (savedScoreNet !== null) {
+        setPreviousScoreNet(parseInt(savedScoreNet, 10));
+      }
+    } catch (error) {
+      console.error("Failed to load previous score", error);
+    }
+  };
+
   const requestNotificationPermission = async () => {
     if (Platform.OS === "android") {
       try {
@@ -69,14 +86,11 @@ const HomeComponent = memo((props) => {
 
   const getRecentNotesById = (folders, limit = 3) => {
     const allNotes = folders?.flatMap((folder) => folder?.notes);
-
     const sortedNotes = allNotes.sort((a, b) => b?.id.localeCompare(a?.id));
-
     return sortedNotes.slice(0, limit);
   };
 
   const recentNotes = getRecentNotesById(folders);
-  console.log("recentNotes", recentNotes);
 
   const renderNoteItem = ({ item }) => (
     <TouchableOpacity
@@ -84,38 +98,16 @@ const HomeComponent = memo((props) => {
       style={styles.courseItem}
     >
       <Text style={styles.courseTitle}>{item?.title}</Text>
-      {/* <SeeMore
-        numberOfLines={5} // Number of lines before truncating
-        style={styles.courseDescription}
-        seeMoreText="See More"
-        seeLessText="See Less"
-        seeMoreStyle={styles.seeMoreText} // Optional custom style for "See More" text
-        seeLessStyle={styles.seeMoreText} // Optional custom style for "See Less" text
-      >
-        {item.description}
-      </SeeMore> */}
       <Text numberOfLines={4} style={styles.courseDescription}>
         {item?.description}
       </Text>
     </TouchableOpacity>
   );
 
-  const currentCourses = [
-    { id: "1", title: "Course 1", description: "Description of Course 1" },
-    { id: "2", title: "Course 2", description: "Description of Course 2" },
-  ];
-
   const weeklyQuizzes = [
     { id: "1", title: "Networking Quiz", date: "2025-09-30" },
     { id: "2", title: "Cyber Security Quiz", date: "2025-10-07" },
   ];
-
-  const renderCourseItem = ({ item }) => (
-    <View style={styles.courseItem}>
-      <Text style={styles.courseTitle}>{item.title}</Text>
-      <Text style={styles.courseDescription}>{item.description}</Text>
-    </View>
-  );
 
   const renderQuizItem = ({ item }) => (
     <View style={styles.quizItem}>
@@ -142,10 +134,7 @@ const HomeComponent = memo((props) => {
           <View style={styles.bannerContent}>
             <Text style={styles.bannerText}>Hi Student</Text>
             <TouchableOpacity>
-              <Image
-                source={Images.app_icon} // Fixed typo here
-                style={styles.profileImage}
-              />
+              <Image source={Images.app_icon} style={styles.profileImage} />
             </TouchableOpacity>
           </View>
           <Text style={styles.bottomText}>Let’s start learning</Text>
@@ -174,6 +163,30 @@ const HomeComponent = memo((props) => {
             </View>
           )}
         </View>
+
+        {/* Section to display the previous quiz score */}
+        <View style={styles.sectionContainer}>
+          <Text style={styles.sectionTitle}>Previous Quiz Score</Text>
+          {previousScore !== null ? (
+            <View style={styles.scoreContainer}>
+              <Text style={styles.scoreText}>
+                Last Quiz Score: {previousScore}
+              </Text>
+            </View>
+          ) : (
+            <Text style={styles.noScoreText}>No score available yet.</Text>
+          )}
+          {previousScoreNet !== null ? (
+            <View style={styles.scoreContainer}>
+              <Text style={styles.scoreText}>
+                Last Quiz Score: {previousScoreNet}
+              </Text>
+            </View>
+          ) : (
+            <Text style={styles.noScoreText}>No score available yet.</Text>
+          )}
+        </View>
+
         <View style={styles.sectionContainer}>
           <Text style={styles.sectionTitle}>Weekly Quizzes</Text>
           <FlatList

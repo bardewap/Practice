@@ -71,7 +71,6 @@ export default StyleSheet.create({
   courseDescription: {
     fontSize: 14,
     color: "#4B5563",
-    
   },
   quizItem: {
     padding: 15,
@@ -125,5 +124,20 @@ export default StyleSheet.create({
     fontWeight: "bold",
     fontSize: 14,
     paddingVertical: 5,
+  },
+  scoreContainer: {
+    marginVertical: 10,
+    padding: 15,
+    backgroundColor: "#e0f7fa",
+    borderRadius: 10,
+  },
+  scoreText: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#00796b",
+  },
+  noScoreText: {
+    fontSize: 16,
+    color: "#757575",
   },
 });

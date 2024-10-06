@@ -93,7 +93,9 @@ const AddNoteComponent = memo((props) => {
             style={styles.addButton}
             onPress={props?.handleAddNote}
           >
-            <Text style={styles.addButtonText}>Add</Text>
+            <Text style={styles.addButtonText}>
+              {props.noteId ? "Update Note" : "Add Note"}
+            </Text>
           </TouchableOpacity>
         </View>
       </ScrollView>

@@ -48,8 +48,22 @@ const HomeComponent = memo((props) => {
   };
 
   const getRecentNotesById = (folders, limit = 3) => {
-    const allNotes = props?.folders?.flatMap((folder) => folder?.notes);
+    // Filter out folders that have an empty 'notes' array
+    const foldersWithNotes = props?.folders?.filter(
+      (folder) => folder?.notes?.length > 0
+    );
+
+    if (foldersWithNotes.length === 0) {
+      return [];
+    }
+
+    // Flatten the notes array from all folders that contain notes
+    const allNotes = foldersWithNotes.flatMap((folder) => folder?.notes);
+
+    // Sort the notes by id and limit the result to the specified number
     const sortedNotes = allNotes.sort((a, b) => b?.id.localeCompare(a?.id));
+
+    // Return the most recent notes based on the limit
     return sortedNotes.slice(0, limit);
   };
 
@@ -124,7 +138,7 @@ const HomeComponent = memo((props) => {
       <ScrollView style={styles.scrollView}>
         <View style={styles.sectionContainer}>
           <Text style={styles.sectionTitle}>Recently Created Notes</Text>
-          {recentNotes?.length > 0 || recentNotes == [] ? (
+          {recentNotes?.length > 0 ? (
             <FlatList
               data={recentNotes}
               renderItem={renderNoteItem}
@@ -134,7 +148,7 @@ const HomeComponent = memo((props) => {
           ) : (
             <View style={styles.noNotesContainer}>
               <Text style={styles.noNotesText}>
-                No recently created notes available.
+                No notes available in the folders.
               </Text>
               <Image
                 source={Images.noNotesIllustration}

@@ -5,12 +5,12 @@ const windowWidth = Dimensions.get("window").width;
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.White_FFFFFF,
+    backgroundColor: "#F3F3F3", // Light background color for the whole screen
   },
   header: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: Colors.Main,
+    backgroundColor: "#4A90E2", // Primary color for the top banner
     padding: 15,
   },
   backButton: {
@@ -50,12 +50,13 @@ export default StyleSheet.create({
     fontWeight: "bold",
   },
   profileImage: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
+    width: 80,
+    height: 80,
+    borderRadius: 40,
+    resizeMode: "cover",
   },
   topView: {
-    backgroundColor: "#6200EA", // Primary color similar to HomeComponent
+    backgroundColor: "#F3F3F3", // Light background color for the whole screen
     padding: 20,
     borderBottomLeftRadius: 30,
     borderBottomRightRadius: 30,
@@ -111,7 +112,7 @@ export default StyleSheet.create({
     marginTop: 40,
   },
   addButton: {
-    backgroundColor: "#34D399",
+    backgroundColor: Colors.ButtonColor,
     padding: 15,
     borderRadius: 10,
     width: "100%",
@@ -143,5 +144,4 @@ export default StyleSheet.create({
     width: 200,
     height: 200,
   },
-  
 });

@@ -5,10 +5,10 @@ const windowWidth = Dimensions.get("window").width;
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F4F6F8",
+    backgroundColor: "#F3F3F3", // Light background color for the whole screen
   },
   topView: {
-    backgroundColor: "#6200EA",
+    backgroundColor: "#4A90E2", // Primary color for the top banner
     padding: 20,
     borderBottomLeftRadius: 30,
     borderBottomRightRadius: 30,
@@ -30,9 +30,9 @@ export default StyleSheet.create({
     fontWeight: "bold",
   },
   profileImage: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
+    width: 80,
+    height: 80,
+    borderRadius: 40,
     resizeMode: "cover",
   },
   bottomText: {
@@ -65,7 +65,7 @@ export default StyleSheet.create({
     color: "#4B5563",
   },
   createFolderButton: {
-    backgroundColor: "#03DAC6",
+    backgroundColor: Colors.ButtonColor,
     padding: 10,
     borderRadius: 5,
     marginTop: 10,
@@ -212,5 +212,38 @@ export default StyleSheet.create({
   smartFolderText: {
     fontSize: 16,
     color: "#000",
+  },
+  folderGridItem: {
+    flex: 1,
+    margin: 10,
+    alignItems: "center",
+    justifyContent: "center",
+    // backgroundColor: "#fff",
+    borderRadius: 8,
+    // shadowColor: "#000",
+    // shadowOffset: { width: 0, height: 2 },
+    // shadowOpacity: 0.3,
+    // shadowRadius: 4,
+    // elevation: 3,
+  },
+  gridListContainer: {
+    paddingHorizontal: 10,
+  },
+  folderIcon: {
+    width: 60,
+    height: 60,
+    marginBottom: 10,
+  },
+  folderDetails: {
+    alignItems: "center",
+  },
+  folderTitle: {
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "#333",
+  },
+  fileCount: {
+    fontSize: 14,
+    color: "#888",
   },
 });

@@ -4,12 +4,12 @@ import { Colors, Fonts } from "../../utils/Theme";
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.White_FFFFFF, // Keeping a clean, minimal background color
+    backgroundColor: "#F3F3F3", // Light background color for the whole screen
   },
   header: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: Colors.Main, // Main brand color for consistency
+    backgroundColor: "#4A90E2", // Primary color for the top banner
     paddingVertical: 15, // Added vertical padding for a balanced look
     paddingHorizontal: 20,
     elevation: 4, // Added shadow for depth
@@ -40,7 +40,7 @@ export default StyleSheet.create({
   contentContainer: {
     flex: 1,
     padding: 20,
-    backgroundColor: "#F9F9F9", // Soft background to distinguish content
+    backgroundColor: "#F3F3F3", // Light background color for the whole screen
   },
   noteItemContainer: {
     paddingVertical: 15, // Adding vertical space between notes

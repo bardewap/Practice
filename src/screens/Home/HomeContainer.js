@@ -19,6 +19,8 @@ const HomeContainer = memo((props) => {
     useCallback(() => {
       const fetchFolders = async () => {
         const storedFolders = await AsyncStorage.getItem("folders");
+        console.log("storedFolders", storedFolders);
+
         if (storedFolders) {
           setFolders(JSON.parse(storedFolders));
         }

@@ -3,7 +3,7 @@ export default {
   White_FFFFFF: "#FFFFFF",
   White_FFFFFF_Secondary: "#F5F5F5",
   Black_dark: "#202E2A",
-  Main: "#4A90E2",
+  Main: "#023047",
   Background: "#126782",
   ButtonColor: "#023047",
   cardColor: "#8ecae6",

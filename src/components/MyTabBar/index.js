@@ -5,7 +5,7 @@ export default function MyTabBar({ state, descriptors, navigation }) {
   return (
     <View
       style={{
-        backgroundColor: Colors.cardColor,
+        backgroundColor: Colors.Main,
         flexDirection: "row",
         shadowColor: Colors.Black_000000,
         shadowOpacity: 0.5,

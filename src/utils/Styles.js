@@ -5,7 +5,7 @@ import Sizes from "./Sizes";
 import Constants from "./Constants";
 export default StyleSheet.create({
   bottomTabSelectedView: {
-    backgroundColor: Colors.Main,
+    backgroundColor: Colors.cardColor,
     justifyContent: "center",
     borderRadius: 8,
     alignItems: "center",
@@ -23,7 +23,7 @@ export default StyleSheet.create({
     elevation: 5,
   },
   bottomTabUnSelectedView: {
-    backgroundColor: Colors.cardColor,
+    backgroundColor: Colors.Main,
     justifyContent: "center",
     borderRadius: 8,
     alignItems: "center",

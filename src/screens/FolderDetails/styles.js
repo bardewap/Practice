@@ -4,12 +4,12 @@ import { Colors, Fonts } from "../../utils/Theme";
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F3F3F3", // Light background color for the whole screen
+    backgroundColor: Colors.Main, // Light background color for the whole screen
   },
   header: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#4A90E2", // Primary color for the top banner
+    backgroundColor: Colors.Main, // Light background color for the whole screen
     paddingVertical: 15, // Added vertical padding for a balanced look
     paddingHorizontal: 20,
     elevation: 4, // Added shadow for depth
@@ -40,19 +40,9 @@ export default StyleSheet.create({
   contentContainer: {
     flex: 1,
     padding: 20,
-    backgroundColor: "#F3F3F3", // Light background color for the whole screen
+    backgroundColor: Colors.Main, // Light background color for the whole screen
   },
-  noteItemContainer: {
-    paddingVertical: 15, // Adding vertical space between notes
-    paddingHorizontal: 20,
-    backgroundColor: "#FFF", // White background for the note item
-    borderRadius: 8, // Rounded corners for better design aesthetics
-    marginBottom: 10, // Space between each note item
-    shadowColor: "#000", // Adding shadow for depth
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 2,
-  },
+
   noteTitle: {
     fontSize: 18, // Slightly larger title font size
     fontWeight: "bold",
@@ -79,7 +69,7 @@ export default StyleSheet.create({
     width: 60, // Increased size for better tap experience
     height: 60,
     borderRadius: 30, // Perfect circle
-    backgroundColor: Colors.Main,
+    backgroundColor: Colors.cardColor,
     justifyContent: "center",
     alignItems: "center",
     shadowColor: "#000",
@@ -94,7 +84,7 @@ export default StyleSheet.create({
   },
   addText: {
     fontSize: 24, // Larger size to make the "+" sign prominent
-    color: Colors.White_FFFFFF,
+    color: Colors.Main,
     fontFamily: Fonts.Bold,
   },
   searchContainer: {
@@ -106,6 +96,9 @@ export default StyleSheet.create({
     borderWidth: 1,
     borderRadius: 5,
     paddingHorizontal: 10,
+    backgroundColor: Colors.cardColor,
+    marginLeft: 12,
+    marginRight: 12,
   },
   reminderContainer: {
     flexDirection: "row",
@@ -139,7 +132,7 @@ export default StyleSheet.create({
   noteItemContainer: {
     paddingVertical: 15, // Adding vertical space between notes
     paddingHorizontal: 20,
-    backgroundColor: "#FFF", // White background for the note item
+    backgroundColor: Colors.cardColor, // White background for the note item
     borderRadius: 8, // Rounded corners for better design aesthetics
     marginBottom: 10, // Space between each note item
     shadowColor: "#000", // Adding shadow for depth

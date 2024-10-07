@@ -5,12 +5,12 @@ const windowWidth = Dimensions.get("window").width;
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F3F3F3", // Light background color for the whole screen
+    backgroundColor: Colors.Main, // Light background color for the whole screen
   },
   header: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#4A90E2", // Primary color for the top banner
+    backgroundColor: Colors.Main, // Light background color for the whole screen
     padding: 15,
   },
   backButton: {
@@ -84,7 +84,7 @@ export default StyleSheet.create({
     borderRadius: 5,
     paddingHorizontal: 10,
     marginBottom: 15,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.cardColor,
   },
   descriptionInput: {
     height: 100,
@@ -101,25 +101,26 @@ export default StyleSheet.create({
   },
   uploadText: {
     fontSize: 16,
-    color: "#6200EA",
+    color: Colors.White_FFFFFF,
+    marginLeft: 20,
   },
   fileNameText: {
     marginTop: 5,
-    color: "#333333",
+    color: Colors.White_FFFFFF,
   },
   addButtonContainer: {
     alignItems: "center",
     marginTop: 40,
   },
   addButton: {
-    backgroundColor: Colors.ButtonColor,
+    backgroundColor: Colors.cardColor,
     padding: 15,
     borderRadius: 10,
     width: "100%",
     alignItems: "center",
   },
   addButtonText: {
-    color: "#FFFFFF",
+    color: Colors.Main, // Light background color for the whole screen
     fontSize: 18,
     fontWeight: "bold",
   },
@@ -133,7 +134,7 @@ export default StyleSheet.create({
   },
   reminderText: {
     fontSize: 16,
-    color: "#000",
+    color: Colors.White_FFFFFF,
     marginLeft: 10,
   },
   icon: {
@@ -152,6 +153,7 @@ export default StyleSheet.create({
   statusText: {
     fontSize: 12,
     marginBottom: 20,
+    color: Colors.White_FFFFFF,
   },
   resultText: {
     marginTop: 20,

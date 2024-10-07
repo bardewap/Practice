@@ -5,12 +5,12 @@ const windowWidth = Dimensions.get("window").width;
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F3F3F3", // Light background color for the whole screen
+    backgroundColor: Colors.Main, // Light background color for the whole screen
   },
   header: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#4A90E2", // Primary color for the top banner
+    backgroundColor: Colors.Main, // Light background color for the whole screen
     padding: 15,
   },
   backButton: {
@@ -63,7 +63,7 @@ export default StyleSheet.create({
     elevation: 5,
   },
   headerContainer: {
-    backgroundColor: "#6200EA", // Primary color
+    backgroundColor: Colors.Main, // Light background color for the whole screen
     paddingVertical: 20,
     borderBottomLeftRadius: 30,
     borderBottomRightRadius: 30,
@@ -156,11 +156,13 @@ export default StyleSheet.create({
 
   quizContainer: {
     padding: 20,
+    backgroundColor: Colors.Main,
+    flex: 1, // Light background color for the whole screen
   },
   question: {
     fontSize: 18,
     fontWeight: "bold",
-    color: "#333",
+    color: Colors.White_FFFFFF,
     marginBottom: 20,
   },
   optionButton: {
@@ -181,7 +183,7 @@ export default StyleSheet.create({
     color: "#333",
   },
   nextButton: {
-    backgroundColor: "#4CAF50",
+    backgroundColor: Colors.cardColor,
     padding: 15,
     borderRadius: 10,
     alignItems: "center",
@@ -189,7 +191,7 @@ export default StyleSheet.create({
   },
   nextButtonText: {
     fontSize: 18,
-    color: "#fff",
+    color: Colors.Main,
     fontWeight: "bold",
   },
   modalContainer: {
@@ -215,7 +217,7 @@ export default StyleSheet.create({
     marginBottom: 20,
   },
   modalButton: {
-    backgroundColor: "#4CAF50",
+    backgroundColor: Colors.Main,
     padding: 10,
     borderRadius: 5,
     width: 150,

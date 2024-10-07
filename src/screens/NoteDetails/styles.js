@@ -5,12 +5,12 @@ const windowWidth = Dimensions.get("window").width;
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F3F3F3", // Light background color for the whole screen
+    backgroundColor: Colors.Main,
   },
   header: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#4A90E2", // Primary color for the top banner
+    backgroundColor: Colors.Main,
     padding: 15,
   },
   backButton: {
@@ -133,7 +133,7 @@ export default StyleSheet.create({
   },
   reminderText: {
     fontSize: 14,
-    color: "#555", // Muted color for description
+    color: Colors.White_FFFFFF,
     fontFamily: Fonts.Regular,
     marginBottom: 6,
   },
@@ -146,7 +146,7 @@ export default StyleSheet.create({
   },
   label: {
     fontSize: 14,
-    color: Colors.Black_000000,
+    color: Colors.White_FFFFFF,
     fontWeight: "400",
     marginBottom: 8,
     fontFamily: Fonts.Bold,
@@ -154,11 +154,10 @@ export default StyleSheet.create({
   },
   value: {
     fontSize: 14,
-    color: "#555", // Muted color for description
+    color: Colors.White_FFFFFF,
     fontFamily: Fonts.Regular,
   },
   imageSection: {
     marginBottom: 16,
   },
-  
 });

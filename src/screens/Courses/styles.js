@@ -5,10 +5,10 @@ const windowWidth = Dimensions.get("window").width;
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F3F3F3", // Light background color for the whole screen
+    backgroundColor: Colors.Main, // Light background color for the whole screen
   },
   topView: {
-    backgroundColor: "#4A90E2", // Primary color for the top banner
+    backgroundColor: Colors.Main, // Light background color for the whole screen
     padding: 20,
     borderBottomLeftRadius: 30,
     borderBottomRightRadius: 30,
@@ -55,23 +55,19 @@ export default StyleSheet.create({
   folderDetails: {
     flex: 1,
   },
-  folderTitle: {
-    fontSize: 18,
-    fontWeight: "600",
-    color: "#1E3A8A",
-  },
+
   fileCount: {
     fontSize: 14,
     color: "#4B5563",
   },
   createFolderButton: {
-    backgroundColor: Colors.ButtonColor,
+    backgroundColor: Colors.White_FFFFFF,
     padding: 10,
     borderRadius: 5,
     marginTop: 10,
   },
   createFolderButtonText: {
-    color: "#FFF",
+    color: Colors.Main,
     fontSize: 16,
     fontWeight: "bold",
   },
@@ -120,7 +116,7 @@ export default StyleSheet.create({
   modalContent: {
     width: "80%",
     padding: 20,
-    backgroundColor: "white",
+    backgroundColor: Colors.cardColor,
     borderRadius: 10,
     alignItems: "center",
   },
@@ -240,7 +236,7 @@ export default StyleSheet.create({
   folderTitle: {
     fontSize: 16,
     fontWeight: "bold",
-    color: "#333",
+    color: Colors.White_FFFFFF,
   },
   fileCount: {
     fontSize: 14,

@@ -5,11 +5,11 @@ import { Colors, Sizes, Fonts, Constants } from "../../utils/Theme";
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F3F3F3", // Light background color for the whole screen
+    backgroundColor: Colors.Main, // Light background color for the whole screen
   },
   topView: {
-    height: 200,
-    backgroundColor: "#4A90E2", // Primary color for the top banner
+    height: 150,
+    backgroundColor: Colors.Main, // Light background color for the whole screen
     borderBottomLeftRadius: 30,
     borderBottomRightRadius: 30,
     justifyContent: "center",
@@ -18,7 +18,7 @@ export default StyleSheet.create({
   blurContainer: {
     width: "90%",
     height: "80%",
-    backgroundColor: "#4A90E2", // Slight transparent white overlay
+    backgroundColor: Colors.Main, // Light background color for the whole screen
     borderRadius: 20,
     padding: 20,
     justifyContent: "center",
@@ -47,12 +47,13 @@ export default StyleSheet.create({
     fontSize: 16,
     color: "#fff",
     marginTop: 10,
+    fontStyle: "italic",
   },
   scrollView: {
     marginVertical: 20,
   },
   sectionContainer: {
-    backgroundColor: "#ffffff",
+    backgroundColor: Colors.cardColor,
     borderRadius: 15,
     marginHorizontal: 20,
     paddingVertical: 15,
@@ -68,7 +69,7 @@ export default StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
     marginBottom: 10,
-    color: "#4A90E2",
+    // backgroundColor: Colors.White_FFFFFF, // Light background color for the whole screen
   },
   listContainer: {
     paddingBottom: 10,
@@ -126,7 +127,7 @@ export default StyleSheet.create({
   },
   startQuizButton: {
     marginTop: 10,
-    backgroundColor: "#4A90E2",
+    backgroundColor: Colors.Main,
     paddingVertical: 10,
     borderRadius: 5,
     alignItems: "center",
@@ -168,16 +169,7 @@ export default StyleSheet.create({
   scrollView: {
     flex: 1,
   },
-  sectionContainer: {
-    marginTop: 20,
-    paddingHorizontal: 15,
-  },
-  sectionTitle: {
-    fontSize: 18,
-    fontWeight: "bold",
-    marginBottom: 10,
-    color: "#333",
-  },
+
   listContainer: {
     paddingBottom: 20,
   },

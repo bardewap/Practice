@@ -5,10 +5,10 @@ const windowWidth = Dimensions.get("window").width;
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F3F3F3", // Light background color for the whole screen
+    backgroundColor: Colors.Main, // Light background color for the whole screen
   },
   topView: {
-    backgroundColor: "#4A90E2", // Primary color for the top banner
+    backgroundColor: Colors.Main, // Primary color for the top banner
     padding: 20,
     borderBottomLeftRadius: 30,
     borderBottomRightRadius: 30,
@@ -77,12 +77,12 @@ export default StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
     marginBottom: 10,
-    color: Colors.primary,
+    color: Colors.White_FFFFFF,
   },
 
   aboutUsDescription: {
     fontSize: 14,
-    color: Colors.Black_000000,
+    color: Colors.White_FFFFFF,
     lineHeight: 20,
   },
 });

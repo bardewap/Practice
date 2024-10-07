@@ -30,6 +30,12 @@ const NoteDetailsComponent = memo((props) => {
             />
           </View>
         )}
+        {/* <View style={styles.detailSection}>
+          <Text style={styles.label}>Voice Text</Text>
+          <Text style={styles.value}>
+            {props?.data?.item?.voiceText || "No Voice Text"}
+          </Text>
+        </View> */}
 
         {props?.data?.item?.reminderDate && (
           <View style={styles.reminderSection}>

@@ -144,4 +144,29 @@ export default StyleSheet.create({
     width: 200,
     height: 200,
   },
+  containerMIc: {
+    padding: 20,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  statusText: {
+    fontSize: 12,
+    marginBottom: 20,
+  },
+  resultText: {
+    marginTop: 20,
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+  iconButton: {
+    borderRadius: 50,
+    padding: 10,
+    backgroundColor: "#e0e0e0",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  micStyle: {
+    width: 40,
+    height: 40,
+  },
 });

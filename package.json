@@ -18,6 +18,7 @@
     "@react-native-community/datetimepicker": "^7.6.1",
     "@react-native-community/netinfo": "^11.3.2",
     "@react-native-community/push-notification-ios": "^1.11.0",
+    "@react-native-voice/voice": "^3.2.4",
     "@react-native/gradle-plugin": "^0.75.3",
     "@react-native/metro-config": "^0.75.3",
     "@react-navigation/bottom-tabs": "^6.5.4",

@@ -7,6 +7,7 @@ import { launchImageLibrary, launchCamera } from "react-native-image-picker";
 import AddNoteComponent from "./AddNoteComponent";
 import PushNotification from "react-native-push-notification";
 import RNFS from "react-native-fs";
+import Voice from "@react-native-voice/voice";
 
 const AddNoteContainer = memo(({ navigation, route }) => {
   const {
@@ -18,10 +19,12 @@ const AddNoteContainer = memo(({ navigation, route }) => {
     image: initialImage,
     reminderDate: initialReminderDate,
     selectedImageName: initialSelectedImageName,
+    voiceText: initialVoiceText,
   } = route.params;
 
   const [title, setTitle] = useState(initialTitle || ""); // Prepopulate if editing
   const [description, setDescription] = useState(initialDescription || "");
+  const [voiceText, setVoiceText] = useState(initialVoiceText || "");
   const [selectedImageUri, setSelectedImageUri] = useState(
     initialImage || null
   ); // Prepopulate the image URI if editing
@@ -34,6 +37,48 @@ const AddNoteContainer = memo(({ navigation, route }) => {
   );
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [showTimePicker, setShowTimePicker] = useState(false);
+
+  const [isListening, setIsListening] = useState(false);
+  const [result, setResult] = useState("");
+
+  useEffect(() => {
+    Voice.onSpeechStart = onSpeechStart;
+    Voice.onSpeechEnd = onSpeechEnd;
+    Voice.onSpeechResults = onSpeechResults;
+
+    return () => {
+      Voice.destroy().then(Voice.removeAllListeners);
+    };
+  }, []);
+
+  const onSpeechStart = () => {
+    setIsListening(true);
+  };
+
+  const onSpeechEnd = () => {
+    setIsListening(false);
+  };
+
+  const onSpeechResults = (event) => {
+    setResult(event.value[0]);
+    setVoiceText(event.value[0]);
+  };
+
+  const startListening = async () => {
+    try {
+      await Voice.start("en-US"); // You can set the language here
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  const stopListening = async () => {
+    try {
+      await Voice.stop();
+    } catch (e) {
+      console.error(e);
+    }
+  };
 
   useEffect(() => {
     console.log("initialImage", initialImage);
@@ -163,6 +208,7 @@ const AddNoteContainer = memo(({ navigation, route }) => {
       selectedImageName, // Use the correctly formatted path
       folderId,
       reminderDate,
+      voiceText,
     };
 
     try {
@@ -202,6 +248,7 @@ const AddNoteContainer = memo(({ navigation, route }) => {
       setDescription("");
       setSelectedImageUri(null); // Clear the image selection
       setReminderDate(new Date());
+      setVoiceText("");
       onNoteAdded(); // Notify parent that note was added/edited
     } catch (error) {
       console.error("Error saving note:", error);
@@ -270,6 +317,10 @@ const AddNoteContainer = memo(({ navigation, route }) => {
       setShowDatePicker={setShowDatePicker}
       selectedImageUri={selectedImageUri}
       noteId={noteId} // Pass the URI to the component
+      result={result}
+      isListening={isListening}
+      startListening={startListening}
+      stopListening={stopListening}
     />
   );
 });

@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   Image,
   ScrollView,
+  Button,
 } from "react-native";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import { Images } from "../../utils/Theme";
@@ -89,6 +90,31 @@ const AddNoteComponent = memo((props) => {
             onChange={props?.handleTimeChange} // After selecting the time
           />
         )}
+        <View style={styles.containerMIc}>
+          <Text style={styles.statusText}>
+            {props?.isListening ? "Listening..." : "Press the mic to start"}
+          </Text>
+
+          {/* Button with Mic and Stop icons */}
+          <TouchableOpacity
+            style={styles.iconButton}
+            onPress={
+              props?.isListening ? props?.stopListening : props?.startListening
+            }
+          >
+            {/* <Icon
+              name={props?.isListening ? "stop" : "mic"}
+              size={50}
+              color={props?.isListening ? "red" : "blue"}
+            /> */}
+            <Image
+              source={props?.isListening ? Images.stop : Images.mic} // Display the selected image
+              style={styles.micStyle}
+            />
+          </TouchableOpacity>
+
+          {/* <Text style={styles.resultText}>Result: {props?.result}</Text> */}
+        </View>
 
         <View style={styles.addButtonContainer}>
           <TouchableOpacity

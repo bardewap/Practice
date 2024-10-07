@@ -26,6 +26,10 @@ export default {
   edit: require("../../assets/images/edit.png"),
   delete: require("../../assets/images/delete.png"),
 
+  mic: require("../../assets/images/mic.png"),
+  stop: require("../../assets/images/stop.png"),
+
+
 
 
 };

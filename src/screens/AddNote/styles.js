@@ -27,8 +27,8 @@ export default StyleSheet.create({
   },
   headerTitle: {
     fontSize: 20,
-    fontWeight: "bold",
     color: "#FFF",
+    fontFamily: Fonts.YellowGinger,
   },
   headerSubtitle: {
     fontSize: 14,
@@ -85,6 +85,7 @@ export default StyleSheet.create({
     paddingHorizontal: 10,
     marginBottom: 15,
     backgroundColor: Colors.cardColor,
+    fontFamily: Fonts.Italic,
   },
   descriptionInput: {
     height: 100,
@@ -122,7 +123,7 @@ export default StyleSheet.create({
   addButtonText: {
     color: Colors.Main, // Light background color for the whole screen
     fontSize: 18,
-    fontWeight: "bold",
+    fontFamily: Fonts.YellowGinger,
   },
   reminderSection: {
     flexDirection: "row",

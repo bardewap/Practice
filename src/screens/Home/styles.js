@@ -33,7 +33,7 @@ export default StyleSheet.create({
   bannerText: {
     fontSize: 24,
     color: "#fff",
-    fontWeight: "bold",
+    fontFamily: Fonts.YellowGinger,
   },
   profileImage: {
     width: 50,
@@ -44,10 +44,10 @@ export default StyleSheet.create({
     borderColor: "#4A90E2",
   },
   bottomText: {
-    fontSize: 16,
+    fontSize: 24,
     color: "#fff",
     marginTop: 10,
-    fontStyle: "italic",
+    fontFamily: Fonts.akaDora,
   },
   scrollView: {
     marginVertical: 20,
@@ -66,10 +66,10 @@ export default StyleSheet.create({
     elevation: 3,
   },
   sectionTitle: {
-    fontSize: 18,
-    fontWeight: "bold",
+    fontSize: 30,
     marginBottom: 10,
-    // backgroundColor: Colors.White_FFFFFF, // Light background color for the whole screen
+    fontFamily: Fonts.FontleroyBrownNF,
+    color: Colors.Black_000000,
   },
   listContainer: {
     paddingBottom: 10,
@@ -81,11 +81,6 @@ export default StyleSheet.create({
     marginVertical: 5,
     flexDirection: "row",
     justifyContent: "space-between",
-  },
-  noteTitle: {
-    fontSize: 16,
-    color: "#333333",
-    fontWeight: "bold",
   },
 
   reminderContainer: {
@@ -116,9 +111,9 @@ export default StyleSheet.create({
     marginVertical: 5,
   },
   quizTitle: {
-    fontSize: 16,
+    fontSize: 28,
     color: "#333333",
-    fontWeight: "bold",
+    fontFamily: Fonts.akaDora,
   },
   quizDate: {
     fontSize: 14,
@@ -135,7 +130,8 @@ export default StyleSheet.create({
   buttonText: {
     color: "#ffffff",
     fontSize: 14,
-    fontWeight: "bold",
+    // fontWeight: "bold",
+    fontFamily: Fonts.YellowGinger,
   },
   scoreContainer: {
     backgroundColor: Colors.cardSection,
@@ -191,15 +187,16 @@ export default StyleSheet.create({
     elevation: 3,
   },
   noteTitle: {
-    fontSize: 16,
-    fontWeight: "bold",
+    fontSize: 20,
     color: "#fff",
     marginBottom: 5,
+    fontFamily: Fonts.akaDora,
   },
   noteDescription: {
-    fontSize: 14,
+    fontSize: 20,
     color: "#fff",
     flex: 1,
+    fontFamily: Fonts.LoversQuarrelRegular,
   },
   reminderContainer: {
     flexDirection: "row",

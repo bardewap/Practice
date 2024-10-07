@@ -28,14 +28,14 @@ export default StyleSheet.create({
   },
   headerTitle: {
     fontSize: 22, // Increased size for better readability
-    fontWeight: "bold",
+    fontFamily: Fonts.YellowGinger,
     color: "#FFF",
-    fontFamily: Fonts.Bold, // Using custom font for consistency
   },
   headerSubtitle: {
-    fontSize: 14,
+    fontSize: 16,
     color: "#FFF",
-    fontFamily: Fonts.Regular, // Custom font for subtler text
+    fontFamily: Fonts.MontezRegular,
+    marginTop: 4,
   },
   contentContainer: {
     flex: 1,
@@ -43,18 +43,6 @@ export default StyleSheet.create({
     backgroundColor: Colors.Main, // Light background color for the whole screen
   },
 
-  noteTitle: {
-    fontSize: 18, // Slightly larger title font size
-    fontWeight: "bold",
-    color: Colors.text, // Consistent text color from theme
-    marginBottom: 6, // Space between title and description
-    fontFamily: Fonts.Bold,
-  },
-  noteDescription: {
-    fontSize: 14,
-    color: "#555", // Muted color for description
-    fontFamily: Fonts.Regular,
-  },
   noNotesText: {
     textAlign: "center",
     fontSize: 16,
@@ -99,6 +87,7 @@ export default StyleSheet.create({
     backgroundColor: Colors.cardColor,
     marginLeft: 12,
     marginRight: 12,
+    fontFamily: Fonts.Italic,
   },
   reminderContainer: {
     flexDirection: "row",
@@ -111,8 +100,9 @@ export default StyleSheet.create({
     marginRight: 8,
   },
   reminderText: {
-    fontSize: 14,
+    fontSize: 16,
     color: "#888",
+    fontFamily: Fonts.MontezRegular,
   },
   seeMoreText: {
     color: Colors.Main, // Blue for emphasis
@@ -143,15 +133,14 @@ export default StyleSheet.create({
     alignItems: "center",
   },
   noteTitle: {
-    fontSize: 18, // Slightly larger title font size
-    fontWeight: "bold",
+    fontSize: 24, // Slightly larger title font size
     color: Colors.text, // Consistent text color from theme
     marginBottom: 6, // Space between title and description
-    fontFamily: Fonts.Bold,
+    fontFamily: Fonts.akaDora,
   },
   noteDescription: {
     fontSize: 14,
     color: "#555", // Muted color for description
-    fontFamily: Fonts.Regular,
+    fontFamily: Fonts.Italic,
   },
 });

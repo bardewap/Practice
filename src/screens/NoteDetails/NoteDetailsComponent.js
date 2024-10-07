@@ -16,7 +16,7 @@ const NoteDetailsComponent = memo((props) => {
 
       <ScrollView contentContainerStyle={styles.scrollViewContent}>
         <View style={styles.detailSection}>
-          <Text style={styles.label}>Description</Text>
+          <Text style={styles.label}>Description :</Text>
           <Text style={styles.value}>
             {props?.data?.item?.description || "No Description"}
           </Text>
@@ -24,7 +24,7 @@ const NoteDetailsComponent = memo((props) => {
 
         {props?.data?.item?.image && (
           <View style={styles.imageSection}>
-            <Text style={styles.label}>Attached Image</Text>
+            <Text style={styles.label}>Attached Image :</Text>
             <Image
               source={{ uri: `file://${props?.data?.item?.image}` }} // Display the saved image
               style={{ width: 200, height: 200 }} // Customize image size
@@ -32,7 +32,7 @@ const NoteDetailsComponent = memo((props) => {
           </View>
         )}
         <View style={styles.detailSection}>
-          <Text style={styles.label}>Voice Text</Text>
+          <Text style={styles.label}>Voice Text :</Text>
           <Text style={styles.value}>
             {props?.data?.item?.voiceText || "No Voice Text"}
           </Text>

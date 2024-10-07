@@ -27,7 +27,7 @@ export default StyleSheet.create({
   },
   headerTitle: {
     fontSize: 20,
-    fontWeight: "bold",
+    fontFamily: Fonts.YellowGinger,
     color: "#FFF",
   },
   headerSubtitle: {
@@ -135,7 +135,6 @@ export default StyleSheet.create({
     fontSize: 14,
     color: Colors.White_FFFFFF,
     fontFamily: Fonts.Regular,
-    marginBottom: 6,
   },
   icon: {
     width: 24,
@@ -145,17 +144,18 @@ export default StyleSheet.create({
     marginBottom: 16,
   },
   label: {
-    fontSize: 14,
+    fontSize: 28,
     color: Colors.White_FFFFFF,
-    fontWeight: "400",
     marginBottom: 8,
     fontFamily: Fonts.Bold,
     marginRight: 10,
+    fontFamily: Fonts.akaDora,
+    marginBottom: 10,
   },
   value: {
-    fontSize: 14,
+    fontSize: 12,
     color: Colors.White_FFFFFF,
-    fontFamily: Fonts.Regular,
+    fontFamily: Fonts.Italic,
   },
   imageSection: {
     marginBottom: 16,

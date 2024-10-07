@@ -27,7 +27,7 @@ export default StyleSheet.create({
   bannerText: {
     color: "#FFFFFF",
     fontSize: 24,
-    fontWeight: "bold",
+    fontFamily: Fonts.YellowGinger,
   },
   profileImage: {
     width: 80,
@@ -74,8 +74,8 @@ export default StyleSheet.create({
   },
 
   aboutUsTitle: {
-    fontSize: 18,
-    fontWeight: "bold",
+    fontSize: 28,
+    fontFamily: Fonts.akaDora,
     marginBottom: 10,
     color: Colors.White_FFFFFF,
   },
@@ -84,5 +84,6 @@ export default StyleSheet.create({
     fontSize: 14,
     color: Colors.White_FFFFFF,
     lineHeight: 20,
+    fontFamily: Fonts.Italic,
   },
 });

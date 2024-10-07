@@ -27,7 +27,7 @@ export default StyleSheet.create({
   bannerText: {
     color: "#FFFFFF",
     fontSize: 24,
-    fontWeight: "bold",
+    fontFamily: Fonts.YellowGinger,
   },
   profileImage: {
     width: 80,
@@ -69,7 +69,7 @@ export default StyleSheet.create({
   createFolderButtonText: {
     color: Colors.Main,
     fontSize: 16,
-    fontWeight: "bold",
+    fontFamily: Fonts.YellowGinger,
   },
   createFolderContainer: {
     flexDirection: "row",

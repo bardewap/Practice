@@ -27,7 +27,7 @@ export default StyleSheet.create({
   },
   headerTitle: {
     fontSize: 20,
-    fontWeight: "bold",
+    fontFamily: Fonts.YellowGinger,
     color: "#FFF",
   },
   headerSubtitle: {
@@ -160,10 +160,10 @@ export default StyleSheet.create({
     flex: 1, // Light background color for the whole screen
   },
   question: {
-    fontSize: 18,
-    fontWeight: "bold",
+    fontSize: 25,
     color: Colors.White_FFFFFF,
     marginBottom: 20,
+    fontFamily: Fonts.MontezRegular,
   },
   optionButton: {
     backgroundColor: "#fff",
@@ -181,6 +181,7 @@ export default StyleSheet.create({
   optionText: {
     fontSize: 16,
     color: "#333",
+    fontFamily: Fonts.Italic,
   },
   nextButton: {
     backgroundColor: Colors.cardColor,
@@ -192,7 +193,7 @@ export default StyleSheet.create({
   nextButtonText: {
     fontSize: 18,
     color: Colors.Main,
-    fontWeight: "bold",
+    fontFamily: Fonts.YellowGinger,
   },
   modalContainer: {
     flex: 1,
@@ -251,5 +252,6 @@ export default StyleSheet.create({
     fontWeight: "bold",
     color: "red", // Red color for emphasis
     marginLeft: 10,
+    marginTop: 8,
   },
 });

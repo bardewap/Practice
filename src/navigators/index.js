@@ -168,9 +168,13 @@ const AvailabilityTabScreen = () => (
 const Drawer = createDrawerNavigator();
 const DrawerScreen = () => (
   <Drawer.Navigator
-    screenOptions={{ headerShown: false }}
-    drawerStyle={{ width: "60%" }}
-    drawerContent={(props) => <SidebarMenu {...props} />}
+    screenOptions={{
+      headerShown: false,
+      swipeEdgeWidth: 0,
+      gestureEnabled: false,
+    }}
+    drawerStyle={{}}
+    drawerContent={(props) => <></>}
   >
     <Drawer.Screen
       options={{ drawerType: "front", drawerLabel: "TabsScreen" }}

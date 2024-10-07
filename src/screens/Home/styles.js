@@ -151,8 +151,8 @@ export default StyleSheet.create({
     fontFamily: Fonts.MontezRegular,
   },
   noNotesImage: {
-    width: 150,
-    height: 150,
+    width: 100,
+    height: 100,
   },
   noScoreText: {
     fontSize: 18,

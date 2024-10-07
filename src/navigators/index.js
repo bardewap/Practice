@@ -66,7 +66,7 @@ const TabsScreen = () => (
 
     <HomeStack.Screen
       options={() => ({
-        title: "Profile",
+        title: "About us",
         imageS: Images.profile_s,
         imageUn: Images.prof_un,
       })}

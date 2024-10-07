@@ -5,12 +5,12 @@ const windowWidth = Dimensions.get("window").width;
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.White_FFFFFF,
+    backgroundColor: Colors.Main, // Light background color for the whole screen
   },
   header: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: Colors.Main,
+    backgroundColor: Colors.Main, // Light background color for the whole screen
     padding: 15,
   },
   backButton: {
@@ -27,7 +27,7 @@ export default StyleSheet.create({
   },
   headerTitle: {
     fontSize: 20,
-    fontWeight: "bold",
+    fontFamily: Fonts.YellowGinger,
     color: "#FFF",
   },
   headerSubtitle: {
@@ -50,9 +50,10 @@ export default StyleSheet.create({
     fontWeight: "bold",
   },
   profileImage: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
+    width: 80,
+    height: 80,
+    borderRadius: 40,
+    resizeMode: "cover",
   },
   topView: {
     backgroundColor: "#6200EA", // Primary color similar to HomeComponent
@@ -139,10 +140,10 @@ export default StyleSheet.create({
     width: 24,
     height: 24,
   },
-  container: {
-    flex: 1,
-    backgroundColor: "#f5f5f5",
-  },
+  // container: {
+  //   flex: 1,
+  //   backgroundColor: "#f5f5f5",
+  // },
 
   backButton: {
     padding: 10,
@@ -157,10 +158,10 @@ export default StyleSheet.create({
     padding: 20,
   },
   question: {
-    fontSize: 18,
-    fontWeight: "bold",
-    color: "#333",
+    fontSize: 25,
+    color: Colors.White_FFFFFF,
     marginBottom: 20,
+    fontFamily: Fonts.MontezRegular,
   },
   optionButton: {
     backgroundColor: "#fff",
@@ -178,9 +179,10 @@ export default StyleSheet.create({
   optionText: {
     fontSize: 16,
     color: "#333",
+    fontFamily: Fonts.Italic,
   },
   nextButton: {
-    backgroundColor: "#4CAF50",
+    backgroundColor: Colors.cardColor,
     padding: 15,
     borderRadius: 10,
     alignItems: "center",
@@ -188,8 +190,8 @@ export default StyleSheet.create({
   },
   nextButtonText: {
     fontSize: 18,
-    color: "#fff",
-    fontWeight: "bold",
+    color: Colors.Main,
+    fontFamily: Fonts.YellowGinger,
   },
 
   modalContainer: {
@@ -215,7 +217,7 @@ export default StyleSheet.create({
     marginBottom: 20,
   },
   modalButton: {
-    backgroundColor: "#4CAF50",
+    backgroundColor: Colors.Main,
     padding: 10,
     borderRadius: 5,
     width: 150,
@@ -249,5 +251,6 @@ export default StyleSheet.create({
     fontWeight: "bold",
     color: "#ff0000", // Red color for emphasis
     marginLeft: 10,
+    marginTop: 8,
   },
 });

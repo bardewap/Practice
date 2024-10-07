@@ -37,7 +37,8 @@ export default StyleSheet.create({
   },
   bottomText: {
     color: "#FFFFFF",
-    fontSize: 16,
+    fontSize: 20,
+    fontFamily: Fonts.MontezRegular,
   },
   folderItem: {
     padding: 15,
@@ -56,10 +57,6 @@ export default StyleSheet.create({
     flex: 1,
   },
 
-  fileCount: {
-    fontSize: 14,
-    color: "#4B5563",
-  },
   createFolderButton: {
     backgroundColor: Colors.White_FFFFFF,
     padding: 10,
@@ -234,12 +231,13 @@ export default StyleSheet.create({
     alignItems: "center",
   },
   folderTitle: {
-    fontSize: 16,
-    fontWeight: "bold",
+    fontSize: 20,
     color: Colors.White_FFFFFF,
+    fontFamily: Fonts.akaDora,
   },
   fileCount: {
     fontSize: 14,
     color: "#888",
+    fontFamily: Fonts.akaDora,
   },
 });

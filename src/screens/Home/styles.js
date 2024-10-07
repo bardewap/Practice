@@ -39,9 +39,9 @@ export default StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 25,
-    backgroundColor: "#fff",
     borderWidth: 1,
     borderColor: "#4A90E2",
+    resizeMode: "stretch",
   },
   bottomText: {
     fontSize: 24,
@@ -83,11 +83,6 @@ export default StyleSheet.create({
     justifyContent: "space-between",
   },
 
-  reminderContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginTop: 5,
-  },
   reminderIcon: {
     width: 16,
     height: 16,
@@ -116,9 +111,10 @@ export default StyleSheet.create({
     fontFamily: Fonts.akaDora,
   },
   quizDate: {
-    fontSize: 14,
+    fontSize: 18,
     color: "#666666",
     marginTop: 5,
+    fontFamily: Fonts.MontezRegular,
   },
   startQuizButton: {
     marginTop: 10,
@@ -152,15 +148,17 @@ export default StyleSheet.create({
     fontSize: 16,
     color: "#666666",
     marginBottom: 10,
+    fontFamily: Fonts.MontezRegular,
   },
   noNotesImage: {
     width: 150,
     height: 150,
   },
   noScoreText: {
-    fontSize: 14,
+    fontSize: 18,
     color: "#666666",
     textAlign: "center",
+    fontFamily: Fonts.MontezRegular,
   },
   scrollView: {
     flex: 1,
@@ -187,7 +185,7 @@ export default StyleSheet.create({
     elevation: 3,
   },
   noteTitle: {
-    fontSize: 20,
+    fontSize: 18,
     color: "#fff",
     marginBottom: 5,
     fontFamily: Fonts.akaDora,
@@ -201,7 +199,7 @@ export default StyleSheet.create({
   reminderContainer: {
     flexDirection: "row",
     alignItems: "center",
-    marginTop: 10,
+    marginTop: 4,
   },
   reminderIcon: {
     height: 18,
@@ -209,8 +207,9 @@ export default StyleSheet.create({
     marginRight: 5,
   },
   reminderText: {
-    fontSize: 12,
+    fontSize: 14,
     color: "#fff",
+    fontFamily: Fonts.MontezRegular,
   },
   iconContainer: {
     flexDirection: "row",

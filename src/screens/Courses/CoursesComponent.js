@@ -1,4 +1,4 @@
-import React, { useState, useEffect, memo, useCallback } from "react";
+import React, { useState, memo, useCallback } from "react";
 import {
   View,
   Text,
@@ -8,7 +8,6 @@ import {
   Alert,
   TextInput,
   Modal,
-  StyleSheet,
 } from "react-native";
 import styles from "./styles";
 import { Images } from "../../utils/Theme"; // Assuming you have a folder icon in Images
@@ -17,7 +16,6 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useFocusEffect } from "@react-navigation/native";
 
 const CoursesComponent = memo((props) => {
-  const { navigation } = props;
   const [folders, setFolders] = useState([]);
   const [newFolderName, setNewFolderName] = useState("");
   const [isCreatingFolder, setIsCreatingFolder] = useState(false);
@@ -30,11 +28,6 @@ const CoursesComponent = memo((props) => {
         const storedFolders = await AsyncStorage.getItem("folders");
         if (storedFolders) {
           setFolders(JSON.parse(storedFolders));
-
-          console.log(
-            "storedFolders",
-            JSON.stringify(JSON.parse(storedFolders))
-          );
         }
       };
       fetchFolders();
@@ -48,15 +41,13 @@ const CoursesComponent = memo((props) => {
     }
 
     const newFolder = {
-      id: Date.now().toString(), // Unique ID for the folder
+      id: Date.now().toString(),
       title: newFolderName,
-      filesCount: 0, // Initially, 0 files in the folder
+      filesCount: 0,
     };
 
     const updatedFolders = [...folders, newFolder];
-
     try {
-      // Store the new folder in AsyncStorage
       await AsyncStorage.setItem("folders", JSON.stringify(updatedFolders));
       setFolders(updatedFolders);
       setNewFolderName("");
@@ -73,11 +64,11 @@ const CoursesComponent = memo((props) => {
         setFolderToDelete(item); // Set the folder to be deleted
         setModalVisible(true); // Show the confirmation modal
       }}
-      style={styles.folderItem}
+      style={styles.folderGridItem} // Adjusted style for grid layout
     >
       <Image source={Images.folder} style={styles.folderIcon} />
       <View style={styles.folderDetails}>
-        <Text style={styles.folderTitle}>{item.title}</Text>
+        <Text style={styles.folderTitle}>{item?.title}</Text>
         <Text style={styles.fileCount}>
           {item?.notes ? item?.notes?.length : "0"} files
         </Text>
@@ -102,6 +93,7 @@ const CoursesComponent = memo((props) => {
       console.error("Error deleting folder:", error);
     }
   };
+
   return (
     <View style={styles.container}>
       <Loader loading={props.isLoading} />
@@ -121,22 +113,6 @@ const CoursesComponent = memo((props) => {
           >
             <Text style={styles.createFolderButtonText}>Create Folder</Text>
           </TouchableOpacity>
-          {/* Input for Folder Name */}
-          {/* {isCreatingFolder && (
-            <View style={styles.createFolderContainer}>
-              <TextInput
-                style={styles.folderInput}
-                placeholder="Enter folder name"
-                value={newFolderName}
-                onChangeText={setNewFolderName}
-              />
-              <TouchableOpacity
-                onPress={handleCreateFolder}
-                style={styles.saveButton}>
-                <Text style={styles.saveButtonText}>Save</Text>
-              </TouchableOpacity>
-            </View>
-          )} */}
           {isCreatingFolder && (
             <Modal
               animationType="slide"
@@ -192,7 +168,8 @@ const CoursesComponent = memo((props) => {
           data={folders}
           renderItem={renderFolderItem}
           keyExtractor={(item) => item.id}
-          contentContainerStyle={styles.listContainer}
+          contentContainerStyle={styles.gridListContainer}
+          numColumns={2} // Show folders in grid with 2 columns
         />
       )}
 

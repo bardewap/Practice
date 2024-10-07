@@ -94,6 +94,12 @@ export default StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     marginBottom: 15,
+    marginTop: 15,
+    borderWidth: 1,
+    borderColor: Colors.cardColor,
+    height: 50,
+    padding: 10,
+    borderRadius: 8,
   },
   icon: {
     width: 24,
@@ -104,10 +110,14 @@ export default StyleSheet.create({
     fontSize: 16,
     color: Colors.White_FFFFFF,
     marginLeft: 20,
+    fontFamily: Fonts.YellowGinger,
   },
   fileNameText: {
     marginTop: 5,
+    fontSize: 14,
+    margin: 8,
     color: Colors.White_FFFFFF,
+    fontFamily: Fonts.MontezRegular,
   },
   addButtonContainer: {
     alignItems: "center",
@@ -134,9 +144,10 @@ export default StyleSheet.create({
     marginTop: 20,
   },
   reminderText: {
-    fontSize: 16,
+    fontSize: 18,
     color: Colors.White_FFFFFF,
     marginLeft: 10,
+    fontFamily: Fonts.MontezRegular,
   },
   icon: {
     width: 24,
@@ -152,9 +163,10 @@ export default StyleSheet.create({
     alignItems: "center",
   },
   statusText: {
-    fontSize: 12,
+    fontSize: 14,
     marginBottom: 20,
     color: Colors.White_FFFFFF,
+    fontFamily: Fonts.MontezRegular,
   },
   resultText: {
     marginTop: 20,

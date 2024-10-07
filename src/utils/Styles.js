@@ -49,12 +49,12 @@ export default StyleSheet.create({
   bottomTabTextStyle: {
     marginLeft: 5,
     paddingTop: 5,
-    fontWeight: "bold",
     paddingBottom: 5,
     alignSelf: "center",
     textAlign: "center",
     fontSize: Sizes.Regular,
     color: Colors.White_FFFFFF,
+    fontFamily: Fonts.YellowGinger,
   },
 
   bottomUnTabTextStyle: {

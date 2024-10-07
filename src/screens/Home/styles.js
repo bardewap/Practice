@@ -86,11 +86,7 @@ export default StyleSheet.create({
     color: "#333333",
     fontWeight: "bold",
   },
-  noteDescription: {
-    fontSize: 14,
-    color: "#666666",
-    marginTop: 5,
-  },
+
   reminderContainer: {
     flexDirection: "row",
     alignItems: "center",
@@ -101,10 +97,7 @@ export default StyleSheet.create({
     height: 16,
     marginRight: 5,
   },
-  reminderText: {
-    fontSize: 12,
-    color: "#FF8C42", // Highlighting reminders
-  },
+
   iconContainer: {
     flexDirection: "row",
     alignItems: "center",
@@ -144,7 +137,7 @@ export default StyleSheet.create({
     fontWeight: "bold",
   },
   scoreContainer: {
-    backgroundColor: "#EFF6FD",
+    backgroundColor: Colors.cardSection,
     padding: 10,
     borderRadius: 10,
     marginVertical: 5,

@@ -90,7 +90,7 @@ const HomeComponent = memo((props) => {
         style={{ flex: 0.8 }}
       >
         <Text style={styles.noteTitle}>{item?.title}</Text>
-        <Text numberOfLines={2} style={styles?.noteDescription}>
+        <Text numberOfLines={3} style={styles?.noteDescription}>
           {item?.description}
         </Text>
         {item?.reminderDate && (

@@ -2,6 +2,7 @@ import React, { memo } from "react";
 import { View, Text, TouchableOpacity, Image, ScrollView } from "react-native";
 import { Images } from "../../utils/Theme";
 import styles from "./styles";
+import moment from "moment";
 
 const NoteDetailsComponent = memo((props) => {
   return (
@@ -44,7 +45,9 @@ const NoteDetailsComponent = memo((props) => {
           <View style={styles.reminderSection}>
             <Text style={styles.label}>Reminder :</Text>
             <Text style={styles.reminderText}>
-              {props?.data?.item?.reminderDate}
+              {moment(props?.data?.item?.reminderDate).format(
+                "MMMM DD YYYY, h:mm:A"
+              )}
             </Text>
           </View>
         )}

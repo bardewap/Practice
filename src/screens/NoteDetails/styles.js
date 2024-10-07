@@ -135,7 +135,7 @@ export default StyleSheet.create({
     fontSize: 14,
     color: "#555", // Muted color for description
     fontFamily: Fonts.Regular,
-    marginBottom: 4,
+    marginBottom: 6,
   },
   icon: {
     width: 24,

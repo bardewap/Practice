@@ -172,4 +172,67 @@ export default StyleSheet.create({
     color: "#666666",
     textAlign: "center",
   },
+  scrollView: {
+    flex: 1,
+  },
+  sectionContainer: {
+    marginTop: 20,
+    paddingHorizontal: 15,
+  },
+  sectionTitle: {
+    fontSize: 18,
+    fontWeight: "bold",
+    marginBottom: 10,
+    color: "#333",
+  },
+  listContainer: {
+    paddingBottom: 20,
+  },
+  noteItemContainer: {
+    flex: 1,
+    margin: 5,
+    borderRadius: 10,
+    padding: 15,
+    justifyContent: "space-between",
+    backgroundColor: "#FFF",
+    // Aspect ratio to keep the grid items squared
+    aspectRatio: 1,
+    // Shadow for iOS
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3,
+    // Shadow for Android
+    elevation: 3,
+  },
+  noteTitle: {
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "#fff",
+    marginBottom: 5,
+  },
+  noteDescription: {
+    fontSize: 14,
+    color: "#fff",
+    flex: 1,
+  },
+  reminderContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginTop: 10,
+  },
+  reminderIcon: {
+    height: 18,
+    width: 18,
+    marginRight: 5,
+  },
+  reminderText: {
+    fontSize: 12,
+    color: "#fff",
+  },
+  iconContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginTop: 10,
+  },
 });

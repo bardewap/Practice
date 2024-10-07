@@ -69,10 +69,21 @@ const HomeComponent = memo((props) => {
 
   const recentNotes = getRecentNotesById(props?.folders);
 
-  const renderNoteItem = ({ item }) => (
+  const noteColors = [
+    "#FFC107",
+    "#03A9F4",
+    "#8BC34A",
+    "#E91E63",
+    "#FF5722",
+    "#673AB7",
+  ];
+
+  const renderNoteItem = ({ item, index }) => (
     <View
-      // Delete on long press
-      style={styles.noteItemContainer}
+      style={[
+        styles.noteItemContainer,
+        { backgroundColor: noteColors[index % noteColors.length] },
+      ]}
     >
       <TouchableOpacity
         onPress={() => props.handleNoteDetails(item)}
@@ -144,6 +155,7 @@ const HomeComponent = memo((props) => {
               renderItem={renderNoteItem}
               keyExtractor={(item) => item?.id}
               contentContainerStyle={styles.listContainer}
+              numColumns={2} // Display in grid with 2 columns
             />
           ) : (
             <View style={styles.noNotesContainer}>

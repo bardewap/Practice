@@ -235,6 +235,7 @@ const AddNoteContainer = memo(({ navigation, route }) => {
         return folder;
       });
 
+      // sendNotification();
       // Save updated folders back to AsyncStorage
       await AsyncStorage.setItem("folders", JSON.stringify(updatedFolders));
 
@@ -277,15 +278,15 @@ const AddNoteContainer = memo(({ navigation, route }) => {
     }
   };
 
-  // const sendNotification = () => {
-  //   createChannel();
-  //   PushNotification.localNotification({
-  //     channelId: "your-channel-id",
-  //     id: 0,
-  //     title: `My Name's Alireza`,
-  //     message: "Hi 👋",
-  //   });
-  // };
+  const sendNotification = () => {
+    createChannel();
+    PushNotification.localNotification({
+      channelId: "your-channel-id",
+      id: 0,
+      title: `Note.`,
+      message: "Note has been Added Successfully",
+    });
+  };
 
   const scheduleNotification = (date, title) => {
     createChannel();

@@ -11,7 +11,16 @@ import styles from "./styles";
 import { Images } from "../../utils/Theme";
 import Loader from "../../components/Loader";
 import moment from "moment";
-import SeeMore from "react-native-see-more-inline"; // Import the SeeMore component
+
+// Function to generate a random color for each item
+const getRandomColor = () => {
+  const letters = "0123456789ABCDEF";
+  let color = "#";
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
 
 const FolderDetailsComponent = memo((props) => {
   const { searchQuery, setSearchQuery } = props;
@@ -24,72 +33,80 @@ const FolderDetailsComponent = memo((props) => {
       note.description.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  // const renderNoteItem = ({ item }) => (
-  //   <TouchableOpacity
-  //     onPress={() => props.handleNoteDetails(item)} // Delete on long press
-  //     onLongPress={() => props.handleDeleteNote(item.id)} // Delete on long press
-  //     style={styles.noteItemContainer}
-  //   >
-  //     <Text style={styles.noteTitle}>{item.title}</Text>
-  //     <Text numberOfLines={4} style={styles.noteDescription}>
-  //       {item.description}
-  //     </Text>
-  //     {/* <SeeMore
-  //       numberOfLines={3} // Number of lines before truncating
-  //       style={styles.noteDescription}
-  //       seeMoreText="See More"
-  //       seeLessText="See Less"
-  //       seeMoreStyle={styles.seeMoreText} // Optional custom style for "See More" text
-  //       seeLessStyle={styles.seeMoreText} // Optional custom style for "See Less" text
+  // const renderNoteItem = ({ item }) => {
+  //   // Assign a random background color to each item
+  //   const backgroundColor = getRandomColor();
+
+  //   return (
+  //     <View
+  //       style={[styles.noteItemContainer, { backgroundColor }]} // Apply random color
   //     >
-  //       {item.description}
-  //     </SeeMore> */}
-
-  //     {/* Render the reminder section if reminderDate exists */}
-  //     {item.reminderDate && (
-  //       <View style={styles.reminderContainer}>
-  //         <Image source={Images.reminder} style={styles.reminderIcon} />
-  //         <Text style={styles.reminderText}>
-  //           Reminder: {moment(item.reminderDate).format("MMMM Do YYYY, h:mm a")}
+  //       <TouchableOpacity
+  //         onPress={() => props.handleNoteDetails(item)}
+  //         style={{ flex: 0.8 }}
+  //       >
+  //         <Text style={styles.noteTitle}>{item?.title}</Text>
+  //         <Text numberOfLines={2} style={styles.noteDescription}>
+  //           {item.description}
   //         </Text>
+  //         {item.reminderDate && (
+  //           <View style={styles.reminderContainer}>
+  //             <Image source={Images.reminder} style={styles.reminderIcon} />
+  //             <Text style={styles.reminderText}>
+  //               Reminder:{" "}
+  //               {moment(item.reminderDate).format("MMMM Do YYYY, h:mm a")}
+  //             </Text>
+  //           </View>
+  //         )}
+  //       </TouchableOpacity>
+  //       <View style={styles.iconContainer}>
+  //         <TouchableOpacity onPress={() => props.handleEditNote(item)}>
+  //           <Image source={Images.edit} style={styles.iconStyle} />
+  //         </TouchableOpacity>
+  //         <TouchableOpacity onPress={() => props.handleDeleteNote(item.id)}>
+  //           <Image source={Images.delete} style={styles.iconStyle} />
+  //         </TouchableOpacity>
   //       </View>
-  //     )}
-  //   </TouchableOpacity>
-  // );
+  //     </View>
+  //   );
+  // };
 
-  const renderNoteItem = ({ item }) => (
-    <View
-      // Delete on long press
-      style={styles.noteItemContainer}
-    >
-      <TouchableOpacity
-        onPress={() => props.handleNoteDetails(item)}
-        style={{ flex: 0.8 }}
+  const renderNoteItem = ({ item }) => {
+    // Assign a random background color to each item
+    const backgroundColor = getRandomColor();
+
+    return (
+      <View
+        style={[styles.noteItemContainer, { backgroundColor }]} // Apply random color
       >
-        <Text style={styles.noteTitle}>{item?.title}</Text>
-        <Text numberOfLines={2} style={styles.noteDescription}>
-          {item.description}
-        </Text>
-        {item.reminderDate && (
-          <View style={styles.reminderContainer}>
-            <Image source={Images.reminder} style={styles.reminderIcon} />
-            <Text style={styles.reminderText}>
-              Reminder:{" "}
-              {moment(item.reminderDate).format("MMMM Do YYYY, h:mm a")}
-            </Text>
-          </View>
-        )}
-      </TouchableOpacity>
-      <View style={styles.iconContainer}>
-        <TouchableOpacity onPress={() => props.handleEditNote(item)}>
-          <Image source={Images.edit} style={styles.iconStyle} />
+        <TouchableOpacity
+          onPress={() => props.handleNoteDetails(item)}
+          style={styles.noteContent}
+        >
+          <Text style={styles.noteTitle}>{item?.title}</Text>
+          <Text numberOfLines={2} style={styles.noteDescription}>
+            {item.description}
+          </Text>
+          {item.reminderDate && (
+            <View style={styles.reminderContainer}>
+              <Image source={Images.reminder} style={styles.reminderIcon} />
+              <Text style={styles.reminderText}>
+                Reminder: {moment(item.reminderDate).format("MM Do YY, h:mm a")}
+              </Text>
+            </View>
+          )}
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => props.handleDeleteNote(item.id)}>
-          <Image source={Images.delete} style={styles.iconStyle} />
-        </TouchableOpacity>
+        <View style={styles.noteActions}>
+          <TouchableOpacity onPress={() => props.handleEditNote(item)}>
+            <Image source={Images.edit} style={styles.iconStyle} />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => props.handleDeleteNote(item.id)}>
+            <Image source={Images.delete} style={styles.iconStyle} />
+          </TouchableOpacity>
+        </View>
       </View>
-    </View>
-  );
+    );
+  };
 
   return (
     <View style={styles.container}>
@@ -116,11 +133,12 @@ const FolderDetailsComponent = memo((props) => {
         />
       </View>
 
-      {/* Notes List */}
+      {/* Notes List in Grid View */}
       <View style={styles.contentContainer}>
         {filteredNotes.length > 0 ? (
           <FlatList
             data={filteredNotes}
+            numColumns={2} // Set the number of columns for grid view
             showsVerticalScrollIndicator={false}
             renderItem={renderNoteItem}
             keyExtractor={(item) => item.id} // Use unique id as key

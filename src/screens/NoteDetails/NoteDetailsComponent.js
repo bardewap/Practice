@@ -30,12 +30,15 @@ const NoteDetailsComponent = memo((props) => {
             />
           </View>
         )}
-        {/* <View style={styles.detailSection}>
+        <View style={styles.detailSection}>
           <Text style={styles.label}>Voice Text</Text>
           <Text style={styles.value}>
             {props?.data?.item?.voiceText || "No Voice Text"}
           </Text>
-        </View> */}
+        </View>
+
+        {/* Button to Convert Text to Speech */}
+        {/* {props?.props?.data?.item?.voiceText ? ( */}
 
         {props?.data?.item?.reminderDate && (
           <View style={styles.reminderSection}>

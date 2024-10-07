@@ -160,4 +160,5 @@ export default StyleSheet.create({
   imageSection: {
     marginBottom: 16,
   },
+  
 });

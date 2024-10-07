@@ -47,7 +47,7 @@ const HomeComponent = memo((props) => {
     }
   };
 
-  const getRecentNotesById = (folders, limit = 3) => {
+  const getRecentNotesById = (folders, limit = 6) => {
     // Filter out folders that have an empty 'notes' array
     const foldersWithNotes = props?.folders?.filter(
       (folder) => folder?.notes?.length > 0

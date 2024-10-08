@@ -15,7 +15,7 @@ import moment from "moment";
 
 const HomeComponent = memo((props) => {
   useEffect(() => {
-    // requestNotificationPermission();
+    requestNotificationPermission();
   }, []);
 
   const requestNotificationPermission = async () => {

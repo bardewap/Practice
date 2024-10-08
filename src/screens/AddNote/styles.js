@@ -26,9 +26,9 @@ export default StyleSheet.create({
     marginLeft: 10,
   },
   headerTitle: {
-    fontSize: 20,
+    fontSize: 24,
     color: "#FFF",
-    fontFamily: Fonts.YellowGinger,
+    fontFamily: Fonts.Bold,
   },
   headerSubtitle: {
     fontSize: 14,
@@ -85,7 +85,7 @@ export default StyleSheet.create({
     paddingHorizontal: 10,
     marginBottom: 15,
     backgroundColor: Colors.White_FFFFFF,
-    fontFamily: Fonts.Italic,
+    // fontFamily: Fonts.Italic,
   },
   descriptionInput: {
     height: 100,
@@ -110,14 +110,14 @@ export default StyleSheet.create({
     fontSize: 16,
     color: Colors.White_FFFFFF,
     marginLeft: 20,
-    fontFamily: Fonts.YellowGinger,
+    // fontFamily: Fonts.YellowGinger,
   },
   fileNameText: {
     marginTop: 5,
     fontSize: 14,
     margin: 8,
     color: Colors.White_FFFFFF,
-    fontFamily: Fonts.MontezRegular,
+    // fontFamily: Fonts.MontezRegular,
   },
   addButtonContainer: {
     alignItems: "center",
@@ -133,7 +133,7 @@ export default StyleSheet.create({
   addButtonText: {
     color: Colors.Main, // Light background color for the whole screen
     fontSize: 18,
-    fontFamily: Fonts.YellowGinger,
+    // fontFamily: Fonts.YellowGinger,
   },
   reminderSection: {
     flexDirection: "row",
@@ -144,10 +144,10 @@ export default StyleSheet.create({
     marginTop: 20,
   },
   reminderText: {
-    fontSize: 18,
+    fontSize: 16,
     color: Colors.White_FFFFFF,
     marginLeft: 10,
-    fontFamily: Fonts.MontezRegular,
+    // fontFamily: Fonts.MontezRegular,
   },
   icon: {
     width: 24,
@@ -166,7 +166,7 @@ export default StyleSheet.create({
     fontSize: 14,
     marginBottom: 20,
     color: Colors.White_FFFFFF,
-    fontFamily: Fonts.MontezRegular,
+    // fontFamily: Fonts.MontezRegular,
   },
   resultText: {
     marginTop: 20,

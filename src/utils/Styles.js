@@ -54,7 +54,7 @@ export default StyleSheet.create({
     textAlign: "center",
     fontSize: Sizes.Regular,
     color: Colors.White_FFFFFF,
-    fontFamily: Fonts.YellowGinger,
+    // fontFamily: Fonts.YellowGinger,
   },
 
   bottomUnTabTextStyle: {

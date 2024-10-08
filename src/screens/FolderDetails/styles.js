@@ -100,7 +100,7 @@ export default StyleSheet.create({
   //   marginRight: 8,
   // },
   reminderText: {
-    fontSize: 16,
+    fontSize: 12,
     color: Colors.Black_000000, // Consistent text color from theme
     // fontFamily: Fonts.MontezRegular,
   },
@@ -176,8 +176,8 @@ export default StyleSheet.create({
     alignItems: "center",
   },
   iconStyle: {
-    width: 20,
-    height: 20,
+    width: 24,
+    height: 24,
     // tintColor: "red",
   },
 });

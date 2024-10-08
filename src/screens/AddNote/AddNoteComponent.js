@@ -108,7 +108,7 @@ const AddNoteComponent = memo((props) => {
               color={props?.isListening ? "red" : "blue"}
             /> */}
             <Image
-              source={props?.isListening ? Images.stop : Images.mic} // Display the selected image
+              source={props?.isListening ? Images?.stop : Images?.mic} // Display the selected image
               style={styles.micStyle}
             />
           </TouchableOpacity>

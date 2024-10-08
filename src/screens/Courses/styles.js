@@ -13,6 +13,7 @@ export default StyleSheet.create({
     borderBottomLeftRadius: 30,
     borderBottomRightRadius: 30,
     elevation: 5,
+    height: 180,
   },
   blurContainer: {
     // alignItems: "center",

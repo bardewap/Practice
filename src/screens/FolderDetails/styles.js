@@ -28,13 +28,13 @@ export default StyleSheet.create({
   },
   headerTitle: {
     fontSize: 22, // Increased size for better readability
-    fontFamily: Fonts.YellowGinger,
+    // fontFamily: Fonts.YellowGinger,
     color: "#FFF",
   },
   headerSubtitle: {
     fontSize: 16,
     color: "#FFF",
-    fontFamily: Fonts.MontezRegular,
+    // fontFamily: Fonts.MontezRegular,
     marginTop: 4,
   },
   contentContainer: {
@@ -48,7 +48,7 @@ export default StyleSheet.create({
     fontSize: 16,
     color: "#888",
     marginTop: 20,
-    fontFamily: Fonts.Regular,
+    // fontFamily: Fonts.Regular,
   },
   addButton: {
     position: "absolute",
@@ -73,7 +73,7 @@ export default StyleSheet.create({
   addText: {
     fontSize: 24, // Larger size to make the "+" sign prominent
     color: Colors.Main,
-    fontFamily: Fonts.Bold,
+    // fontFamily: Fonts.Bold,
   },
   searchContainer: {
     padding: 10,
@@ -87,7 +87,7 @@ export default StyleSheet.create({
     backgroundColor: Colors.White_FFFFFF,
     marginLeft: 12,
     marginRight: 12,
-    fontFamily: Fonts.Italic,
+    // fontFamily: Fonts.Italic,
   },
   // reminderContainer: {
   //   flexDirection: "row",
@@ -102,7 +102,7 @@ export default StyleSheet.create({
   reminderText: {
     fontSize: 16,
     color: Colors.Black_000000, // Consistent text color from theme
-    fontFamily: Fonts.MontezRegular,
+    // fontFamily: Fonts.MontezRegular,
   },
   // seeMoreText: {
   //   color: Colors.Main, // Blue for emphasis
@@ -136,12 +136,12 @@ export default StyleSheet.create({
     fontSize: 24, // Slightly larger title font size
     color: Colors.White_FFFFFF, // Consistent text color from theme
     marginBottom: 6, // Space between title and description
-    fontFamily: Fonts.akaDora,
+    // fontFamily: Fonts.akaDora,
   },
   noteDescription: {
     fontSize: 14,
     color: Colors.White_FFFFFF, // Consistent text color from theme
-    fontFamily: Fonts.Italic,
+    // fontFamily: Fonts.Italic,
   },
 
   noteItemContainer: {

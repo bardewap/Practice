@@ -10,7 +10,7 @@ export default StyleSheet.create({
   header: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: Colors.Main,
+    backgroundColor: Colors.cardColor,
     padding: 15,
   },
   backButton: {
@@ -26,8 +26,8 @@ export default StyleSheet.create({
     marginLeft: 10,
   },
   headerTitle: {
-    fontSize: 20,
-    fontFamily: Fonts.YellowGinger,
+    fontSize: 24,
+    fontFamily: Fonts.Bold,
     color: "#FFF",
   },
   headerSubtitle: {
@@ -134,7 +134,7 @@ export default StyleSheet.create({
   reminderText: {
     fontSize: 14,
     color: Colors.White_FFFFFF,
-    fontFamily: Fonts.Regular,
+    // fontFamily: Fonts.Regular,
   },
   icon: {
     width: 24,
@@ -144,18 +144,18 @@ export default StyleSheet.create({
     marginBottom: 16,
   },
   label: {
-    fontSize: 28,
+    fontSize: 20,
     color: Colors.White_FFFFFF,
     marginBottom: 8,
     fontFamily: Fonts.Bold,
     marginRight: 10,
-    fontFamily: Fonts.akaDora,
+    // fontFamily: Fonts.akaDora,
     marginBottom: 10,
   },
   value: {
     fontSize: 12,
     color: Colors.White_FFFFFF,
-    fontFamily: Fonts.Italic,
+    // fontFamily: Fonts.Italic,
   },
   imageSection: {
     marginBottom: 16,

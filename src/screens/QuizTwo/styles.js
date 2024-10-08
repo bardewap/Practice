@@ -27,7 +27,7 @@ export default StyleSheet.create({
   },
   headerTitle: {
     fontSize: 20,
-    fontFamily: Fonts.YellowGinger,
+    // fontFamily: Fonts.YellowGinger,
     color: "#FFF",
   },
   headerSubtitle: {
@@ -163,7 +163,7 @@ export default StyleSheet.create({
     fontSize: 25,
     color: Colors.White_FFFFFF,
     marginBottom: 20,
-    fontFamily: Fonts.MontezRegular,
+    // fontFamily: Fonts.MontezRegular,
   },
   optionButton: {
     backgroundColor: "#fff",
@@ -181,7 +181,7 @@ export default StyleSheet.create({
   optionText: {
     fontSize: 16,
     color: "#333",
-    fontFamily: Fonts.Italic,
+    // fontFamily: Fonts.Italic,
   },
   nextButton: {
     backgroundColor: Colors.cardColor,
@@ -193,7 +193,7 @@ export default StyleSheet.create({
   nextButtonText: {
     fontSize: 18,
     color: Colors.Main,
-    fontFamily: Fonts.YellowGinger,
+    // fontFamily: Fonts.YellowGinger,
   },
   modalContainer: {
     flex: 1,

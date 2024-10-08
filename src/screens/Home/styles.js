@@ -8,7 +8,7 @@ export default StyleSheet.create({
     backgroundColor: Colors.Main, // Light background color for the whole screen
   },
   topView: {
-    height: 150,
+    height: 180,
     backgroundColor: Colors.cardColor, // Light background color for the whole screen
     borderBottomLeftRadius: 30,
     borderBottomRightRadius: 30,

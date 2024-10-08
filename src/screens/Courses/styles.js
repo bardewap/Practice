@@ -15,7 +15,7 @@ export default StyleSheet.create({
     elevation: 5,
   },
   blurContainer: {
-    alignItems: "center",
+    // alignItems: "center",
     marginBottom: 10,
   },
   bannerContent: {
@@ -26,8 +26,9 @@ export default StyleSheet.create({
   },
   bannerText: {
     color: "#FFFFFF",
-    fontSize: 24,
-    fontFamily: Fonts.YellowGinger,
+    fontSize: 28,
+    // fontFamily: Fonts.YellowGinger,
+    fontFamily: Fonts.Bold,
   },
   profileImage: {
     width: 80,
@@ -38,7 +39,8 @@ export default StyleSheet.create({
   bottomText: {
     color: "#FFFFFF",
     fontSize: 20,
-    fontFamily: Fonts.MontezRegular,
+    // fontFamily: Fonts.MontezRegular,
+    marginTop: -20,
   },
   folderItem: {
     padding: 15,
@@ -62,11 +64,15 @@ export default StyleSheet.create({
     padding: 10,
     borderRadius: 5,
     marginTop: 10,
+    height: 40,
+    width: 150,
+    justifyContent: "center",
+    alignItems: "center",
   },
   createFolderButtonText: {
     color: Colors.Main,
     fontSize: 16,
-    fontFamily: Fonts.YellowGinger,
+    // fontFamily: Fonts.YellowGinger,
   },
   createFolderContainer: {
     flexDirection: "row",
@@ -233,11 +239,11 @@ export default StyleSheet.create({
   folderTitle: {
     fontSize: 20,
     color: Colors.White_FFFFFF,
-    fontFamily: Fonts.akaDora,
+    // fontFamily: Fonts.akaDora,
   },
   fileCount: {
     fontSize: 14,
     color: "#888",
-    fontFamily: Fonts.akaDora,
+    // fontFamily: Fonts.akaDora,
   },
 });

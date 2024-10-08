@@ -107,12 +107,20 @@ const CoursesComponent = memo((props) => {
           </View>
           <Text style={styles.bottomText}>Manage your folders</Text>
           {/* Create Folder Button */}
-          <TouchableOpacity
-            style={styles.createFolderButton}
-            onPress={() => setIsCreatingFolder(!isCreatingFolder)}
+          <View
+            style={{
+              justifyContent: "center",
+              alignItems: "center",
+            }}
           >
-            <Text style={styles.createFolderButtonText}>Create Folder</Text>
-          </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.createFolderButton}
+              onPress={() => setIsCreatingFolder(!isCreatingFolder)}
+            >
+              <Text style={styles.createFolderButtonText}>Create Folder</Text>
+            </TouchableOpacity>
+          </View>
+
           {isCreatingFolder && (
             <Modal
               animationType="slide"

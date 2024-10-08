@@ -1,7 +1,7 @@
 import React, { memo, useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { useFocusEffect } from "@react-navigation/native";
-import { Alert, BackHandler } from "react-native";
+import { Alert, BackHandler, PermissionsAndroid } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { launchImageLibrary, launchCamera } from "react-native-image-picker";
 import AddNoteComponent from "./AddNoteComponent";
@@ -45,7 +45,6 @@ const AddNoteContainer = memo(({ navigation, route }) => {
     Voice.onSpeechStart = onSpeechStart;
     Voice.onSpeechEnd = onSpeechEnd;
     Voice.onSpeechResults = onSpeechResults;
-
     return () => {
       Voice.destroy().then(Voice.removeAllListeners);
     };
@@ -82,12 +81,39 @@ const AddNoteContainer = memo(({ navigation, route }) => {
 
   useEffect(() => {
     console.log("initialImage", initialImage);
+    requestPermissions();
     setSelectedImageUri(
       initialImage && !initialImage.startsWith("file://")
         ? `file://${initialImage}`
         : initialImage
     );
   }, [initialImage]);
+
+  async function requestPermissions() {
+    if (Platform.OS === "android") {
+      try {
+        const granted = await PermissionsAndroid.requestMultiple([
+          PermissionsAndroid.PERMISSIONS.CAMERA,
+          PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE,
+          PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
+        ]);
+        if (
+          granted["android.permission.CAMERA"] ===
+            PermissionsAndroid.RESULTS.GRANTED &&
+          granted["android.permission.READ_EXTERNAL_STORAGE"] ===
+            PermissionsAndroid.RESULTS.GRANTED &&
+          granted["android.permission.WRITE_EXTERNAL_STORAGE"] ===
+            PermissionsAndroid.RESULTS.GRANTED
+        ) {
+          console.log("Permissions granted");
+        } else {
+          console.log("Permissions denied");
+        }
+      } catch (err) {
+        console.warn(err);
+      }
+    }
+  }
 
   PushNotification.configure({
     // (optional) Called when Token is generated (iOS and Android)

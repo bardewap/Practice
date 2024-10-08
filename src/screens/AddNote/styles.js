@@ -10,7 +10,7 @@ export default StyleSheet.create({
   header: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: Colors.Main, // Light background color for the whole screen
+    backgroundColor: Colors.cardColor, // Light background color for the whole screen
     padding: 15,
   },
   backButton: {
@@ -84,7 +84,7 @@ export default StyleSheet.create({
     borderRadius: 5,
     paddingHorizontal: 10,
     marginBottom: 15,
-    backgroundColor: Colors.cardColor,
+    backgroundColor: Colors.White_FFFFFF,
     fontFamily: Fonts.Italic,
   },
   descriptionInput: {

@@ -9,7 +9,7 @@ export default StyleSheet.create({
   header: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: Colors.Main, // Light background color for the whole screen
+    backgroundColor: Colors.cardColor, // Light background color for the whole screen
     paddingVertical: 15, // Added vertical padding for a balanced look
     paddingHorizontal: 20,
     elevation: 4, // Added shadow for depth
@@ -84,7 +84,7 @@ export default StyleSheet.create({
     borderWidth: 1,
     borderRadius: 5,
     paddingHorizontal: 10,
-    backgroundColor: Colors.cardColor,
+    backgroundColor: Colors.White_FFFFFF,
     marginLeft: 12,
     marginRight: 12,
     fontFamily: Fonts.Italic,

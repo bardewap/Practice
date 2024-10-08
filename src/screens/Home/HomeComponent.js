@@ -138,12 +138,15 @@ const HomeComponent = memo((props) => {
       <View style={styles.topView}>
         <View style={styles.blurContainer}>
           <View style={styles.bannerContent}>
-            <Text style={styles.bannerText}>Hi Student</Text>
+            <View>
+              <Text style={styles.bannerText}>Hi Student</Text>
+              <Text style={styles.bottomText}>Let’s start learning</Text>
+            </View>
+
             <TouchableOpacity>
               <Image source={Images.app_icon} style={styles.profileImage} />
             </TouchableOpacity>
           </View>
-          <Text style={styles.bottomText}>Let’s start learning</Text>
         </View>
       </View>
       <ScrollView style={styles.scrollView}>

@@ -9,11 +9,12 @@ export default StyleSheet.create({
   },
   topView: {
     height: 150,
-    backgroundColor: Colors.Main, // Light background color for the whole screen
+    backgroundColor: Colors.cardColor, // Light background color for the whole screen
     borderBottomLeftRadius: 30,
     borderBottomRightRadius: 30,
     justifyContent: "center",
     alignItems: "center",
+    marginBottom: 30,
   },
   blurContainer: {
     width: "90%",
@@ -31,9 +32,11 @@ export default StyleSheet.create({
     width: "100%",
   },
   bannerText: {
-    fontSize: 24,
+    fontSize: 28,
     color: "#fff",
-    fontFamily: Fonts.YellowGinger,
+    fontFamily: Fonts.Bold,
+    fontWeight: "900",
+    // fontFamily: Fonts.YellowGinger,
   },
   profileImage: {
     width: 50,
@@ -46,14 +49,13 @@ export default StyleSheet.create({
   bottomText: {
     fontSize: 24,
     color: "#fff",
-    marginTop: 10,
-    fontFamily: Fonts.akaDora,
+    // fontFamily: Fonts.akaDora,
   },
   scrollView: {
     marginVertical: 20,
   },
   sectionContainer: {
-    backgroundColor: Colors.cardColor,
+    backgroundColor: Colors.White_FFFFFF,
     borderRadius: 15,
     marginHorizontal: 20,
     paddingVertical: 15,
@@ -66,9 +68,9 @@ export default StyleSheet.create({
     elevation: 3,
   },
   sectionTitle: {
-    fontSize: 30,
+    fontSize: 20,
     marginBottom: 10,
-    fontFamily: Fonts.FontleroyBrownNF,
+    fontFamily: Fonts.Bold,
     color: Colors.Black_000000,
   },
   listContainer: {
@@ -106,15 +108,15 @@ export default StyleSheet.create({
     marginVertical: 5,
   },
   quizTitle: {
-    fontSize: 28,
+    fontSize: 24,
     color: "#333333",
-    fontFamily: Fonts.akaDora,
+    // fontFamily: Fonts.akaDora,
   },
   quizDate: {
     fontSize: 18,
     color: "#666666",
     marginTop: 5,
-    fontFamily: Fonts.MontezRegular,
+    // fontFamily: Fonts.MontezRegular,
   },
   startQuizButton: {
     marginTop: 10,
@@ -127,7 +129,7 @@ export default StyleSheet.create({
     color: "#ffffff",
     fontSize: 14,
     // fontWeight: "bold",
-    fontFamily: Fonts.YellowGinger,
+    // fontFamily: Fonts.YellowGinger,
   },
   scoreContainer: {
     backgroundColor: Colors.cardSection,
@@ -148,7 +150,7 @@ export default StyleSheet.create({
     fontSize: 16,
     color: "#666666",
     marginBottom: 10,
-    fontFamily: Fonts.MontezRegular,
+    // fontFamily: Fonts.MontezRegular,
   },
   noNotesImage: {
     width: 100,
@@ -158,7 +160,7 @@ export default StyleSheet.create({
     fontSize: 18,
     color: "#666666",
     textAlign: "center",
-    fontFamily: Fonts.MontezRegular,
+    // fontFamily: Fonts.MontezRegular,
   },
   scrollView: {
     flex: 1,
@@ -185,16 +187,16 @@ export default StyleSheet.create({
     elevation: 3,
   },
   noteTitle: {
-    fontSize: 18,
-    color: "#fff",
-    marginBottom: 5,
-    fontFamily: Fonts.akaDora,
-  },
-  noteDescription: {
     fontSize: 20,
     color: "#fff",
+    marginBottom: 5,
+    fontFamily: Fonts.Bold,
+  },
+  noteDescription: {
+    fontSize: 18,
+    color: "#fff",
     flex: 1,
-    fontFamily: Fonts.LoversQuarrelRegular,
+    // fontFamily: Fonts.LoversQuarrelRegular,
   },
   reminderContainer: {
     flexDirection: "row",
@@ -209,7 +211,7 @@ export default StyleSheet.create({
   reminderText: {
     fontSize: 14,
     color: "#fff",
-    fontFamily: Fonts.MontezRegular,
+    // fontFamily: Fonts.MontezRegular,
   },
   iconContainer: {
     flexDirection: "row",

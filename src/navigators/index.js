@@ -4,7 +4,6 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import MyTabBar from "../components/MyTabBar";
-import SidebarMenu from "../components/SidebarMenu";
 import SplashContainer from "../screens/Splash/SplashContainer";
 import HomeContainer from "../screens/Home/HomeContainer";
 import ProfileContainer from "../screens/Profile/ProfileContainer";

@@ -6,6 +6,8 @@ import Loader from "../../components/Loader";
 import moment from "moment";
 
 const ProfileComponent = memo((props) => {
+  const joinedDate = moment(new Date()).format("MMMM D, YYYY");
+
   return (
     <View style={styles.container}>
       <Loader loading={props.isLoading} />
@@ -17,6 +19,7 @@ const ProfileComponent = memo((props) => {
               <Image source={Images.app_icon} style={styles.profileImage} />
             </TouchableOpacity>
           </View>
+          <Text style={styles.joinedText}>Joined on : {joinedDate}</Text>
         </View>
       </View>
 
@@ -29,12 +32,12 @@ const ProfileComponent = memo((props) => {
             can create personalized folders and notes for each subject,
             enriching your learning experience by adding images and detailed
             descriptions to your notes. Our app also lets you set reminders,
-            keeping you on track with your study schedule. To further boost your
-            progress, StudyMate offers weekly quizzes, allowing you to test your
-            knowledge and reinforce key concepts regularly. Whether you're
-            organizing your notes or checking your understanding, StudyMate is
-            here to help you stay focused, motivated, and on the path to
-            success.
+            keeping you on track with your study schedule.{"\n\n"} To further
+            boost your progress, StudyMate offers weekly quizzes, allowing you
+            to test your knowledge and reinforce key concepts regularly. Whether
+            you're organizing your notes or checking your understanding,
+            StudyMate is here to help you stay focused, motivated, and on the
+            path to success.
           </Text>
         </View>
       </ScrollView>

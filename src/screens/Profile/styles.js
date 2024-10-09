@@ -8,14 +8,15 @@ export default StyleSheet.create({
     backgroundColor: Colors.Main, // Light background color for the whole screen
   },
   topView: {
-    backgroundColor: Colors.Main, // Primary color for the top banner
+    backgroundColor: Colors.cardColor, // Primary color for the top banner
     padding: 20,
     borderBottomLeftRadius: 30,
     borderBottomRightRadius: 30,
     elevation: 5,
+    height: 180,
   },
   blurContainer: {
-    alignItems: "center",
+    // alignItems: "center",
     marginBottom: 10,
   },
   bannerContent: {
@@ -23,11 +24,12 @@ export default StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     width: "100%",
+    marginTop: 15,
   },
   bannerText: {
     color: "#FFFFFF",
-    fontSize: 24,
-    fontFamily: Fonts.YellowGinger,
+    fontSize: 30,
+    fontFamily: Fonts.Bold,
   },
   profileImage: {
     width: 80,
@@ -63,7 +65,7 @@ export default StyleSheet.create({
   },
   appVersion: {
     fontSize: 12,
-    color: Colors.gray,
+    color: Colors.White_FFFFFF,
     margin: 10,
     textAlign: "center",
   },
@@ -75,7 +77,7 @@ export default StyleSheet.create({
 
   aboutUsTitle: {
     fontSize: 28,
-    fontFamily: Fonts.akaDora,
+    // fontFamily: Fonts.akaDora,
     marginBottom: 10,
     color: Colors.White_FFFFFF,
   },
@@ -84,6 +86,14 @@ export default StyleSheet.create({
     fontSize: 14,
     color: Colors.White_FFFFFF,
     lineHeight: 20,
-    fontFamily: Fonts.Italic,
+    // fontFamily: Fonts.Italic,
+  },
+  joinedText: {
+    fontSize: 16,
+    color: Colors.White_FFFFFF,
+    // textAlign: "center",
+    // marginVertical: 10,
+    // fontFamily: Fonts.akaDora,
+    marginTop: -20,
   },
 });

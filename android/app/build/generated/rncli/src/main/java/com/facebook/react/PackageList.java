@@ -23,8 +23,12 @@ import com.reactnativecommunity.checkbox.ReactCheckBoxPackage;
 import com.reactcommunity.rndatetimepicker.RNDateTimePickerPackage;
 // @react-native-community/netinfo
 import com.reactnativecommunity.netinfo.NetInfoPackage;
+// @react-native-voice/voice
+import com.wenkesj.voice.VoicePackage;
 // react-native-date-picker
 import com.henninghall.date_picker.DatePickerPackage;
+// react-native-fs
+import com.rnfs.RNFSPackage;
 // react-native-gesture-handler
 import com.swmansion.gesturehandler.RNGestureHandlerPackage;
 // react-native-html-to-pdf
@@ -33,6 +37,10 @@ import com.christopherdro.htmltopdf.RNHTMLtoPDFPackage;
 import com.reactnative.ivpusic.imagepicker.PickerPackage;
 // react-native-image-picker
 import com.imagepicker.ImagePickerPackage;
+// react-native-permissions
+import com.zoontek.rnpermissions.RNPermissionsPackage;
+// react-native-push-notification
+import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
 // react-native-reanimated
 import com.swmansion.reanimated.ReanimatedPackage;
 // react-native-safe-area-context
@@ -41,6 +49,10 @@ import com.th3rdwave.safeareacontext.SafeAreaContextPackage;
 import com.swmansion.rnscreens.RNScreensPackage;
 // react-native-splash-screen
 import org.devio.rn.splashscreen.SplashScreenReactPackage;
+// react-native-text-size
+import com.github.amarcruz.rntextsize.RNTextSizePackage;
+// react-native-tts
+import net.no_mad.tts.TextToSpeechPackage;
 // react-native-view-shot
 import fr.greweb.reactnativeviewshot.RNViewShotPackage;
 
@@ -94,15 +106,21 @@ public class PackageList {
       new ReactCheckBoxPackage(),
       new RNDateTimePickerPackage(),
       new NetInfoPackage(),
+      new VoicePackage(),
       new DatePickerPackage(),
+      new RNFSPackage(),
       new RNGestureHandlerPackage(),
       new RNHTMLtoPDFPackage(),
       new PickerPackage(),
       new ImagePickerPackage(),
+      new RNPermissionsPackage(),
+      new ReactNativePushNotificationPackage(),
       new ReanimatedPackage(),
       new SafeAreaContextPackage(),
       new RNScreensPackage(),
       new SplashScreenReactPackage(),
+      new RNTextSizePackage(),
+      new TextToSpeechPackage(),
       new RNViewShotPackage()
     ));
   }

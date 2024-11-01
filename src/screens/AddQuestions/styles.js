@@ -184,4 +184,21 @@ export default StyleSheet.create({
     width: 40,
     height: 40,
   },
+
+  container: {
+    flex: 1,
+    padding: 16,
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: "bold",
+    marginBottom: 16,
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: "#ddd",
+    padding: 8,
+    marginVertical: 8,
+    borderRadius: 4,
+  },
 });

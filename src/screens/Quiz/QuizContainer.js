@@ -21,7 +21,11 @@ const QuizContainer = memo(({ navigation, route }) => {
     navigation.goBack();
   };
 
-  return <QuizComponent backPress={backPress} />;
+  const addQuestions = () => {
+    navigation.navigate("AddQuestionsContainer");
+  };
+
+  return <QuizComponent backPress={backPress} addQuestions={addQuestions} />;
 });
 
 const mapStateToProps = ({ userSession }) => ({

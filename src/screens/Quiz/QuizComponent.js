@@ -163,6 +163,12 @@ const QuizComponent = memo((props) => {
           </View>
         </View>
       </Modal>
+      <TouchableOpacity
+        style={styles.addButton} // Optional styling
+        onPress={() => props?.addQuestions()}
+      >
+        <Text style={styles.addButtonText}>Add Question</Text>
+      </TouchableOpacity>
     </View>
   );
 });

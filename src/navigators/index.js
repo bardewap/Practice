@@ -17,6 +17,7 @@ import AddNoteContainer from "../screens/AddNote/AddNoteContainer";
 import NoteDetailsContainer from "../screens/NoteDetails/NoteDetailsContainer";
 import QuizContainer from "../screens/Quiz/QuizContainer";
 import QuizTwoContainer from "../screens/QuizTwo/QuizTwoContainer";
+import AddQuestionsContainer from "../screens/AddQuestions/AddQuestionsContainer";
 
 const SplashStack = createStackNavigator();
 const SplashScreen = () => (
@@ -99,6 +100,10 @@ const TabCombineScreen = () => (
       component={QuizTwoContainer}
     />
     <TabCombineStack.Screen name="QuizContainer" component={QuizContainer} />
+    <TabCombineStack.Screen
+      name="AddQuestionsContainer"
+      component={AddQuestionsContainer}
+    />
   </TabCombineStack.Navigator>
 );
 

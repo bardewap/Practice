@@ -130,6 +130,10 @@ const HomeContainer = memo((props) => {
     );
   };
 
+  const handleAddQuestion = (item) => {
+    navigation.navigate("AddQuestionsContainer");
+  };
+
   return (
     <HomeComponent
       props={props}
@@ -141,6 +145,7 @@ const HomeContainer = memo((props) => {
       folders={folders}
       previousScore={previousScore}
       previousScoreNet={previousScoreNet}
+      handleAddQuestion={handleAddQuestion}
     />
   );
 });

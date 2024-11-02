@@ -218,4 +218,27 @@ export default StyleSheet.create({
     justifyContent: "space-between",
     marginTop: 10,
   },
+  buttonContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginTop: 12,
+  },
+  startQuizButton: {
+    backgroundColor: "#4CAF50",
+    padding: 12,
+    borderRadius: 8,
+    flex: 1,
+    marginRight: 8,
+  },
+  addQuestionButton: {
+    backgroundColor: "#2196F3",
+    padding: 12,
+    borderRadius: 8,
+    flex: 1,
+  },
+  buttonText: {
+    color: "#fff",
+    fontWeight: "bold",
+    textAlign: "center",
+  },
 });

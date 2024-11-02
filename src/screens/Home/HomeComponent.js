@@ -119,16 +119,40 @@ const HomeComponent = memo((props) => {
     { id: "2", title: "Cyber Security Quiz", date: "30" },
   ];
 
+  // const renderQuizItem = ({ item }) => (
+  //   <View style={styles.quizItem}>
+  //     <Text style={styles.quizTitle}>{item?.title}</Text>
+  //     <Text style={styles.quizDate}>Total Questions: {item?.date}</Text>
+  //     <TouchableOpacity
+  //       style={styles.startQuizButton}
+  //       onPress={() => props?.handleStartQuiz(item)}
+  //     >
+  //       <Text style={styles.buttonText}>Start Quiz</Text>
+  //     </TouchableOpacity>
+  //   </View>
+  // );
+
   const renderQuizItem = ({ item }) => (
     <View style={styles.quizItem}>
       <Text style={styles.quizTitle}>{item?.title}</Text>
       <Text style={styles.quizDate}>Total Questions: {item?.date}</Text>
-      <TouchableOpacity
-        style={styles.startQuizButton}
-        onPress={() => props?.handleStartQuiz(item)}
-      >
-        <Text style={styles.buttonText}>Start Quiz</Text>
-      </TouchableOpacity>
+
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity
+          style={styles.startQuizButton}
+          onPress={() => props?.handleStartQuiz(item)}
+        >
+          <Text style={styles.buttonText}>Start Quiz</Text>
+        </TouchableOpacity>
+
+        {/* Add Question Button for Specific Category */}
+        <TouchableOpacity
+          style={styles.addQuestionButton}
+          onPress={() => props.handleAddQuestion(item)}
+        >
+          <Text style={styles.buttonText}>Add Questions</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 

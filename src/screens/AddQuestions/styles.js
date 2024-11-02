@@ -1,5 +1,6 @@
 import { StyleSheet, Dimensions } from "react-native";
 import { Colors, Sizes, Fonts } from "../../utils/Theme";
+import colors from "../../globals/colors";
 const windowWidth = Dimensions.get("window").width;
 
 export default StyleSheet.create({
@@ -23,7 +24,6 @@ export default StyleSheet.create({
   },
   headerTextContainer: {
     flex: 1,
-    marginLeft: 10,
   },
   headerTitle: {
     fontSize: 24,
@@ -185,7 +185,7 @@ export default StyleSheet.create({
     height: 40,
   },
 
-  container: {
+  container11: {
     flex: 1,
     padding: 16,
   },
@@ -193,12 +193,13 @@ export default StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     marginBottom: 16,
+    color: colors.White_FFFFFF,
   },
-  input: {
-    borderWidth: 1,
-    borderColor: "#ddd",
-    padding: 8,
-    marginVertical: 8,
-    borderRadius: 4,
-  },
+  // input: {
+  //   borderWidth: 1,
+  //   borderColor: "#ddd",
+  //   padding: 8,
+  //   marginVertical: 8,
+  //   borderRadius: 4,
+  // },
 });

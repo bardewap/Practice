@@ -202,4 +202,8 @@ export default StyleSheet.create({
   //   marginVertical: 8,
   //   borderRadius: 4,
   // },
+  inputLabel: {
+    color: Colors.White_FFFFFF,
+    marginBottom: 8,
+  },
 });

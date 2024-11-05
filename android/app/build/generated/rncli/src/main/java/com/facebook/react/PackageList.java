@@ -23,6 +23,8 @@ import com.reactnativecommunity.checkbox.ReactCheckBoxPackage;
 import com.reactcommunity.rndatetimepicker.RNDateTimePickerPackage;
 // @react-native-community/netinfo
 import com.reactnativecommunity.netinfo.NetInfoPackage;
+// @react-native-picker/picker
+import com.reactnativecommunity.picker.RNCPickerPackage;
 // @react-native-voice/voice
 import com.wenkesj.voice.VoicePackage;
 // react-native-date-picker
@@ -106,6 +108,7 @@ public class PackageList {
       new ReactCheckBoxPackage(),
       new RNDateTimePickerPackage(),
       new NetInfoPackage(),
+      new RNCPickerPackage(),
       new VoicePackage(),
       new DatePickerPackage(),
       new RNFSPackage(),

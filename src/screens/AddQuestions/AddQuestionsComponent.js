@@ -6,10 +6,9 @@ import {
   TouchableOpacity,
   Image,
   ScrollView,
-  Button,
   Alert,
 } from "react-native";
-import DateTimePicker from "@react-native-community/datetimepicker";
+import { Picker } from "@react-native-picker/picker"; // Import Picker component
 import { Images } from "../../utils/Theme";
 import styles from "./styles";
 import axios from "axios";
@@ -21,6 +20,7 @@ const AddQuestionsComponent = memo((props) => {
   const [option3, setOption3] = useState("");
   const [option4, setOption4] = useState("");
   const [correctOption, setCorrectOption] = useState("");
+  const [category, setCategory] = useState(""); // State for category
 
   const validateInputs = () => {
     if (!question.trim()) {
@@ -43,6 +43,10 @@ const AddQuestionsComponent = memo((props) => {
       );
       return false;
     }
+    if (!category) {
+      Alert.alert("Validation Error", "Please select a category.");
+      return false;
+    }
     return true;
   };
 
@@ -55,7 +59,7 @@ const AddQuestionsComponent = memo((props) => {
       { value: option4, isCorrect: option4 === correctOption },
     ];
 
-    const payload = { question, answers };
+    const payload = { question, category, answers }; // Include category in payload
 
     console.log("payload", JSON.stringify(payload));
     try {
@@ -82,12 +86,24 @@ const AddQuestionsComponent = memo((props) => {
       <ScrollView>
         <View style={styles.container11}>
           <Text style={styles.title}>Add a New Question</Text>
+          <Text style={styles.inputLabel}>Category</Text>
+          <Picker
+            selectedValue={category}
+            onValueChange={(itemValue) => setCategory(itemValue)}
+            style={styles.input} // Add picker styles if needed
+          >
+            <Picker.Item label="Select a category" value="" />
+            <Picker.Item label="Network" value="network" />
+            <Picker.Item label="Cyber" value="cyber" />
+          </Picker>
+
           <TextInput
             placeholder="Question"
             value={question}
             onChangeText={setQuestion}
             style={styles.input}
           />
+
           <TextInput
             placeholder="Option 1"
             value={option1}

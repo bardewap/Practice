@@ -49,7 +49,7 @@ const QuizComponent = memo((props) => {
 
       // Filter questions to include only those in the "food" category
       const filteredData = response?.data.data?.filter(
-        (item) => item?.category === "food"
+        (item) => item?.category === "network"
       );
 
       // Map the filtered questions to extract relevant data
@@ -170,12 +170,12 @@ const QuizComponent = memo((props) => {
           </View>
         </View>
       </Modal>
-      <TouchableOpacity
+      {/* <TouchableOpacity
         style={styles.addButton} // Optional styling
         onPress={() => props?.addQuestions()}
       >
         <Text style={styles.addButtonText}>Add Question</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
     </View>
   );
 });

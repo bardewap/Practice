@@ -49,7 +49,7 @@ const QuizTwoComponent = memo((props) => {
 
       // Filter questions to include only those in the "food" category
       const filteredData = response?.data.data?.filter(
-        (item) => item?.category === "food"
+        (item) => item?.category === "cyber"
       );
 
       // Map the filtered questions to extract relevant data

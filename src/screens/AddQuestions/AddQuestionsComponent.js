@@ -67,8 +67,18 @@ const AddQuestionsComponent = memo((props) => {
         "https://test-que.onrender.com/question",
         payload
       );
-      Alert.alert("Success", "Question added successfully!");
-      // navigation.goBack();
+      Alert.alert(
+        "Success",
+        "Question added successfully!\nAdd new question."
+      );
+      // Clear all fields after successful addition
+      setQuestion("");
+      setOption1("");
+      setOption2("");
+      setOption3("");
+      setOption4("");
+      setCorrectOption("");
+      setCategory(""); // Clear the category field
     } catch (error) {
       console.error("Error adding question:", error);
       Alert.alert("Error", "Failed to add question. Please try again.");

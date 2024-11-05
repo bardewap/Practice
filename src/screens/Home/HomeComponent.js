@@ -135,7 +135,7 @@ const HomeComponent = memo((props) => {
   const renderQuizItem = ({ item }) => (
     <View style={styles.quizItem}>
       <Text style={styles.quizTitle}>{item?.title}</Text>
-      <Text style={styles.quizDate}>Total Questions: {item?.date}</Text>
+      {/* <Text style={styles.quizDate}>Total Questions: {item?.date}</Text> */}
 
       <View style={styles.buttonContainer}>
         <TouchableOpacity

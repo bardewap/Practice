@@ -41,7 +41,7 @@ const ProfileComponent = memo((props) => {
           </Text>
         </View>
       </ScrollView>
-      <Text style={styles.appVersion}>App version: 1.2</Text>
+      <Text style={styles.appVersion}>App version: 2.0</Text>
     </View>
   );
 });

@@ -253,4 +253,11 @@ export default StyleSheet.create({
     marginLeft: 10,
     marginTop: 8,
   },
+  Loadercontainer: {
+    flex: 1,
+    backgroundColor: Colors.White_FFFFFF,
+    justifyContent: "center",
+    alignItems: "center",
+    // Light background color for the whole screen
+  },
 });

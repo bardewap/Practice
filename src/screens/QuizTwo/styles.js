@@ -140,10 +140,6 @@ export default StyleSheet.create({
     width: 24,
     height: 24,
   },
-  container: {
-    flex: 1,
-    backgroundColor: "#f5f5f5",
-  },
 
   backButton: {
     padding: 10,
@@ -253,5 +249,12 @@ export default StyleSheet.create({
     color: "red", // Red color for emphasis
     marginLeft: 10,
     marginTop: 8,
+  },
+  Loadercontainer: {
+    flex: 1,
+    backgroundColor: Colors.White_FFFFFF,
+    justifyContent: "center",
+    alignItems: "center",
+    // Light background color for the whole screen
   },
 });

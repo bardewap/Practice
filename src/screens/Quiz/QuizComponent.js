@@ -46,10 +46,17 @@ const QuizComponent = memo((props) => {
         "https://test-que.onrender.com/questions"
       );
       console.log("response", JSON.stringify(response));
-      const formattedData = response?.data.data?.map((item) => ({
-        question: item.question,
-        options: item.answer.map((option) => option.value), // Extract values of answers
-        answer: item.answer.find((option) => option.isCorrect)?.value || "", // Find the correct answer
+
+      // Filter questions to include only those in the "food" category
+      const filteredData = response?.data.data?.filter(
+        (item) => item?.category === "food"
+      );
+
+      // Map the filtered questions to extract relevant data
+      const formattedData = filteredData?.map((item) => ({
+        question: item?.question,
+        options: item?.answer.map((option) => option.value), // Extract values of answers
+        answer: item?.answer.find((option) => option.isCorrect)?.value || "", // Find the correct answer
       }));
 
       setQuizData(formattedData); // Set the formatted data
@@ -90,7 +97,7 @@ const QuizComponent = memo((props) => {
 
   if (loading) {
     return (
-      <View style={styles.container}>
+      <View style={styles.Loadercontainer}>
         <ActivityIndicator size="large" color="#0000ff" />
       </View>
     );
